@@ -1,1 +1,13 @@
-spring.ai.openai.api-key=REPLACE_WITH_YOUR_OPENROUTER_KEY
+# All OpenAI-compatible model calls go through OpenRouter
+spring.ai.openai.base-url=https://openrouter.ai/api/v1
+spring.ai.openai.api-key=${OPENROUTER_API_KEY}
+
+# Enable embedding-model auto-configuration
+spring.ai.model.embedding=openai
+
+# OpenRouter requires the provider-prefixed model identifier
+spring.ai.openai.embedding.model=openai/text-embedding-3-small
+spring.ai.openai.embedding.dimensions=1536
+
+# Existing database configuration
+spring.datasource.password=${DATASOURCE_PASSWORD}

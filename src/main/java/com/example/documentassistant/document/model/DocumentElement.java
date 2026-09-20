@@ -1,4 +1,3 @@
-
 package com.example.documentassistant.document.model;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -12,7 +11,8 @@ import java.util.Map;
  * The discriminator is handled by Jackson, so records do not repeat it.
  * Only the explicitly listed JSON type names are registered here.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME,
+    include = JsonTypeInfo.As.PROPERTY, property = "type")
 @JsonSubTypes({
     @JsonSubTypes.Type(value = DocumentElement.Paragraph.class, name = "paragraph"),
     @JsonSubTypes.Type(value = DocumentElement.ListItem.class, name = "list_item"),
