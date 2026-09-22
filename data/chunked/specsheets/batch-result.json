@@ -1,0 +1,64 @@
+{
+  "discoveredFiles" : 9,
+  "successfulDocuments" : 9,
+  "failedDocuments" : 0,
+  "totalChunks" : 571,
+  "complete" : true,
+  "outputDirectory" : "/home/metameg/Work/RagPortfolio/document-assistant/target/chunk-runs/run-7578981419038565340",
+  "documents" : [ {
+    "inputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/data/processed/specsheets/product_1.json",
+    "documentId" : "product_1",
+    "chunkCount" : 35,
+    "longestChunkCharacters" : 1876,
+    "outputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/target/chunk-runs/run-7578981419038565340/product_1-chunks.json"
+  }, {
+    "inputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/data/processed/specsheets/product_11.json",
+    "documentId" : "product_11",
+    "chunkCount" : 28,
+    "longestChunkCharacters" : 2015,
+    "outputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/target/chunk-runs/run-7578981419038565340/product_11-chunks.json"
+  }, {
+    "inputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/data/processed/specsheets/product_12.json",
+    "documentId" : "product_12",
+    "chunkCount" : 81,
+    "longestChunkCharacters" : 2130,
+    "outputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/target/chunk-runs/run-7578981419038565340/product_12-chunks.json"
+  }, {
+    "inputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/data/processed/specsheets/product_14.json",
+    "documentId" : "product_14",
+    "chunkCount" : 75,
+    "longestChunkCharacters" : 2068,
+    "outputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/target/chunk-runs/run-7578981419038565340/product_14-chunks.json"
+  }, {
+    "inputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/data/processed/specsheets/product_16.json",
+    "documentId" : "product_16",
+    "chunkCount" : 83,
+    "longestChunkCharacters" : 2130,
+    "outputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/target/chunk-runs/run-7578981419038565340/product_16-chunks.json"
+  }, {
+    "inputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/data/processed/specsheets/product_18.json",
+    "documentId" : "product_18",
+    "chunkCount" : 41,
+    "longestChunkCharacters" : 2046,
+    "outputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/target/chunk-runs/run-7578981419038565340/product_18-chunks.json"
+  }, {
+    "inputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/data/processed/specsheets/product_2.json",
+    "documentId" : "product_2",
+    "chunkCount" : 80,
+    "longestChunkCharacters" : 1960,
+    "outputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/target/chunk-runs/run-7578981419038565340/product_2-chunks.json"
+  }, {
+    "inputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/data/processed/specsheets/product_3.json",
+    "documentId" : "product_3",
+    "chunkCount" : 74,
+    "longestChunkCharacters" : 2058,
+    "outputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/target/chunk-runs/run-7578981419038565340/product_3-chunks.json"
+  }, {
+    "inputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/data/processed/specsheets/product_5.json",
+    "documentId" : "product_5",
+    "chunkCount" : 74,
+    "longestChunkCharacters" : 2055,
+    "outputFile" : "/home/metameg/Work/RagPortfolio/document-assistant/target/chunk-runs/run-7578981419038565340/product_5-chunks.json"
+  } ],
+  "failures" : [ ]
+}

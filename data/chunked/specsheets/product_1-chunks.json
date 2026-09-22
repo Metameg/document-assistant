@@ -1,0 +1,330 @@
+{
+  "chunkSchemaVersion" : "1",
+  "sourceSchemaVersion" : "1.3",
+  "documentId" : "product_1",
+  "sourceFile" : "product_1.pdf",
+  "revision" : {
+    "partNumber" : "10000007490-B",
+    "revision" : "B",
+    "publicationDate" : "06/06/18",
+    "copyrightYear" : 2018
+  },
+  "chunkCount" : 35,
+  "longestChunkCharacters" : 1876,
+  "chunks" : [ {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 0,
+    "section" : "Overview",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 1 ],
+    "sourceElementIds" : [ "p1.overview.paragraph.8-10-13-kva" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: Overview\n\n[Page 1] 8/10/13 kVA"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 1,
+    "section" : "INCLUDES:",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 1 ],
+    "sourceElementIds" : [ "p1.includes.list-item.true-power-electrical-technology", "p1.includes.list-item.two-line-lcd-multilingual-digital-evolution-controller", "p1.includes.list-item.standard-wi-fi-remote-monitoring", "p1.includes.list-item.electronic-governor", "p1.includes.list-item.system-status-maintenance-interval-led-indicators", "p1.includes.list-item.sound-attenuated-enclosure", "p1.includes.list-item.flexible-fuel-line-connector", "p1.includes.list-item.direct-to-dirt-composite-mounting-pad", "p1.includes.list-item.natural-gas-or-lp-gas-operation", "p1.includes.list-item.5-year-limited-warranty", "p1.includes.list-item.listed-and-labeled-by-the-southwest-research-institute-allowing-installation-as", "p1.includes.technical-note.minimum-installation-distance" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: INCLUDES:\n\n[Page 1] True Power™ Electrical Technology\n\n[Page 1] Two Line LCD Multilingual Digital Evolution™ Controller\n\n[Page 1] Standard Wi-FI ® Remote Monitoring\n\n[Page 1] Electronic Governor\n\n[Page 1] System Status & Maintenance Interval LED Indicators\n\n[Page 1] Sound Attenuated Enclosure\n\n[Page 1] Flexible Fuel Line Connector\n\n[Page 1] Direct-To-Dirt Composite Mounting Pad\n\n[Page 1] Natural Gas or LP Gas Operation\n\n[Page 1] 5 Year Limited Warranty\n\n[Page 1] Listed and Labeled by the Southwest Research Institute allowing installation as close as 18\" (457 mm) to a structure.*\n\n[Page 1] Note for models G007144-0, G007145-0, G007146-0: Minimum installation distance: *Must be located away from doors, windows, and fresh air intakes and in accordance with local codes."
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 2,
+    "section" : "INCLUDES:",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 1 ],
+    "sourceElementIds" : [ "p1.includes.paragraph.https-assets-swri-org-library-directoryoflistedproducts-constructionindustry-9" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: INCLUDES:\n\n[Page 1] https://assets.swri.org/library/DirectoryOfListedProducts/ConstructionIndustry/973_DoC_204_13204-01-01_Rev9.pdf"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 3,
+    "section" : "FEATURES",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 1 ],
+    "sourceElementIds" : [ "p1.features.feature.innovative-engine-design-rigorous-testing", "p1.features.feature.mobile-link-remote-monitoring" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: FEATURES\n\n[Page 1] INNOVATIVE ENGINE DESIGN & RIGOROUS TESTING: are at the heart of Generac's success in providing the most reliable generators possible. Generac's G-Force engine lineup offers added peace of mind and reliability for when you need it the most. The G-Force series engines are purpose built and designed to handle the rigors of extended run times in high temperatures and extreme operating conditions.\n\n[Page 1] MOBILE LINK™ REMOTE MONITORING: FREE with every Guardian Series Home standby generator. Allows you to monitor the status of your generator from anywhere in the world using a smartphone, tablet, or PC. Easily access information such as the current operating status and maintenance alerts. Connect your account to your authorized service dealer for fast, friendly and proactive service. With Mobile Link, you are taken care of before the next power outage."
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 4,
+    "section" : "Standby Power Rating",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 1 ],
+    "sourceElementIds" : [ "p1.standby-power-rating.paragraph.model-g007144-0-aluminum-bisque-8-kva-50-hz", "p1.standby-power-rating.paragraph.model-g007145-0-aluminum-bisque-10-kva-50-hz", "p1.standby-power-rating.paragraph.model-g007146-0-aluminum-bisque-13-kva-50-hz" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: Standby Power Rating\n\n[Page 1] Model G007144-0 (Aluminum - Bisque) - 8 kVA 50 Hz\n\n[Page 1] Model G007145-0 (Aluminum - Bisque) - 10 kVA 50 Hz\n\n[Page 1] Model G007146-0 (Aluminum - Bisque) - 13 kVA 50 Hz"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 5,
+    "section" : "SOLID-STATE, FREQUENCY COMPENSATED VOLTAGE REGULATION:",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 1 ],
+    "sourceElementIds" : [ "p1.solid-state-frequency-compensated-voltage-regulation.list-item.this-state-of-the-art-power-maximizing-regulation-system-is-standard-on-all-gene", "p1.solid-state-frequency-compensated-voltage-regulation.feature.true-power-electrical-technology" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: SOLID-STATE, FREQUENCY COMPENSATED VOLTAGE REGULATION:\n\n[Page 1] This state-of-the-art power maximizing regulation system is standard on all Generac models. It provides optimized FAST RESPONSE to changing load conditions and MAXIMUM MOTOR STARTING CAPABILITY by electronically torque-matching the surge loads to the engine. Digital voltage regulation at ±1%.\n\n[Page 1] TRUE POWER™ ELECTRICAL TECHNOLOGY: Superior harmonics and sine wave form produce less than 5% Total Harmonic Distortion for utility quality power. This allows confident operation of sensitive electronic equipment and micro-chip based appliances, such as variable speed HVAC systems."
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 6,
+    "section" : "TEST CRITERIA:",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 1 ],
+    "sourceElementIds" : [ "p1.test-criteria.list-item.prototype-tested", "p1.test-criteria.list-item.system-torsional-tested", "p1.test-criteria.list-item.nema-mg1-22-evaluation-motor-starting-ability" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: TEST CRITERIA:\n\n[Page 1] PROTOTYPE TESTED\n\n[Page 1] SYSTEM TORSIONAL TESTED\n\n[Page 1] NEMA MG1-22 EVALUATION √ MOTOR STARTING ABILITY"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 7,
+    "section" : "Engine",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 2 ],
+    "sourceElementIds" : [ "p2.engine.feature.generac-g-force-design", "p2.engine.feature.spiny-lok-cast-iron-cylinder-walls", "p2.engine.feature.electronic-ignition-spark-advance", "p2.engine.feature.full-pressure-lubrication-system", "p2.engine.feature.low-oil-pressure-shutdown-system", "p2.engine.feature.high-temperature-shutdown" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: Engine\n\n[Page 2] Generac G-Force design: Maximizes engine 'breathing' for increased fuel efficiency. Plateau honed cylinder walls and plasma moly rings helps the engine run cooler, reducing oil consumption resulting in longer engine life.\n\n[Page 2] 'Spiny-lok' cast iron cylinder walls: Rigid construction and added durability provide long engine life.\n\n[Page 2] Electronic ignition/spark advance: These features combine to assure smooth, quick starting every time.\n\n[Page 2] Full pressure lubrication system: Pressurized lubrication to all vital bearings means better performance, less maintenance and longer engine life. Now featuring up to a 2 year/200 hour oil change interval.\n\n[Page 2] Low oil pressure shutdown system: Shutdown protection prevents catastrophic engine damage due to low oil.\n\n[Page 2] High temperature shutdown: Prevents damage due to overheating."
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 8,
+    "section" : "Generator",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 2 ],
+    "sourceElementIds" : [ "p2.generator.feature.revolving-field", "p2.generator.feature.skewed-stator", "p2.generator.feature.displaced-phase-excitation", "p2.generator.feature.automatic-voltage-regulation", "p2.generator.feature.true-power-technology" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: Generator\n\n[Page 2] Revolving field: Allows for a smaller, light weight unit that operates 25% more efficiently than a revolving armature generator.\n\n[Page 2] Skewed stator: Produces a smooth output waveform for compatibility with electronic equipment.\n\n[Page 2] Displaced phase excitation: Maximizes motor starting capability.\n\n[Page 2] Automatic voltage regulation: Regulates the output voltage to ±1%, preventing damaging voltage spikes.\n\n[Page 2] True Power Technology: Less than 5% total harmonic distortion (THD)."
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 9,
+    "section" : "Evolution™ Controls",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 2 ],
+    "sourceElementIds" : [ "p2.evolution-controls.feature.auto-manual-off-illuminated-buttons", "p2.evolution-controls.feature.sealed-raised-buttons", "p2.evolution-controls.feature.utility-voltage-sensing", "p2.evolution-controls.feature.utility-interrupt-delay", "p2.evolution-controls.feature.voltage-selection-options", "p2.evolution-controls.feature.engine-warm-up", "p2.evolution-controls.feature.engine-cool-down", "p2.evolution-controls.feature.programmable-seven-day-exercise", "p2.evolution-controls.feature.smart-battery-charger", "p2.evolution-controls.feature.main-line-circuit-breaker", "p2.evolution-controls.feature.electronic-governor" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: Evolution™ Controls\n\n[Page 2] Auto/Manual/Off illuminated buttons: Selects the operating mode and provides easy, at-a-glance status indication in any condition.\n\n[Page 2] Sealed, raised buttons: Smooth, weather-resistant user interface for programming and operations.\n\n[Page 2] Utility voltage sensing: Constantly monitors utility voltage; defaults 156 V dropout, 190 V pick up.\n\n[Page 2] Utility interrupt delay: Prevents nuisance start-ups of the engine; adjustable 2-1500 seconds from factory default setting of 5 seconds by a qualified dealer.\n\n[Page 2] Voltage selection options: Output voltage is selectable through the controller from 220 V, 230 V, or 240 V.\n\n[Page 2] Engine warm-up: Ensures engine is ready to assume the load, setpoint approximately 5 seconds.\n\n[Page 2] Engine cool-down: Allows engine to cool prior to shutdown, setpoint approximately 1 minute.\n\n[Page 2] Programmable seven day exercise: Operates engine to prevent oil seal drying and damage between power outages by running the generator for 5 minutes every other week. Also offers a selectable setting for Weekly, Bi-Weekly, or Monthly operation providing flexibility and potentially lower fuel costs to the owner.\n\n[Page 2] Smart battery charger: Delivers charge to the battery only when needed at varying rates depending on outdoor air temperature. Compatible with lead acid and AGM-style batteries.\n\n[Page 2] Main line circuit breaker: Protects generator from overload.\n\n[Page 2] Electronic governor: Maintains constant 50 Hz frequency."
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 10,
+    "section" : "Unit",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 2 ],
+    "sourceElementIds" : [ "p2.unit.feature.sae-weather-protective-enclosure", "p2.unit.feature.enclosed-critical-grade-muffler", "p2.unit.feature.small-compact-attractive" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: Unit\n\n[Page 2] SAE weather protective enclosure: Sound attenuated enclosures ensure quiet operation and protection against mother nature, withstanding winds up to 150 mph. Hinged key locking roof panel for security. Lift-out front for easy access to all routine maintenance items. Electrostatically applied textured epoxy paint for added durability.\n\n[Page 2] Enclosed critical grade muffler: Quiet, critical grade muffler is mounted inside the unit to prevent injuries.\n\n[Page 2] Small, compact, attractive: Makes for an easy, eye appealing installation, as close as 18\" away from a building."
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 11,
+    "section" : "Installation System",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 2 ],
+    "sourceElementIds" : [ "p2.installation-system.feature.1-ft-305-mm-flexible-fuel-line-connector", "p2.installation-system.feature.direct-to-dirt-composite-mounting-pad", "p2.installation-system.feature.integral-sediment-trap" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: Installation System\n\n[Page 2] 1 ft (305 mm) flexible fuel line connector: Absorbs any generator vibration when connected to rigid pipe.\n\n[Page 2] Direct-to-dirt composite mounting pad: Complex lattice design prevents settling or sinking of the generator system.\n\n[Page 2] Integral sediment trap: Prevents particles and moisture from entering the fuel regulator and engine, prolonging engine life."
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 12,
+    "section" : "Remote Monitoring ‡",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 2 ],
+    "sourceElementIds" : [ "p2.remote-monitoring.feature.ability-to-view-generator-status", "p2.remote-monitoring.feature.ability-to-view-generator-exercise-run-and-total-hours", "p2.remote-monitoring.feature.ability-to-view-generator-maintenance-information", "p2.remote-monitoring.feature.monthly-report-with-previous-month-s-activity", "p2.remote-monitoring.feature.ability-to-view-generator-battery-information", "p2.remote-monitoring.feature.weather-information", "p2.remote-monitoring.technical-note.remote-monitoring" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: Remote Monitoring ‡\n\n[Page 2] Ability to view generator status: Monitor the generator via a smartphone, tablet, or computer at any time via the Mobile Link application for complete peace of mind\n\n[Page 2] Ability to view generator Exercise/Run and Total Hours: Review the generator's complete protection profile for exercise hours and total hours\n\n[Page 2] Ability to view generator maintenance information: Provides maintenance information for your specific model generator when scheduled maintenance is due\n\n[Page 2] Monthly report with previous month's activity.: Detailed monthly reports provide historical generator information\n\n[Page 2] Ability to view generator battery information: Built in battery diagnostics displaying current state of the battery\n\n[Page 2] Weather information: Provides detailed local ambient weather conditions for generator location\n\n[Page 2] Note for models G007144-0, G007145-0, G007146-0: Remote Monitoring: ‡ Where supported"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 13,
+    "section" : "Generator",
+    "modelNumbers" : [ "G007144-0" ],
+    "pageNumbers" : [ 3 ],
+    "sourceElementIds" : [ "p3.generator.specification.rated-maximum-power-capacity-lp-esp", "p3.generator.specification.rated-maximum-power-capacity-ng-esp", "p3.generator.specification.rated-voltage", "p3.generator.specification.rated-maximum-continuous-load-current-220-volts-lp-ng", "p3.generator.specification.main-line-circuit-breaker", "p3.generator.specification.phase", "p3.generator.specification.number-of-rotor-poles", "p3.generator.specification.rated-ac-frequency", "p3.generator.specification.power-factor", "p3.generator.specification.battery-requirement-not-included", "p3.generator.specification.unit-weight-kg-lb", "p3.generator.specification.dimensions-l-x-w-x-h-mm-in", "p3.generator.specification.sound-output-in-db-a-at-7m-23-ft-with-generator-operating-at-normal-load", "p3.generator.specification.sound-output-in-db-a-at-7m-23-ft-with-generator-in-quiet-test-low-speed-exercise-mode", "p3.generator.specification.exercise-duration", "p3.technical-notes.technical-note.specification-qualifications" ],
+    "text" : "Document: product_1\nModels: G007144-0\nSection: Generator\n\n[Page 3] Rated Maximum Power Capacity—LP (ESP): 8,000 VA* [Units: VA]\n\n[Page 3] Rated Maximum Power Capacity—NG (ESP): 7,000 VA* [Units: VA]\n\n[Page 3] Rated Voltage: 220 [Units: V]\n\n[Page 3] Rated Maximum Continuous Load Current – 220 Volts (LP/NG): 36.4/31.8 [Units: A]\n\n[Page 3] Main Line Circuit Breaker: 40 Amp [Units: A]\n\n[Page 3] Phase: 1\n\n[Page 3] Number of Rotor Poles: 2\n\n[Page 3] Rated AC Frequency: 50 Hz [Units: Hz]\n\n[Page 3] Power Factor: 1.0\n\n[Page 3] Battery Requirement (not included): 12 Volts, Group 26R 540 CCA Minimum or Group 35 AGM 650 CCA Minimum [Units: V, CCA]\n\n[Page 3] Unit Weight (kg/lb): 155/341 [Units: kg, lb]\n\n[Page 3] Dimensions (L x W x H) mm/in: 1232 x 648 x 733 / 48 x 25 x 29 [Units: mm, in]\n\n[Page 3] Sound output in dB(A) at 7m (23 ft) with generator operating at normal load**: 62 [Units: dB(A)]\n\n[Page 3] Sound output in dB(A) at 7m (23 ft) with generator in Quiet-Test™ low-speed exercise mode**: 54 [Units: dB(A)]\n\n[Page 3] Exercise duration: 5 min [Units: min]\n\n[Page 3] Note for models G007144-0: Specification qualifications: **Sound levels are taken from the front of the generator. Sound levels taken from other sides of the generator may be higher depending on installation parameters. Rating definitions - Standby: Applicable for supplying emergency power for the duration of the utility power outage. No overload capability is available for this rating. (All ratings in accordance with BS5514, ISO3046 and DIN6271). * Maximum kilovolt amps and current are subject to and limited by such factors as fuel Btu/megajoule content, ambient temperature, altitude, engine power and condition, etc. Maximum power decreases about 3.5 percent for each 1,000 feet (304.8 meters) above sea level; and also will decrease about 1 percent for each 6 °C (10 °F) above 16 °C (60 °F)."
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 14,
+    "section" : "Generator",
+    "modelNumbers" : [ "G007145-0" ],
+    "pageNumbers" : [ 3 ],
+    "sourceElementIds" : [ "p3.generator.specification.rated-maximum-power-capacity-lp-esp", "p3.generator.specification.rated-maximum-power-capacity-ng-esp", "p3.generator.specification.rated-voltage", "p3.generator.specification.rated-maximum-continuous-load-current-220-volts-lp-ng", "p3.generator.specification.main-line-circuit-breaker", "p3.generator.specification.phase", "p3.generator.specification.number-of-rotor-poles", "p3.generator.specification.rated-ac-frequency", "p3.generator.specification.power-factor", "p3.generator.specification.battery-requirement-not-included", "p3.generator.specification.unit-weight-kg-lb", "p3.generator.specification.dimensions-l-x-w-x-h-mm-in", "p3.generator.specification.sound-output-in-db-a-at-7m-23-ft-with-generator-operating-at-normal-load", "p3.generator.specification.sound-output-in-db-a-at-7m-23-ft-with-generator-in-quiet-test-low-speed-exercise-mode", "p3.generator.specification.exercise-duration", "p3.technical-notes.technical-note.specification-qualifications" ],
+    "text" : "Document: product_1\nModels: G007145-0\nSection: Generator\n\n[Page 3] Rated Maximum Power Capacity—LP (ESP): 10,000 VA* [Units: VA]\n\n[Page 3] Rated Maximum Power Capacity—NG (ESP): 10,000 VA* [Units: VA]\n\n[Page 3] Rated Voltage: 220 [Units: V]\n\n[Page 3] Rated Maximum Continuous Load Current – 220 Volts (LP/NG): 45.5/45.5 [Units: A]\n\n[Page 3] Main Line Circuit Breaker: 50 Amp [Units: A]\n\n[Page 3] Phase: 1\n\n[Page 3] Number of Rotor Poles: 2\n\n[Page 3] Rated AC Frequency: 50 Hz [Units: Hz]\n\n[Page 3] Power Factor: 1.0\n\n[Page 3] Battery Requirement (not included): 12 Volts, Group 26R 540 CCA Minimum or Group 35 AGM 650 CCA Minimum [Units: V, CCA]\n\n[Page 3] Unit Weight (kg/lb): 176/389 [Units: kg, lb]\n\n[Page 3] Dimensions (L x W x H) mm/in: 1232 x 648 x 733 / 48 x 25 x 29 [Units: mm, in]\n\n[Page 3] Sound output in dB(A) at 7m (23 ft) with generator operating at normal load**: 63 [Units: dB(A)]\n\n[Page 3] Sound output in dB(A) at 7m (23 ft) with generator in Quiet-Test™ low-speed exercise mode**: 54 [Units: dB(A)]\n\n[Page 3] Exercise duration: 5 min [Units: min]\n\n[Page 3] Note for models G007145-0: Specification qualifications: **Sound levels are taken from the front of the generator. Sound levels taken from other sides of the generator may be higher depending on installation parameters. Rating definitions - Standby: Applicable for supplying emergency power for the duration of the utility power outage. No overload capability is available for this rating. (All ratings in accordance with BS5514, ISO3046 and DIN6271). * Maximum kilovolt amps and current are subject to and limited by such factors as fuel Btu/megajoule content, ambient temperature, altitude, engine power and condition, etc. Maximum power decreases about 3.5 percent for each 1,000 feet (304.8 meters) above sea level; and also will decrease about 1 percent for each 6 °C (10 °F) above 16 °C (60 °F)."
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 15,
+    "section" : "Generator",
+    "modelNumbers" : [ "G007146-0" ],
+    "pageNumbers" : [ 3 ],
+    "sourceElementIds" : [ "p3.generator.specification.rated-maximum-power-capacity-lp-esp", "p3.generator.specification.rated-maximum-power-capacity-ng-esp", "p3.generator.specification.rated-voltage", "p3.generator.specification.rated-maximum-continuous-load-current-220-volts-lp-ng", "p3.generator.specification.main-line-circuit-breaker", "p3.generator.specification.phase", "p3.generator.specification.number-of-rotor-poles", "p3.generator.specification.rated-ac-frequency", "p3.generator.specification.power-factor", "p3.generator.specification.battery-requirement-not-included", "p3.generator.specification.unit-weight-kg-lb", "p3.generator.specification.dimensions-l-x-w-x-h-mm-in", "p3.generator.specification.sound-output-in-db-a-at-7m-23-ft-with-generator-operating-at-normal-load", "p3.generator.specification.sound-output-in-db-a-at-7m-23-ft-with-generator-in-quiet-test-low-speed-exercise-mode", "p3.generator.specification.exercise-duration", "p3.technical-notes.technical-note.specification-qualifications" ],
+    "text" : "Document: product_1\nModels: G007146-0\nSection: Generator\n\n[Page 3] Rated Maximum Power Capacity—LP (ESP): 13,000 VA* [Units: VA]\n\n[Page 3] Rated Maximum Power Capacity—NG (ESP): 13,000 VA* [Units: VA]\n\n[Page 3] Rated Voltage: 220 [Units: V]\n\n[Page 3] Rated Maximum Continuous Load Current – 220 Volts (LP/NG): 59.1/59.1 [Units: A]\n\n[Page 3] Main Line Circuit Breaker: 63 Amp [Units: A]\n\n[Page 3] Phase: 1\n\n[Page 3] Number of Rotor Poles: 2\n\n[Page 3] Rated AC Frequency: 50 Hz [Units: Hz]\n\n[Page 3] Power Factor: 1.0\n\n[Page 3] Battery Requirement (not included): 12 Volts, Group 26R 540 CCA Minimum or Group 35 AGM 650 CCA Minimum [Units: V, CCA]\n\n[Page 3] Unit Weight (kg/lb): 193/425 [Units: kg, lb]\n\n[Page 3] Dimensions (L x W x H) mm/in: 1232 x 648 x 733 / 48 x 25 x 29 [Units: mm, in]\n\n[Page 3] Sound output in dB(A) at 7m (23 ft) with generator operating at normal load**: 63 [Units: dB(A)]\n\n[Page 3] Sound output in dB(A) at 7m (23 ft) with generator in Quiet-Test™ low-speed exercise mode**: 54 [Units: dB(A)]\n\n[Page 3] Exercise duration: 5 min [Units: min]\n\n[Page 3] Note for models G007146-0: Specification qualifications: **Sound levels are taken from the front of the generator. Sound levels taken from other sides of the generator may be higher depending on installation parameters. Rating definitions - Standby: Applicable for supplying emergency power for the duration of the utility power outage. No overload capability is available for this rating. (All ratings in accordance with BS5514, ISO3046 and DIN6271). * Maximum kilovolt amps and current are subject to and limited by such factors as fuel Btu/megajoule content, ambient temperature, altitude, engine power and condition, etc. Maximum power decreases about 3.5 percent for each 1,000 feet (304.8 meters) above sea level; and also will decrease about 1 percent for each 6 °C (10 °F) above 16 °C (60 °F)."
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 16,
+    "section" : "Engine",
+    "modelNumbers" : [ "G007144-0" ],
+    "pageNumbers" : [ 3 ],
+    "sourceElementIds" : [ "p3.engine.specification.type-of-engine", "p3.engine.specification.number-of-cylinders", "p3.engine.specification.displacement", "p3.engine.specification.cylinder-block", "p3.engine.specification.valve-arrangement", "p3.engine.specification.ignition-system", "p3.engine.specification.governor-system", "p3.engine.specification.compression-ratio", "p3.engine.specification.starter", "p3.engine.specification.oil-capacity-including-filter", "p3.engine.specification.operating-rpm" ],
+    "text" : "Document: product_1\nModels: G007144-0\nSection: Engine\n\n[Page 3] Type of Engine: GENERAC G-FORCE 500 SERIES\n\n[Page 3] Number of Cylinders: 2\n\n[Page 3] Displacement: 530 cc [Units: cc]\n\n[Page 3] Cylinder Block: Aluminum w/ Cast Iron Sleeve\n\n[Page 3] Valve Arrangement: Overhead Valve\n\n[Page 3] Ignition System: Solid-state w/ Magneto\n\n[Page 3] Governor System: Electronic\n\n[Page 3] Compression Ratio: 9.5:1\n\n[Page 3] Starter: 12 VDC [Units: VDC]\n\n[Page 3] Oil Capacity Including Filter: 1.6 L / 1.7 qt [Units: L, qt]\n\n[Page 3] Operating rpm: 3,000 [Units: rpm]"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 17,
+    "section" : "Engine",
+    "modelNumbers" : [ "G007145-0" ],
+    "pageNumbers" : [ 3 ],
+    "sourceElementIds" : [ "p3.engine.specification.type-of-engine", "p3.engine.specification.number-of-cylinders", "p3.engine.specification.displacement", "p3.engine.specification.cylinder-block", "p3.engine.specification.valve-arrangement", "p3.engine.specification.ignition-system", "p3.engine.specification.governor-system", "p3.engine.specification.compression-ratio", "p3.engine.specification.starter", "p3.engine.specification.oil-capacity-including-filter", "p3.engine.specification.operating-rpm" ],
+    "text" : "Document: product_1\nModels: G007145-0\nSection: Engine\n\n[Page 3] Type of Engine: GENERAC G-FORCE 1000 SERIES\n\n[Page 3] Number of Cylinders: 2\n\n[Page 3] Displacement: 999 cc [Units: cc]\n\n[Page 3] Cylinder Block: Aluminum w/ Cast Iron Sleeve\n\n[Page 3] Valve Arrangement: Overhead Valve\n\n[Page 3] Ignition System: Solid-state w/ Magneto\n\n[Page 3] Governor System: Electronic\n\n[Page 3] Compression Ratio: 9.5:1\n\n[Page 3] Starter: 12 VDC [Units: VDC]\n\n[Page 3] Oil Capacity Including Filter: 1.8 L / 1.9 qt [Units: L, qt]\n\n[Page 3] Operating rpm: 3,000 [Units: rpm]"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 18,
+    "section" : "Engine",
+    "modelNumbers" : [ "G007146-0" ],
+    "pageNumbers" : [ 3 ],
+    "sourceElementIds" : [ "p3.engine.specification.type-of-engine", "p3.engine.specification.number-of-cylinders", "p3.engine.specification.displacement", "p3.engine.specification.cylinder-block", "p3.engine.specification.valve-arrangement", "p3.engine.specification.ignition-system", "p3.engine.specification.governor-system", "p3.engine.specification.compression-ratio", "p3.engine.specification.starter", "p3.engine.specification.oil-capacity-including-filter", "p3.engine.specification.operating-rpm" ],
+    "text" : "Document: product_1\nModels: G007146-0\nSection: Engine\n\n[Page 3] Type of Engine: GENERAC G-FORCE 1000 SERIES\n\n[Page 3] Number of Cylinders: 2\n\n[Page 3] Displacement: 999 cc [Units: cc]\n\n[Page 3] Cylinder Block: Aluminum w/ Cast Iron Sleeve\n\n[Page 3] Valve Arrangement: Overhead Valve\n\n[Page 3] Ignition System: Solid-state w/ Magneto\n\n[Page 3] Governor System: Electronic\n\n[Page 3] Compression Ratio: 9.5:1\n\n[Page 3] Starter: 12 VDC [Units: VDC]\n\n[Page 3] Oil Capacity Including Filter: 1.8 L / 1.9 qt [Units: L, qt]\n\n[Page 3] Operating rpm: 3,000 [Units: rpm]"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 19,
+    "section" : "Fuel Consumption",
+    "modelNumbers" : [ "G007144-0" ],
+    "pageNumbers" : [ 3 ],
+    "sourceElementIds" : [ "p3.fuel-consumption.fuel-consumption.natural-gas", "p3.technical-notes.technical-note.fuel-consumption" ],
+    "text" : "Document: product_1\nModels: G007144-0\nSection: Fuel Consumption\n\n[Page 3] Fuel: Natural Gas; units: m³/hr (ft³/hr)\nHalf load: 2.21 (78)\nFull load: 3.62 (128)\n\n[Page 3] Note for models G007144-0: Fuel consumption: Note: Fuel pipe must be sized for full load. Required fuel pressure to generator fuel inlet at all load ranges—1.74–3.24 kPA (3.5–7.0 in. water column) for natural gas, 4.73–5.48 kPA (10–12 in. water column) for LP gas. Outputs are based upon values @ 1000 BTU per cubic feet with NG and 2500 BTU per cubic feet with LP @ 37.26 Megajoules per cubic meter with NG and 93.15 Megajoules per cubic meter with LP"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 20,
+    "section" : "Fuel Consumption",
+    "modelNumbers" : [ "G007145-0" ],
+    "pageNumbers" : [ 3 ],
+    "sourceElementIds" : [ "p3.fuel-consumption.fuel-consumption.natural-gas", "p3.technical-notes.technical-note.fuel-consumption" ],
+    "text" : "Document: product_1\nModels: G007145-0\nSection: Fuel Consumption\n\n[Page 3] Fuel: Natural Gas; units: m³/hr (ft³/hr)\nHalf load: 3.51 (124)\nFull load: 5.30 (187)\n\n[Page 3] Note for models G007145-0: Fuel consumption: Note: Fuel pipe must be sized for full load. Required fuel pressure to generator fuel inlet at all load ranges—1.74–3.24 kPA (3.5–7.0 in. water column) for natural gas, 4.73–5.48 kPA (10–12 in. water column) for LP gas. Outputs are based upon values @ 1000 BTU per cubic feet with NG and 2500 BTU per cubic feet with LP @ 37.26 Megajoules per cubic meter with NG and 93.15 Megajoules per cubic meter with LP"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 21,
+    "section" : "Fuel Consumption",
+    "modelNumbers" : [ "G007146-0" ],
+    "pageNumbers" : [ 3 ],
+    "sourceElementIds" : [ "p3.fuel-consumption.fuel-consumption.natural-gas", "p3.technical-notes.technical-note.fuel-consumption" ],
+    "text" : "Document: product_1\nModels: G007146-0\nSection: Fuel Consumption\n\n[Page 3] Fuel: Natural Gas; units: m³/hr (ft³/hr)\nHalf load: 4.02 (142)\nFull load: 6.48 (229)\n\n[Page 3] Note for models G007146-0: Fuel consumption: Note: Fuel pipe must be sized for full load. Required fuel pressure to generator fuel inlet at all load ranges—1.74–3.24 kPA (3.5–7.0 in. water column) for natural gas, 4.73–5.48 kPA (10–12 in. water column) for LP gas. Outputs are based upon values @ 1000 BTU per cubic feet with NG and 2500 BTU per cubic feet with LP @ 37.26 Megajoules per cubic meter with NG and 93.15 Megajoules per cubic meter with LP"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 22,
+    "section" : "Fuel Consumption",
+    "modelNumbers" : [ "G007144-0" ],
+    "pageNumbers" : [ 3 ],
+    "sourceElementIds" : [ "p3.fuel-consumption.fuel-consumption.liquid-propane", "p3.technical-notes.technical-note.fuel-consumption" ],
+    "text" : "Document: product_1\nModels: G007144-0\nSection: Fuel Consumption\n\n[Page 3] Fuel: Liquid Propane; units: l/hr (gal/hr) [m3/h LPG]\nHalf load: 3.29 (0.87) [0.89]\nFull load: 6.16 (1.63) [1.68]\n\n[Page 3] Note for models G007144-0: Fuel consumption: Note: Fuel pipe must be sized for full load. Required fuel pressure to generator fuel inlet at all load ranges—1.74–3.24 kPA (3.5–7.0 in. water column) for natural gas, 4.73–5.48 kPA (10–12 in. water column) for LP gas. Outputs are based upon values @ 1000 BTU per cubic feet with NG and 2500 BTU per cubic feet with LP @ 37.26 Megajoules per cubic meter with NG and 93.15 Megajoules per cubic meter with LP"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 23,
+    "section" : "Fuel Consumption",
+    "modelNumbers" : [ "G007145-0" ],
+    "pageNumbers" : [ 3 ],
+    "sourceElementIds" : [ "p3.fuel-consumption.fuel-consumption.liquid-propane", "p3.technical-notes.technical-note.fuel-consumption" ],
+    "text" : "Document: product_1\nModels: G007145-0\nSection: Fuel Consumption\n\n[Page 3] Fuel: Liquid Propane; units: l/hr (gal/hr) [m3/h LPG]\nHalf load: 4.79 (1.26) [1.30]\nFull load: 7.62 (2.01) [2.07]\n\n[Page 3] Note for models G007145-0: Fuel consumption: Note: Fuel pipe must be sized for full load. Required fuel pressure to generator fuel inlet at all load ranges—1.74–3.24 kPA (3.5–7.0 in. water column) for natural gas, 4.73–5.48 kPA (10–12 in. water column) for LP gas. Outputs are based upon values @ 1000 BTU per cubic feet with NG and 2500 BTU per cubic feet with LP @ 37.26 Megajoules per cubic meter with NG and 93.15 Megajoules per cubic meter with LP"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 24,
+    "section" : "Fuel Consumption",
+    "modelNumbers" : [ "G007146-0" ],
+    "pageNumbers" : [ 3 ],
+    "sourceElementIds" : [ "p3.fuel-consumption.fuel-consumption.liquid-propane", "p3.technical-notes.technical-note.fuel-consumption" ],
+    "text" : "Document: product_1\nModels: G007146-0\nSection: Fuel Consumption\n\n[Page 3] Fuel: Liquid Propane; units: l/hr (gal/hr) [m3/h LPG]\nHalf load: 5.58 (1.47) [1.52]\nFull load: 8.86 (2.34) [2.41]\n\n[Page 3] Note for models G007146-0: Fuel consumption: Note: Fuel pipe must be sized for full load. Required fuel pressure to generator fuel inlet at all load ranges—1.74–3.24 kPA (3.5–7.0 in. water column) for natural gas, 4.73–5.48 kPA (10–12 in. water column) for LP gas. Outputs are based upon values @ 1000 BTU per cubic feet with NG and 2500 BTU per cubic feet with LP @ 37.26 Megajoules per cubic meter with NG and 93.15 Megajoules per cubic meter with LP"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 25,
+    "section" : "Controls",
+    "modelNumbers" : [ "G007144-0" ],
+    "pageNumbers" : [ 3 ],
+    "sourceElementIds" : [ "p3.controls.specification.2-line-plain-text-multilingual-lcd-display", "p3.controls.specification.mode-buttons-auto", "p3.controls.specification.manual", "p3.controls.specification.off", "p3.controls.specification.ready-to-run-maintenance-messages", "p3.controls.specification.engine-run-hours-indication", "p3.controls.specification.programmable-start-delay-between-2-1500-seconds", "p3.controls.specification.utility-voltage-loss-return-to-utility-adjustable-brownout-setting", "p3.controls.specification.future-set-capable-exerciser-exercise-set-error-warning", "p3.controls.specification.run-alarm-maintenance-logs", "p3.controls.specification.engine-start-sequence", "p3.controls.specification.starter-lock-out", "p3.controls.specification.smart-battery-charger", "p3.controls.specification.charger-fault-missing-ac-warning", "p3.controls.specification.low-battery-battery-problem-protection-and-battery-condition-indication", "p3.controls.specification.automatic-voltage-regulation-with-over-and-under-voltage-protection", "p3.controls.specification.under-frequency-overload-stepper-overcurrent-protection", "p3.controls.specification.safety-fused-fuse-problem-protection", "p3.controls.specification.automatic-low-oil-pressure-high-oil-temperature-shutdown", "p3.controls.specification.overcrank-overspeed-72-hz-rpm-sense-loss-shutdown", "p3.controls.specification.high-engine-temperature-shutdown", "p3.controls.specification.internal-fault-incorrect-wiring-protection", "p3.controls.specification.common-external-fault-capability", "p3.controls.specification.field-upgradable-firmware" ],
+    "text" : "Document: product_1\nModels: G007144-0\nSection: Controls\n\n[Page 3] 2-Line Plain Text Multilingual LCD Display: Simple user interface for ease of operation.\n\n[Page 3] Mode Buttons:Auto: Automatic Start on Utility failure. 7 day exerciser.\n\n[Page 3] Manual: Start with starter control, unit stays on. If utility fails, transfer to load takes place.\n\n[Page 3] Off: Stops unit. Power is removed. Control and charger still operate.\n\n[Page 3] Ready to Run/Maintenance Messages: Standard\n\n[Page 3] Engine Run Hours Indication: Standard\n\n[Page 3] Programmable start delay between 2-1500 seconds: Standard (programmable by dealer only)\n\n[Page 3] Utility Voltage Loss/Return to Utility Adjustable (Brownout Setting): From 140-156 V/175-198 V [Units: V]\n\n[Page 3] Future Set Capable Exerciser/Exercise Set Error Warning: Standard\n\n[Page 3] Run/Alarm/Maintenance Logs: 50 Events Each\n\n[Page 3] Engine Start Sequence: Cyclic cranking: 16 sec on, 7 rest (90 sec maximum duration).\n\n[Page 3] Starter Lock-out: Starter cannot re-engage until 5 sec after engine has stopped.\n\n[Page 3] Smart Battery Charger: Standard\n\n[Page 3] Charger Fault/Missing AC Warning: Standard\n\n[Page 3] Low Battery/Battery Problem Protection and Battery Condition Indication: Standard\n\n[Page 3] Automatic Voltage Regulation with Over and Under Voltage Protection: Standard\n\n[Page 3] Under-Frequency/Overload/Stepper Overcurrent Protection: Standard [Units: Hz]\n\n[Page 3] Safety Fused/Fuse Problem Protection: Standard\n\n[Page 3] Automatic Low Oil Pressure/High Oil Temperature Shutdown: Standard\n\n[Page 3] Overcrank/Overspeed (@ 72 Hz)/rpm Sense Loss Shutdown: Standard\n\n[Page 3] High Engine Temperature Shutdown: Standard\n\n[Page 3] Internal Fault/Incorrect Wiring Protection: Standard\n\n[Page 3] Common External Fault Capability: Standard\n\n[Page 3] Field Upgradable Firmware: Standard"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 26,
+    "section" : "Controls",
+    "modelNumbers" : [ "G007145-0" ],
+    "pageNumbers" : [ 3 ],
+    "sourceElementIds" : [ "p3.controls.specification.2-line-plain-text-multilingual-lcd-display", "p3.controls.specification.mode-buttons-auto", "p3.controls.specification.manual", "p3.controls.specification.off", "p3.controls.specification.ready-to-run-maintenance-messages", "p3.controls.specification.engine-run-hours-indication", "p3.controls.specification.programmable-start-delay-between-2-1500-seconds", "p3.controls.specification.utility-voltage-loss-return-to-utility-adjustable-brownout-setting", "p3.controls.specification.future-set-capable-exerciser-exercise-set-error-warning", "p3.controls.specification.run-alarm-maintenance-logs", "p3.controls.specification.engine-start-sequence", "p3.controls.specification.starter-lock-out", "p3.controls.specification.smart-battery-charger", "p3.controls.specification.charger-fault-missing-ac-warning", "p3.controls.specification.low-battery-battery-problem-protection-and-battery-condition-indication", "p3.controls.specification.automatic-voltage-regulation-with-over-and-under-voltage-protection", "p3.controls.specification.under-frequency-overload-stepper-overcurrent-protection", "p3.controls.specification.safety-fused-fuse-problem-protection", "p3.controls.specification.automatic-low-oil-pressure-high-oil-temperature-shutdown", "p3.controls.specification.overcrank-overspeed-72-hz-rpm-sense-loss-shutdown", "p3.controls.specification.high-engine-temperature-shutdown", "p3.controls.specification.internal-fault-incorrect-wiring-protection", "p3.controls.specification.common-external-fault-capability", "p3.controls.specification.field-upgradable-firmware" ],
+    "text" : "Document: product_1\nModels: G007145-0\nSection: Controls\n\n[Page 3] 2-Line Plain Text Multilingual LCD Display: Simple user interface for ease of operation.\n\n[Page 3] Mode Buttons:Auto: Automatic Start on Utility failure. 7 day exerciser.\n\n[Page 3] Manual: Start with starter control, unit stays on. If utility fails, transfer to load takes place.\n\n[Page 3] Off: Stops unit. Power is removed. Control and charger still operate.\n\n[Page 3] Ready to Run/Maintenance Messages: Standard\n\n[Page 3] Engine Run Hours Indication: Standard\n\n[Page 3] Programmable start delay between 2-1500 seconds: Standard (programmable by dealer only)\n\n[Page 3] Utility Voltage Loss/Return to Utility Adjustable (Brownout Setting): From 140-156 V/175-198 V [Units: V]\n\n[Page 3] Future Set Capable Exerciser/Exercise Set Error Warning: Standard\n\n[Page 3] Run/Alarm/Maintenance Logs: 50 Events Each\n\n[Page 3] Engine Start Sequence: Cyclic cranking: 16 sec on, 7 rest (90 sec maximum duration).\n\n[Page 3] Starter Lock-out: Starter cannot re-engage until 5 sec after engine has stopped.\n\n[Page 3] Smart Battery Charger: Standard\n\n[Page 3] Charger Fault/Missing AC Warning: Standard\n\n[Page 3] Low Battery/Battery Problem Protection and Battery Condition Indication: Standard\n\n[Page 3] Automatic Voltage Regulation with Over and Under Voltage Protection: Standard\n\n[Page 3] Under-Frequency/Overload/Stepper Overcurrent Protection: Standard [Units: Hz]\n\n[Page 3] Safety Fused/Fuse Problem Protection: Standard\n\n[Page 3] Automatic Low Oil Pressure/High Oil Temperature Shutdown: Standard\n\n[Page 3] Overcrank/Overspeed (@ 72 Hz)/rpm Sense Loss Shutdown: Standard\n\n[Page 3] High Engine Temperature Shutdown: Standard\n\n[Page 3] Internal Fault/Incorrect Wiring Protection: Standard\n\n[Page 3] Common External Fault Capability: Standard\n\n[Page 3] Field Upgradable Firmware: Standard"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 27,
+    "section" : "Controls",
+    "modelNumbers" : [ "G007146-0" ],
+    "pageNumbers" : [ 3 ],
+    "sourceElementIds" : [ "p3.controls.specification.2-line-plain-text-multilingual-lcd-display", "p3.controls.specification.mode-buttons-auto", "p3.controls.specification.manual", "p3.controls.specification.off", "p3.controls.specification.ready-to-run-maintenance-messages", "p3.controls.specification.engine-run-hours-indication", "p3.controls.specification.programmable-start-delay-between-2-1500-seconds", "p3.controls.specification.utility-voltage-loss-return-to-utility-adjustable-brownout-setting", "p3.controls.specification.future-set-capable-exerciser-exercise-set-error-warning", "p3.controls.specification.run-alarm-maintenance-logs", "p3.controls.specification.engine-start-sequence", "p3.controls.specification.starter-lock-out", "p3.controls.specification.smart-battery-charger", "p3.controls.specification.charger-fault-missing-ac-warning", "p3.controls.specification.low-battery-battery-problem-protection-and-battery-condition-indication", "p3.controls.specification.automatic-voltage-regulation-with-over-and-under-voltage-protection", "p3.controls.specification.under-frequency-overload-stepper-overcurrent-protection", "p3.controls.specification.safety-fused-fuse-problem-protection", "p3.controls.specification.automatic-low-oil-pressure-high-oil-temperature-shutdown", "p3.controls.specification.overcrank-overspeed-72-hz-rpm-sense-loss-shutdown", "p3.controls.specification.high-engine-temperature-shutdown", "p3.controls.specification.internal-fault-incorrect-wiring-protection", "p3.controls.specification.common-external-fault-capability", "p3.controls.specification.field-upgradable-firmware" ],
+    "text" : "Document: product_1\nModels: G007146-0\nSection: Controls\n\n[Page 3] 2-Line Plain Text Multilingual LCD Display: Simple user interface for ease of operation.\n\n[Page 3] Mode Buttons:Auto: Automatic Start on Utility failure. 7 day exerciser.\n\n[Page 3] Manual: Start with starter control, unit stays on. If utility fails, transfer to load takes place.\n\n[Page 3] Off: Stops unit. Power is removed. Control and charger still operate.\n\n[Page 3] Ready to Run/Maintenance Messages: Standard\n\n[Page 3] Engine Run Hours Indication: Standard\n\n[Page 3] Programmable start delay between 2-1500 seconds: Standard (programmable by dealer only)\n\n[Page 3] Utility Voltage Loss/Return to Utility Adjustable (Brownout Setting): From 140-156 V/175-198 V [Units: V]\n\n[Page 3] Future Set Capable Exerciser/Exercise Set Error Warning: Standard\n\n[Page 3] Run/Alarm/Maintenance Logs: 50 Events Each\n\n[Page 3] Engine Start Sequence: Cyclic cranking: 16 sec on, 7 rest (90 sec maximum duration).\n\n[Page 3] Starter Lock-out: Starter cannot re-engage until 5 sec after engine has stopped.\n\n[Page 3] Smart Battery Charger: Standard\n\n[Page 3] Charger Fault/Missing AC Warning: Standard\n\n[Page 3] Low Battery/Battery Problem Protection and Battery Condition Indication: Standard\n\n[Page 3] Automatic Voltage Regulation with Over and Under Voltage Protection: Standard\n\n[Page 3] Under-Frequency/Overload/Stepper Overcurrent Protection: Standard [Units: Hz]\n\n[Page 3] Safety Fused/Fuse Problem Protection: Standard\n\n[Page 3] Automatic Low Oil Pressure/High Oil Temperature Shutdown: Standard\n\n[Page 3] Overcrank/Overspeed (@ 72 Hz)/rpm Sense Loss Shutdown: Standard\n\n[Page 3] High Engine Temperature Shutdown: Standard\n\n[Page 3] Internal Fault/Incorrect Wiring Protection: Standard\n\n[Page 3] Common External Fault Capability: Standard\n\n[Page 3] Field Upgradable Firmware: Standard"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 28,
+    "section" : "Available Accessories",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 4 ],
+    "sourceElementIds" : [ "p4.available-accessories.accessory.g007101-0" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: Available Accessories\n\n[Page 4] Accessory: Battery Pad Warmer\nG007101-0 applies to generators: G007144-0, G007145-0, G007146-0\nSource model listing: G007101-0\nThe pad warmer rests under the battery. Recommended for use if the temperature regularly falls below -18°C (0°F). (Not necessary for use with AGM-style batteries)."
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 29,
+    "section" : "Available Accessories",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 4 ],
+    "sourceElementIds" : [ "p4.available-accessories.accessory.g007102-0" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: Available Accessories\n\n[Page 4] Accessory: Oil Warmer\nG007102-0 applies to generators: G007144-0, G007145-0, G007146-0\nSource model listing: G007102-0\nOil warmer slips directly over the oil filter. Recommended for use if the temperature regularly falls below -18°C (0°F)."
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 30,
+    "section" : "Available Accessories",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 4 ],
+    "sourceElementIds" : [ "p4.available-accessories.accessory.g007027-0" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: Available Accessories\n\n[Page 4] Accessory: Fascia Base Wrap Kit\nG007027-0 applies to generators: G007144-0, G007145-0, G007146-0\nSource model listing: G007027-0\nThe fascia base wrap snaps together around the bottom of the new air cooled generators. This offers a sleek, contoured appearance as well as offering protection from rodents and insects by covering the lifting holes located in the base."
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 31,
+    "section" : "Available Accessories",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 4 ],
+    "sourceElementIds" : [ "p4.available-accessories.accessory.g005703-0" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: Available Accessories\n\n[Page 4] Accessory: Paint Kit\nG005703-0 applies to generators: G007144-0, G007145-0, G007146-0\nSource model listing: G005703-0\nIf the generator enclosure is scratched or damaged, it is important to touch-up the paint to protect from future corrosion. The paint kit includes the necessary paint to properly maintain or touch-up a generator enclosure."
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 32,
+    "section" : "Available Accessories",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 4 ],
+    "sourceElementIds" : [ "p4.available-accessories.accessory.g006483-0-g006485-0" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: Available Accessories\n\n[Page 4] Accessory: Scheduled Maintenance Kit\nG006483-0 applies to generators: G007144-0\nG006485-0 applies to generators: G007145-0, G007146-0\nSource model listing: G006483-0 - 8 kVA G006485-0 - 10 & 13 kVA\nGenerac's scheduled maintenance kits provide all the hardware necessary to perform complete routine maintenance on a Generac automatic standby generator."
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 33,
+    "section" : "Model UPCs",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 4 ],
+    "sourceElementIds" : [ "p4.model-upcs.table.model-upcs" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: Model UPCs\n\n[Page 4] Model UPCs\nModel: G007144-0; UPC: 696471073270\nModel: G007145-0; UPC: 696471073287\nModel: G007146-0; UPC: 696471073294"
+  }, {
+    "documentId" : "product_1",
+    "sourceFile" : "product_1.pdf",
+    "chunkIndex" : 34,
+    "section" : "Generator Dimension Drawings",
+    "modelNumbers" : [ "G007144-0", "G007145-0", "G007146-0" ],
+    "pageNumbers" : [ 4 ],
+    "sourceElementIds" : [ "p4.generator-dimension-drawings.dimension-drawing.generator-dimensions" ],
+    "text" : "Document: product_1\nModels: G007144-0, G007145-0, G007146-0\nSection: Generator Dimension Drawings\n\n[Page 4] Generator dimension drawing\nleft_side - overall_height: 733 mm / 28.8 in\nleft_side - enclosure_width: 635 mm / 25.0 in\nleft_side - base_width: 648 mm / 25.5 in\nfront - enclosure_width: 1228 mm / 48.4 in\nfront - base_width: 1232 mm / 48.5 in\nWarning: Dimensions shown are approximate. Refer to installation manual for exact dimensions. DO NOT USE THESE DIMENSIONS FOR INSTALLATION PURPOSES."
+  } ]
+}
