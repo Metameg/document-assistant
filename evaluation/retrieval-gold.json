@@ -1,0 +1,173 @@
+{
+  "suiteName": "Generac specification retrieval baseline",
+  "description": "Gold evidence for evaluating retrieval before adding LLM answer generation.",
+  "defaultTopK": 10,
+  "thresholds": {
+    "hitAt1": 0.75,
+    "hitAtK": 0.9,
+    "mrrAtK": 0.8
+  },
+  "cases": [
+    {
+      "id": "product-1-engine-type",
+      "question": "What type of engine does model G007144-0 use?",
+      "goldAnswer": "GENERAC G-FORCE 500 SERIES",
+      "acceptableEvidence": [
+        {
+          "documentId": "product_1",
+          "section": "Engine",
+          "modelNumbersInclude": [
+            "G007144-0"
+          ],
+          "textContainsAll": [
+            "Type of Engine:",
+            "GENERAC G-FORCE 500 SERIES"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-1-natural-gas-full-load",
+      "question": "How much natural gas does model G007144-0 consume at full load?",
+      "goldAnswer": "3.62 m³/hr or 128 ft³/hr",
+      "acceptableEvidence": [
+        {
+          "documentId": "product_1",
+          "section": "Fuel Consumption",
+          "modelNumbersInclude": [
+            "G007144-0"
+          ],
+          "textContainsAll": [
+            "Fuel: Natural Gas",
+            "Full load: 3.62 (128)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-1-oil-capacity",
+      "question": "What is the oil capacity including the filter for model G007144-0?",
+      "goldAnswer": "1.6 L / 1.7 qt",
+      "acceptableEvidence": [
+        {
+          "documentId": "product_1",
+          "section": "Engine",
+          "modelNumbersInclude": [
+            "G007144-0"
+          ],
+          "textContainsAll": [
+            "Oil Capacity Including Filter:",
+            "1.6 L / 1.7 qt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-1-standby-power",
+      "question": "What is the standby power rating of model G007144-0?",
+      "goldAnswer": "8 kVA at 50 Hz",
+      "acceptableEvidence": [
+        {
+          "documentId": "product_1",
+          "section": "Standby Power Rating",
+          "modelNumbersInclude": [
+            "G007144-0"
+          ],
+          "textContainsAll": [
+            "Model G007144-0",
+            "8 kVA 50 Hz"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-1-maintenance-kit",
+      "question": "Which scheduled maintenance kit applies to model G007145-0?",
+      "goldAnswer": "G006485-0",
+      "acceptableEvidence": [
+        {
+          "documentId": "product_1",
+          "section": "Available Accessories",
+          "modelNumbersInclude": [
+            "G007145-0"
+          ],
+          "textContainsAll": [
+            "Scheduled Maintenance Kit",
+            "G006485-0",
+            "G007145-0"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-18-transfer-switch-rating",
+      "question": "What is the transfer switch current rating for model G007291-0?",
+      "goldAnswer": "200 amps",
+      "acceptableEvidence": [
+        {
+          "documentId": "product_18",
+          "section": "Transfer Switch Specifications",
+          "modelNumbersInclude": [
+            "G007291-0"
+          ],
+          "textContainsAll": [
+            "Current rating (amps): 200"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-18-liquid-propane-full-load",
+      "question": "What is the liquid propane consumption at full load for model G007291-0?",
+      "goldAnswer": "132 (3.63) [13.73]",
+      "acceptableEvidence": [
+        {
+          "documentId": "product_18",
+          "section": "Fuel Consumption",
+          "modelNumbersInclude": [
+            "G007291-0"
+          ],
+          "textContainsAll": [
+            "Fuel: Liquid Propane",
+            "Full load: 132 (3.63) [13.73]"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-18-generator-rating",
+      "question": "What generator power ratings are listed for model G007290-0?",
+      "goldAnswer": "26,000 Watts and 22,500 Watts",
+      "acceptableEvidence": [
+        {
+          "documentId": "product_18",
+          "section": "Generator",
+          "modelNumbersInclude": [
+            "G007290-0"
+          ],
+          "textContainsAll": [
+            "26,000 Watts",
+            "22,500 Watts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-1-generator-height",
+      "question": "What is the overall generator height for model G007144-0?",
+      "goldAnswer": "733 mm / 28.8 in",
+      "acceptableEvidence": [
+        {
+          "documentId": "product_1",
+          "section": "Generator Dimension Drawings",
+          "modelNumbersInclude": [
+            "G007144-0"
+          ],
+          "textContainsAll": [
+            "overall_height: 733 mm / 28.8 in"
+          ]
+        }
+      ]
+    }
+  ]
+}

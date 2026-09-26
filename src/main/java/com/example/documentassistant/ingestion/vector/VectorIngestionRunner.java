@@ -6,6 +6,7 @@ import tools.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
+@ConditionalOnProperty(prefix = "document-assistant.ingestion.vector", name = "run-on-startup", havingValue = "true", matchIfMissing = false)
 public final class VectorIngestionRunner implements CommandLineRunner {
 
   private static final Logger log = LoggerFactory.getLogger(VectorIngestionRunner.class);

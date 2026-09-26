@@ -4,10 +4,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 
 import java.nio.file.Path;
 
 /** Registered only by the dedicated non-web ingestion configuration. */
+@ConditionalOnProperty(prefix = "document-assistant.ingestion.chunking", name = "run-on-startup", havingValue = "true", matchIfMissing = false)
+
 public class ChunkingRunner implements ApplicationRunner {
   private static final Logger log = LoggerFactory.getLogger(ChunkingRunner.class);
 
