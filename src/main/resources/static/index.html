@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document Assistant</title>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Document Assistant</h1>
+    <p>Browse Generac specification sheets and inspect retrieval evidence.</p>
+  </header>
+
+  <main>
+    <section aria-labelledby="documents-heading">
+      <h2 id="documents-heading">Source documents</h2>
+      <p id="documents-message" role="status">Loading documents…</p>
+      <ul id="document-list"></ul>
+    </section>
+
+    <section aria-labelledby="corpus-heading">
+      <h2 id="corpus-heading">Corpus status</h2>
+      <p id="corpus-message" role="status">Loading corpus status…</p>
+      <dl>
+        <dt>Indexed</dt>
+        <dd id="corpus-indexed">—</dd>
+
+        <dt>In sync</dt>
+        <dd id="corpus-in-sync">—</dd>
+
+        <dt>Available documents</dt>
+        <dd id="corpus-catalog-count">—</dd>
+
+        <dt>Indexed documents</dt>
+        <dd id="corpus-indexed-count">—</dd>
+
+        <dt>Stored chunks</dt>
+        <dd id="corpus-chunk-count">—</dd>
+      </dl>
+      <p id="corpus-differences"></p>
+    </section>
+
+    <section aria-labelledby="indexing-heading">
+      <h2 id="indexing-heading">Index the corpus</h2>
+      <p>One job rebuilds the index from all processed documents.</p>
+      <button id="begin-indexing" type="button" disabled>
+        Begin chunking
+      </button>
+      <p id="indexing-message" role="status" aria-live="polite">
+        Indexing controls are not connected yet.
+      </p>
+
+      <dl>
+        <dt>Stage</dt>
+        <dd id="indexing-stage">Idle</dd>
+
+        <dt>Current document</dt>
+        <dd id="indexing-document">—</dd>
+
+        <dt>Documents discovered</dt>
+        <dd id="indexing-discovered">0</dd>
+
+        <dt>Documents chunked</dt>
+        <dd id="indexing-chunked">0</dd>
+
+        <dt>Chunks generated</dt>
+        <dd id="indexing-generated">0</dd>
+
+        <dt>Documents indexed</dt>
+        <dd id="indexing-indexed">0</dd>
+
+        <dt>Chunks stored</dt>
+        <dd id="indexing-stored">0</dd>
+      </dl>
+    </section>
+
+    <section aria-labelledby="retrieval-heading">
+      <h2 id="retrieval-heading">Search the corpus</h2>
+      <form id="retrieval-form">
+        <label for="retrieval-query">Question</label>
+        <textarea
+          id="retrieval-query"
+          name="query"
+          rows="3"
+          required
+          disabled
+          placeholder="Ask a question about a generator specification"
+        ></textarea>
+
+        <label for="retrieval-top-k">Maximum results</label>
+        <input
+          id="retrieval-top-k"
+          name="topK"
+          type="number"
+          min="1"
+          value="5"
+          required
+          disabled
+        >
+
+        <button id="retrieval-submit" type="submit" disabled>
+          Search
+        </button>
+      </form>
+
+      <p id="retrieval-message" role="status" aria-live="polite">
+        Search is not connected yet.
+      </p>
+      <div id="retrieval-results"></div>
+    </section>
+  </main>
+</body>
+</html>

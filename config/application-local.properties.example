@@ -5,6 +5,10 @@ spring.ai.openai.api-key=${OPENROUTER_API_KEY}
 # Enable embedding-model auto-configuration
 spring.ai.model.embedding=openai
 
+# Answer generation through OpenRouter
+spring.ai.model.chat=openai
+spring.ai.openai.chat.model=openrouter/free
+
 # OpenRouter requires the provider-prefixed model identifier
 spring.ai.openai.embedding.model=openai/text-embedding-3-small
 spring.ai.openai.embedding.dimensions=1536
@@ -28,3 +32,4 @@ spring.ai.vectorstore.pgvector.max-document-batch-size=64
 spring.ai.vectorstore.pgvector.remove-existing-vector-store-table=false
 
 document-assistant.vector-ingestion.input-directory=target/chunk-runs/run-922
+spring.ai.vectorstore.pgvector.table-name=document_chunk_vectors
