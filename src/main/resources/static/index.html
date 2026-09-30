@@ -48,7 +48,7 @@
         Begin chunking
       </button>
       <p id="indexing-message" role="status" aria-live="polite">
-        Indexing controls are not connected yet.
+        Ready to begin an indexing job.
       </p>
 
       <dl>
@@ -76,7 +76,8 @@
     </section>
 
     <section aria-labelledby="retrieval-heading">
-      <h2 id="retrieval-heading">Search the corpus</h2>
+      <h2 id="retrieval-heading">Ask about the documents</h2>
+
       <form id="retrieval-form">
         <label for="retrieval-query">Question</label>
         <textarea
@@ -88,7 +89,7 @@
           placeholder="Ask a question about a generator specification"
         ></textarea>
 
-        <label for="retrieval-top-k">Maximum results</label>
+        <label for="retrieval-top-k">Maximum sources</label>
         <input
           id="retrieval-top-k"
           name="topK"
@@ -100,13 +101,22 @@
         >
 
         <button id="retrieval-submit" type="submit" disabled>
-          Search
+          Search sources
+        </button>
+        <button id="answer-submit" type="button" disabled>
+          Ask assistant
         </button>
       </form>
 
       <p id="retrieval-message" role="status" aria-live="polite">
-        Search is not connected yet.
+        Enter a question, then search sources or ask the assistant.
       </p>
+
+      <section id="answer-panel" aria-labelledby="answer-heading" hidden>
+        <h3 id="answer-heading">Generated answer</h3>
+        <p id="answer-text"></p>
+      </section>
+
       <div id="retrieval-results"></div>
     </section>
   </main>

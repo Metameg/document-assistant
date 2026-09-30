@@ -1,0 +1,220 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "D1",
+      "category": "direct",
+      "question": "What type of engine does G007144-0 use?",
+      "evidence": [{"model": "G007144-0", "section": "Engine", "contains": ["G-FORCE 500 SERIES"]}],
+      "answer_any": [["G-Force 500"]]
+    },
+    {
+      "id": "D2",
+      "category": "direct",
+      "question": "What engine type does G007171-0 use?",
+      "evidence": [{"model": "G007171-0", "section": "Engine", "contains": ["G-Force 400 Series"]}],
+      "answer_any": [["G-Force 400"]]
+    },
+    {
+      "id": "D3",
+      "category": "direct",
+      "question": "What is the engine displacement of G007039-3?",
+      "evidence": [{"model": "G007039-3", "section": "Engine", "contains": ["Displacement: 999 cc"]}],
+      "answer_any": [["999 cc"]]
+    },
+    {
+      "id": "D4",
+      "category": "direct",
+      "question": "What are the LP and natural-gas continuous power ratings of G007209-10?",
+      "evidence": [{"model": "G007209-10", "section": "Generator", "contains": ["(LP): 24,000", "(NG): 21,000"]}],
+      "answer_any": [["24,000", "24 kw", "24kw"], ["21,000", "21 kw", "21kw"]]
+    },
+    {
+      "id": "D5",
+      "category": "direct",
+      "question": "What are the LP and natural-gas continuous power ratings of G007042-11?",
+      "evidence": [{"model": "G007042-11", "section": "Generator", "contains": ["(LP): 22,000", "(NG): 19,500"]}],
+      "answer_any": [["22,000", "22 kw", "22kw"], ["19,500", "19.5 kw", "19.5kw"]]
+    },
+    {
+      "id": "D6",
+      "category": "direct",
+      "question": "What are the voltage and phase of G007077-1?",
+      "evidence": [{"model": "G007077-1", "section": "Generator", "contains": ["Rated voltage: 208", "Phase: 3"]}],
+      "answer_any": [["208"], ["three-phase", "three phase", "3-phase", "3 phase"]]
+    },
+    {
+      "id": "P1",
+      "category": "paraphrase",
+      "question": "How big is the engine in G007039-3?",
+      "evidence": [{"model": "G007039-3", "section": "Engine", "contains": ["Displacement: 999 cc"]}],
+      "answer_any": [["999 cc"]]
+    },
+    {
+      "id": "P2",
+      "category": "paraphrase",
+      "question": "How much electricity can G007209-10 continuously supply on propane?",
+      "evidence": [{"model": "G007209-10", "section": "Generator", "contains": ["(LP): 24,000"]}],
+      "answer_any": [["24,000", "24 kw", "24kw"]]
+    },
+    {
+      "id": "P3",
+      "category": "paraphrase",
+      "question": "Is G007077-1 a three-phase unit?",
+      "evidence": [{"model": "G007077-1", "section": "Generator", "contains": ["Phase: 3"]}],
+      "answer_any": [["yes", "three-phase", "three phase", "3-phase", "3 phase"]]
+    },
+    {
+      "id": "P4",
+      "category": "paraphrase",
+      "question": "What is the running noise level of G007209-10?",
+      "evidence": [{"model": "G007209-10", "section": "Generator", "contains": ["operating at normal load", ": 67"]}],
+      "answer_any": [["67"], ["db"]]
+    },
+    {
+      "id": "P5",
+      "category": "paraphrase",
+      "question": "How loud is G007209-10 during Quiet-Test?",
+      "evidence": [{"model": "G007209-10", "section": "Generator", "contains": ["Quiet-Test", ": 57"]}],
+      "answer_any": [["57"], ["db"]]
+    },
+    {
+      "id": "C1",
+      "category": "comparison",
+      "question": "On LP, which has greater continuous output: G007042-11 or G007209-10, and by how much?",
+      "evidence": [
+        {"model": "G007042-11", "section": "Generator", "contains": ["(LP): 22,000"]},
+        {"model": "G007209-10", "section": "Generator", "contains": ["(LP): 24,000"]}
+      ],
+      "answer_any": [["G007209"], ["2,000", "2 kw", "2kw"]]
+    },
+    {
+      "id": "C2",
+      "category": "comparison",
+      "question": "On natural gas, which has greater continuous output: G007042-11 or G007209-10?",
+      "evidence": [
+        {"model": "G007042-11", "section": "Generator", "contains": ["(NG): 19,500"]},
+        {"model": "G007209-10", "section": "Generator", "contains": ["(NG): 21,000"]}
+      ],
+      "answer_any": [["G007209"]]
+    },
+    {
+      "id": "C3",
+      "category": "comparison",
+      "question": "How much lower is G007209-10's normal-load sound than its Quiet-Test sound?"
+    },
+    {
+      "id": "C4",
+      "category": "comparison",
+      "question": "Do G007042-11 and G007209-10 have the same rated voltage and phase?",
+      "evidence": [
+        {"model": "G007042-11", "section": "Generator", "contains": ["Rated voltage: 240", "Phase: 1"]},
+        {"model": "G007209-10", "section": "Generator", "contains": ["Rated voltage: 240", "Phase: 1"]}
+      ]
+    },
+    {
+      "id": "C5",
+      "category": "comparison",
+      "question": "Does a 999 cc engine necessarily have more horsepower than an 816 cc engine?"
+    },
+    {
+      "id": "C6",
+      "category": "comparison",
+      "question": "Which generator has the strongest engine?"
+    },
+    {
+      "id": "M1",
+      "category": "corpus",
+      "question": "What is the largest engine displacement listed, and which models have it?"
+    },
+    {
+      "id": "M2",
+      "category": "corpus",
+      "question": "Which generators have the highest LP continuous power rating?"
+    },
+    {
+      "id": "M3",
+      "category": "corpus",
+      "question": "Which models are rated for three-phase output?"
+    },
+    {
+      "id": "M4",
+      "category": "corpus",
+      "question": "Which generators operate at 50 Hz rather than 60 Hz?"
+    },
+    {
+      "id": "M5",
+      "category": "corpus",
+      "question": "Which models have a G-Force 1000 Series engine?"
+    },
+    {
+      "id": "M6",
+      "category": "corpus",
+      "question": "Are all the generators rated for the same voltage?"
+    },
+    {
+      "id": "S1",
+      "category": "qualification",
+      "question": "For G007209-10, is the LP rating the same as the natural-gas rating?",
+      "evidence": [{"model": "G007209-10", "section": "Generator", "contains": ["(LP): 24,000", "(NG): 21,000"]}],
+      "answer_any": [["24,000", "24 kw", "24kw"], ["21,000", "21 kw", "21kw"]]
+    },
+    {
+      "id": "S2",
+      "category": "qualification",
+      "question": "What does the 67 dB(A) sound rating for G007209-10 measure?"
+    },
+    {
+      "id": "S3",
+      "category": "qualification",
+      "question": "What battery does G007209-10 require, and is it included?"
+    },
+    {
+      "id": "S4",
+      "category": "qualification",
+      "question": "What is the exercise duration for G007042-11?",
+      "evidence": [{"model": "G007042-11", "section": "Generator", "contains": ["Exercise duration: 5 min"]}],
+      "answer_any": [["5 min", "five min"]]
+    },
+    {
+      "id": "S5",
+      "category": "qualification",
+      "question": "Does the standby rating permit overload?"
+    },
+    {
+      "id": "S6",
+      "category": "qualification",
+      "question": "How does altitude affect the stated maximum power?"
+    },
+    {
+      "id": "U1",
+      "category": "uncertainty",
+      "question": "Does G007171-0 appear in more than one document?"
+    },
+    {
+      "id": "U2",
+      "category": "uncertainty",
+      "question": "Do the available revisions agree on the engine displacement of G007039-3?"
+    },
+    {
+      "id": "U3",
+      "category": "uncertainty",
+      "question": "Which revision should I use for G007038-1?"
+    },
+    {
+      "id": "U4",
+      "category": "uncertainty",
+      "question": "Which generators are SCAQMD compliant?"
+    },
+    {
+      "id": "U5",
+      "category": "uncertainty",
+      "question": "What is the horsepower of G007039-3?"
+    },
+    {
+      "id": "U6",
+      "category": "uncertainty",
+      "question": "Which generator has the highest engine torque?"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 const savedJobKey = "document-assistant-indexing-job";
 let indexingEvents = null;
+let queryBusy = false;
 
 async function getJson(url) {
   const response = await fetch(url);
@@ -93,11 +94,13 @@ async function loadCorpusStatus() {
       status.storedChunkCount;
 
     const differencesText = [];
+
     if (status.missingDocumentIds.length > 0) {
       differencesText.push(
         `Missing from index: ${status.missingDocumentIds.join(", ")}`
       );
     }
+
     if (status.unexpectedDocumentIds.length > 0) {
       differencesText.push(
         `Unexpected in index: ${status.unexpectedDocumentIds.join(", ")}`
@@ -218,11 +221,10 @@ function watchIndexingJob(initialStatus) {
     document.querySelector("#indexing-message").textContent =
       "Progress connection interrupted; reconnecting…";
 
-    // EventSource reconnects automatically. Check once after an
-    // interruption in case the job finished while disconnected.
     if (checkedAfterError) {
       return;
     }
+
     checkedAfterError = true;
 
     try {
@@ -269,13 +271,18 @@ async function beginIndexing() {
       const problem = await response.json();
 
       if (!problem.activeJobId) {
-        throw new Error(problem.detail || "An indexing job is already running.");
+        throw new Error(
+          problem.detail || "An indexing job is already running."
+        );
       }
 
-      message.textContent = "Connecting to the indexing job already running…";
+      message.textContent =
+        "Connecting to the indexing job already running…";
+
       const activeStatus = await getJson(
         `/api/demo/indexing-jobs/${encodeURIComponent(problem.activeJobId)}`
       );
+
       watchIndexingJob(activeStatus);
       return;
     }
@@ -288,7 +295,8 @@ async function beginIndexing() {
     watchIndexingJob(status);
   } catch (error) {
     button.disabled = false;
-    message.textContent = `Could not start indexing: ${error.message}`;
+    message.textContent =
+      `Could not start indexing: ${error.message}`;
   }
 }
 
@@ -303,12 +311,14 @@ async function resumeSavedJob() {
   const message = document.querySelector("#indexing-message");
 
   button.disabled = true;
-  message.textContent = "Checking the previous indexing job…";
+  message.textContent =
+    "Checking the previous indexing job…";
 
   try {
     const status = await getJson(
       `/api/demo/indexing-jobs/${encodeURIComponent(jobId)}`
     );
+
     watchIndexingJob(status);
   } catch (error) {
     localStorage.removeItem(savedJobKey);
@@ -332,61 +342,158 @@ function addDetail(list, label, value) {
   list.append(term, description);
 }
 
+function formatScore(value) {
+  return typeof value === "number"
+    ? value.toFixed(4)
+    : "—";
+}
+
+function formatList(value) {
+  return Array.isArray(value) && value.length > 0
+    ? value.join(", ")
+    : "—";
+}
+
+function hybridAnswerToRetrieval(response) {
+  const evidence = Array.isArray(response.evidence)
+    ? response.evidence
+    : [];
+
+  return {
+    query: response.query,
+    resultCount:
+      response.evidenceChunkCount ?? evidence.length,
+    results: evidence.map(item => ({
+      sourceNumber: item.sourceNumber,
+      ...item.candidate
+    }))
+  };
+}
+
 function renderRetrievalResults(response) {
-  const container = document.querySelector("#retrieval-results");
+  const container =
+    document.querySelector("#retrieval-results");
+
   container.replaceChildren();
 
   response.results.forEach((chunk, index) => {
     const card = document.createElement("article");
 
     const heading = document.createElement("h3");
-    heading.textContent = `Result ${index + 1}`;
+    heading.textContent =
+      `Source [${chunk.sourceNumber ?? index + 1}]`;
+
     card.append(heading);
 
     const metadata = document.createElement("dl");
+
     addDetail(
       metadata,
       "Similarity score",
-      Number(chunk.similarityScore).toFixed(4)
+      formatScore(chunk.similarityScore)
     );
-    addDetail(metadata, "Document ID", chunk.documentId);
-    addDetail(metadata, "Source filename", chunk.sourceFile);
-    addDetail(metadata, "Revision", chunk.revision);
-    addDetail(metadata, "Revision part number", chunk.revisionPartNumber);
-    addDetail(metadata, "Publication date", chunk.publicationDate);
-    addDetail(metadata, "Chunk index", chunk.chunkIndex);
-    addDetail(metadata, "Section", chunk.section);
-    addDetail(metadata, "Model numbers", chunk.modelNumbers.join(", "));
-    addDetail(metadata, "Page numbers", chunk.pageNumbers.join(", "));
+    addDetail(
+      metadata,
+      "Vector similarity score",
+      formatScore(chunk.vectorSimilarityScore)
+    );
+    addDetail(
+      metadata,
+      "Keyword score",
+      formatScore(chunk.keywordScore)
+    );
+    addDetail(
+      metadata,
+      "RRF score",
+      formatScore(chunk.rrfScore)
+    );
+    addDetail(
+      metadata,
+      "Retrieval channels",
+      formatList(chunk.retrievalChannels)
+    );
+    addDetail(
+      metadata,
+      "Selected by diversity",
+      typeof chunk.selectedByDiversity === "boolean"
+        ? chunk.selectedByDiversity
+          ? "Yes"
+          : "No"
+        : "—"
+    );
+    addDetail(
+      metadata,
+      "Document ID",
+      chunk.documentId
+    );
+    addDetail(
+      metadata,
+      "Source filename",
+      chunk.sourceFile
+    );
+    addDetail(
+      metadata,
+      "Revision",
+      chunk.revision
+    );
+    addDetail(
+      metadata,
+      "Revision part number",
+      chunk.revisionPartNumber
+    );
+    addDetail(
+      metadata,
+      "Publication date",
+      chunk.publicationDate
+    );
+    addDetail(
+      metadata,
+      "Chunk index",
+      chunk.chunkIndex
+    );
+    addDetail(
+      metadata,
+      "Section",
+      chunk.section
+    );
+    addDetail(
+      metadata,
+      "Model numbers",
+      formatList(chunk.modelNumbers)
+    );
+    addDetail(
+      metadata,
+      "Page numbers",
+      formatList(chunk.pageNumbers)
+    );
     addDetail(
       metadata,
       "Source-element IDs",
-      chunk.sourceElementIds.join(", ")
+      formatList(chunk.sourceElementIds)
     );
+
     card.append(metadata);
 
     const textHeading = document.createElement("h4");
     textHeading.textContent = "Complete chunk text";
+
     card.append(textHeading);
 
     const fullText = document.createElement("pre");
     fullText.textContent = chunk.text;
     fullText.style.whiteSpace = "pre-wrap";
     fullText.style.overflowWrap = "anywhere";
-    card.append(fullText);
 
+    card.append(fullText);
     container.append(card);
   });
 }
 
-async function searchRetrieval(event) {
-  event.preventDefault();
-
-  const queryInput = document.querySelector("#retrieval-query");
-  const topKInput = document.querySelector("#retrieval-top-k");
-  const button = document.querySelector("#retrieval-submit");
-  const message = document.querySelector("#retrieval-message");
-  const results = document.querySelector("#retrieval-results");
+function readQuestion() {
+  const queryInput =
+    document.querySelector("#retrieval-query");
+  const topKInput =
+    document.querySelector("#retrieval-top-k");
 
   const query = queryInput.value.trim();
   const topK = Number(topKInput.value);
@@ -395,25 +502,66 @@ async function searchRetrieval(event) {
     queryInput.setCustomValidity("Enter a question.");
     queryInput.reportValidity();
     queryInput.setCustomValidity("");
-    return;
+    return null;
   }
 
-  if (!topKInput.checkValidity() || !Number.isInteger(topK)) {
+  if (
+    !topKInput.checkValidity()
+    || !Number.isInteger(topK)
+  ) {
     topKInput.reportValidity();
+    return null;
+  }
+
+  return {query, topK};
+}
+
+function setQueryBusy(busy) {
+  queryBusy = busy;
+  document.querySelector("#retrieval-submit").disabled =
+    busy;
+  document.querySelector("#answer-submit").disabled =
+    busy;
+}
+
+async function runQuery(withAnswer) {
+  if (queryBusy) {
     return;
   }
 
-  button.disabled = true;
+  const request = readQuestion();
+
+  if (!request) {
+    return;
+  }
+
+  const message =
+    document.querySelector("#retrieval-message");
+  const results =
+    document.querySelector("#retrieval-results");
+  const answerPanel =
+    document.querySelector("#answer-panel");
+
+  setQueryBusy(true);
   results.replaceChildren();
-  message.textContent = "Searching…";
+  answerPanel.hidden = true;
+  document.querySelector("#answer-text").textContent = "";
+
+  message.textContent = withAnswer
+    ? "Retrieving sources and generating an answer…"
+    : "Searching sources…";
+
+  const endpoint = withAnswer
+    ? "/api/rag/answer"
+    : "/api/retrieval/search";
 
   try {
-    const httpResponse = await fetch("/api/retrieval/search", {
+    const httpResponse = await fetch(endpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ query, topK })
+      body: JSON.stringify(request)
     });
 
     if (!httpResponse.ok) {
@@ -426,34 +574,72 @@ async function searchRetrieval(event) {
         // Some server errors have no JSON response body.
       }
 
-      throw new Error(detail || `HTTP ${httpResponse.status}`);
+      throw new Error(
+        detail || `HTTP ${httpResponse.status}`
+      );
     }
 
-    const retrieval = await httpResponse.json();
+    const response = await httpResponse.json();
+    const retrieval = withAnswer
+      ? hybridAnswerToRetrieval(response)
+      : response;
+
+    if (withAnswer) {
+      const answerText =
+        document.querySelector("#answer-text");
+
+      answerText.textContent = response.answer;
+      answerText.style.whiteSpace = "pre-wrap";
+      answerPanel.hidden = false;
+    }
+
     renderRetrievalResults(retrieval);
 
-    message.textContent = retrieval.resultCount === 0
-      ? "No matching chunks were returned."
-      : `${retrieval.resultCount} matching chunk` +
-        `${retrieval.resultCount === 1 ? "" : "s"} returned.`;
+    const count = retrieval.resultCount;
+    const sourceMessage =
+      `${count} source${count === 1 ? "" : "s"} returned.`;
+
+    message.textContent = withAnswer
+      ? `Answer generated. ${sourceMessage}`
+      : sourceMessage;
   } catch (error) {
-    message.textContent = `Search failed: ${error.message}`;
+    message.textContent =
+      `${withAnswer ? "Answer request" : "Search"} failed: ` +
+      error.message;
   } finally {
-    button.disabled = false;
+    setQueryBusy(false);
   }
 }
 
-document.querySelector("#begin-indexing").disabled = false;
+document.querySelector("#begin-indexing").disabled =
+  false;
+
 document
   .querySelector("#begin-indexing")
   .addEventListener("click", beginIndexing);
 
-document.querySelector("#retrieval-query").disabled = false;
-document.querySelector("#retrieval-top-k").disabled = false;
-document.querySelector("#retrieval-submit").disabled = false;
+document.querySelector("#retrieval-query").disabled =
+  false;
+document.querySelector("#retrieval-top-k").disabled =
+  false;
+document.querySelector("#retrieval-submit").disabled =
+  false;
+document.querySelector("#answer-submit").disabled =
+  false;
+
 document
   .querySelector("#retrieval-form")
-  .addEventListener("submit", searchRetrieval);
+  .addEventListener("submit", event => {
+    event.preventDefault();
+    runQuery(false);
+  });
+
+document
+  .querySelector("#answer-submit")
+  .addEventListener(
+    "click",
+    () => runQuery(true)
+  );
 
 loadDocuments();
 loadCorpusStatus();

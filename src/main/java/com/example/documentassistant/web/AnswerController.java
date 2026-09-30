@@ -1,7 +1,7 @@
 package com.example.documentassistant.web;
 
-import com.example.documentassistant.rag.AnswerResponse;
-import com.example.documentassistant.rag.AnswerService;
+import com.example.documentassistant.rag.HybridAnswerService;
+import com.example.documentassistant.rag.HybridAnswerService.HybridAnswerResponse;
 import com.example.documentassistant.retrieval.RetrievalRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
@@ -16,14 +16,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/rag")
 public class AnswerController {
 
-  private final AnswerService answerService;
+  private final HybridAnswerService answerService;
 
-  public AnswerController(AnswerService answerService) {
+  public AnswerController(
+      HybridAnswerService answerService) {
+
     this.answerService = answerService;
   }
 
   @PostMapping("/answer")
-  public AnswerResponse answer(
+  public HybridAnswerResponse answer(
       @RequestBody RetrievalRequest request) {
 
     return answerService.answer(request);
@@ -39,6 +41,8 @@ public class AnswerController {
 
     problem.setTitle("Invalid answer request");
 
-    return ResponseEntity.badRequest().body(problem);
+    return ResponseEntity
+        .badRequest()
+        .body(problem);
   }
 }
