@@ -9,8 +9,15 @@ import org.springframework.boot.context.properties.bind.DefaultValue;
 @ConfigurationProperties(prefix = "document-assistant.retrieval")
 public record RetrievalProperties(
     @DefaultValue("5") int defaultTopK,
-    @DefaultValue("20") int maxTopK,
-    @DefaultValue("0.0") double similarityThreshold) {
+    @DefaultValue("30") int maxTopK,
+    @DefaultValue("0.0") double similarityThreshold,
+    @DefaultValue("60") int keywordLimit,
+    @DefaultValue("12") int diversityDocumentLimit,
+    @DefaultValue("2") int diversityChunksPerDocument,
+    @DefaultValue("40") int candidateLimit,
+    @DefaultValue("30") int defaultEvidenceLimit,
+    @DefaultValue("40") int maxEvidenceLimit,
+    @DefaultValue("70000") int maxContextCharacters) {
 
   public RetrievalProperties {
     if (defaultTopK < 1) {
@@ -28,6 +35,32 @@ public record RetrievalProperties(
 
       throw new IllegalArgumentException(
           "similarityThreshold must be between 0.0 and 1.0");
+    }
+
+    if (keywordLimit < 1 || keywordLimit > 100) {
+      throw new IllegalArgumentException(
+          "keywordLimit must be between 1 and 100");
+    }
+
+    if (diversityDocumentLimit < 1 || diversityDocumentLimit > 100
+        || diversityChunksPerDocument < 1
+        || diversityChunksPerDocument > 100) {
+      throw new IllegalArgumentException(
+          "Diversity limits must be between 1 and 100");
+    }
+
+    if (candidateLimit < 1
+        || defaultEvidenceLimit < 1
+        || maxEvidenceLimit < defaultEvidenceLimit
+        || maxEvidenceLimit > candidateLimit) {
+      throw new IllegalArgumentException(
+          "Require 1 <= defaultEvidenceLimit <= maxEvidenceLimit"
+              + " <= candidateLimit");
+    }
+
+    if (maxContextCharacters < 1) {
+      throw new IllegalArgumentException(
+          "maxContextCharacters must be positive");
     }
   }
 }

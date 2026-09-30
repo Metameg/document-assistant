@@ -1,0 +1,762 @@
+version: 1
+status: approved
+
+domain:
+  name: generator-specifications
+  description: >
+    Generator models, technical specifications, operating conditions, and
+    source documents. Initially supported by the supplied Generac
+    specification sheets.
+
+entities:
+  Model:
+    description: An exact generator model, including its full model-number suffix.
+    identity_property: model_id
+  Claim:
+    description: A model's reported metric or attribute value, with conditions and evidence.
+    identity_property: claim_id
+  Document:
+    description: One specification-sheet edition, identified by document ID and revision.
+    identity_property: document_id
+  SourceElement:
+    description: An original processed JSON element, including its page and section.
+    identity_property: source_element_id
+  Chunk:
+    description: A citable text chunk linked to its original processed elements.
+    identity_property: chunk_id
+
+relationships:
+  DESCRIBED_IN:
+    from: Model
+    to: Document
+  HAS_CLAIM:
+    from: Model
+    to: Claim
+  SUPPORTED_BY:
+    from: Claim
+    to: SourceElement
+  FROM_DOCUMENT:
+    from: SourceElement
+    to: Document
+  IN_CHUNK:
+    from: SourceElement
+    to: Chunk
+
+query_contract:
+  facts: Model -> HAS_CLAIM -> Claim
+  key_property: Claim.property_key
+  value_property: Claim.value
+  original_value_property: Claim.original_value
+  unit_property: Claim.unit
+  condition_property: Claim.conditions
+  model_attributes: >
+    model_number is stored directly on Model. Other queryable model attributes
+    use the same Claim path as metrics.
+  vocabulary: Metric and attribute keys are vocabulary entries, not graph nodes.
+  source_element_identity: document_id + ":" + element_id
+  chunk_identity: document_id + ":" + chunk_index
+
+condition_semantics:
+  claim_required:
+    description: >
+      The mapper must produce these conditions for every claim. If it cannot,
+      the source element enters review and no queryable claim is written.
+  comparison_dimensions:
+    description: >
+      Claims may be ranked together only when these values match. Missing
+      values never match known values.
+  filters:
+    description: >
+      Conditions users may filter by that do not automatically divide
+      otherwise comparable claims.
+  optional_context:
+    description: >
+      Preserved when explicitly supported. Absence does not invalidate a claim.
+  comparison_policy:
+    missing_dimension: separate_group
+    include_ties: true
+
+metrics:
+  rated_active_power:
+    description: Reported generator active power in watts.
+    subject: Model
+    value_type: decimal
+    canonical_unit: W
+    aliases: [rated power, generator wattage, power output, maximum continuous power capacity]
+    condition_roles:
+      claim_required: [fuel, rating_basis]
+      comparison_dimensions: [fuel, rating_basis, rating_definition]
+      filters: [phase, frequency, voltage]
+      optional_context: [rating_label]
+    supported_operations: [lookup, maximum, minimum, greater_than, less_than]
+
+  rated_apparent_power:
+    description: Reported apparent power in volt-amperes.
+    subject: Model
+    value_type: decimal
+    canonical_unit: VA
+    aliases: [apparent power, VA rating, kVA rating, ESP power capacity]
+    condition_roles:
+      claim_required: [fuel, rating_basis]
+      comparison_dimensions: [fuel, rating_basis, rating_definition]
+      filters: [phase, frequency, voltage]
+      optional_context: [rating_label]
+    supported_operations: [lookup, maximum, minimum, greater_than, less_than]
+
+  rated_load_current:
+    description: Rated maximum continuous load current.
+    subject: Model
+    value_type: decimal
+    canonical_unit: A
+    aliases: [rated current, load current, output amps]
+    condition_roles:
+      claim_required: [fuel, voltage]
+      comparison_dimensions: [fuel, voltage, phase, frequency, rating_basis]
+      filters: [phase, frequency]
+      optional_context: [rating_label, rating_basis]
+    supported_operations: [lookup, maximum, minimum, greater_than, less_than]
+
+  rated_voltage:
+    description: Generator rated output voltage, separate from transfer-switch voltage.
+    subject: Model
+    value_type: decimal
+    canonical_unit: V
+    aliases: [rated voltage, output voltage, generator voltage]
+    condition_roles:
+      filters: [phase, frequency]
+    supported_operations: [lookup, filter]
+
+  rated_frequency:
+    description: Rated AC output frequency, separate from protection thresholds.
+    subject: Model
+    value_type: decimal
+    canonical_unit: Hz
+    aliases: [frequency, output frequency, hertz]
+    condition_roles:
+      filters: [phase, voltage]
+    supported_operations: [lookup, filter]
+
+  sound_level:
+    description: A-weighted sound level under stated operating and measurement conditions.
+    subject: Model
+    value_type: decimal
+    canonical_unit: dB(A)
+    aliases: [noise, sound output, noise level, loudness, quietest]
+    condition_roles:
+      claim_required: [operating_mode, measurement_distance_m]
+      comparison_dimensions: [operating_mode, load_description, measurement_distance_m, measurement_side]
+      optional_context: [measurement_side]
+    supported_operations: [lookup, maximum, minimum, greater_than, less_than]
+
+  natural_gas_consumption:
+    description: Natural-gas volume consumed per hour at half or full load.
+    subject: Model
+    value_type: decimal
+    canonical_unit: m3/h
+    aliases: [natural gas consumption, NG consumption, natural gas usage, gas flow rate]
+    condition_roles:
+      claim_required: [fuel, load_fraction]
+      comparison_dimensions: [fuel, load_fraction, reference_state]
+      optional_context: [reference_state]
+    supported_operations: [lookup]
+
+  unit_mass:
+    description: Reported generator unit weight represented as mass.
+    subject: Model
+    value_type: decimal
+    canonical_unit: kg
+    aliases: [weight, unit weight, generator weight, mass]
+    condition_roles:
+      optional_context: [approximate]
+    supported_operations: [lookup, maximum, minimum, greater_than, less_than]
+
+  oil_capacity:
+    description: Engine oil capacity including the filter.
+    subject: Model
+    value_type: decimal
+    canonical_unit: L
+    aliases: [oil capacity, oil volume, how much oil]
+    condition_roles:
+      optional_context: [approximate]
+    supported_operations: [lookup, maximum, minimum]
+
+  engine_displacement:
+    description: Engine displacement volume.
+    subject: Model
+    value_type: decimal
+    canonical_unit: cm3
+    aliases: [engine displacement, engine size, displacement, cc]
+    supported_operations: [lookup, maximum, minimum, greater_than, less_than]
+
+  engine_speed:
+    description: Reported operating engine speed.
+    subject: Model
+    value_type: integer
+    canonical_unit: rpm
+    aliases: [operating rpm, engine rpm, engine speed]
+    supported_operations: [lookup, maximum, minimum]
+
+  exercise_duration:
+    description: Duration of an exercise cycle, separate from its recurrence interval.
+    subject: Model
+    value_type: decimal
+    canonical_unit: s
+    aliases: [exercise duration, exercise time, exercise cycle length]
+    supported_operations: [lookup, maximum, minimum]
+
+  main_breaker_current:
+    description: Current rating of the generator's main-line circuit breaker.
+    subject: Model
+    value_type: decimal
+    canonical_unit: A
+    aliases: [main breaker amps, main line circuit breaker, generator breaker rating]
+    supported_operations: [lookup, maximum, minimum]
+
+  transfer_switch_current:
+    description: Current rating of the transfer switch in the documented package.
+    subject: Model
+    value_type: decimal
+    canonical_unit: A
+    aliases: [transfer switch amps, switch current rating, transfer switch rating]
+    condition_roles:
+      claim_required: [component_scope]
+      comparison_dimensions: [component_scope]
+    supported_operations: [lookup, maximum, minimum]
+
+  drawing_dimension:
+    description: Approximate drawing measurement; preserve its view and dimension name.
+    subject: Model
+    value_type: decimal
+    canonical_unit: mm
+    aliases: [drawing dimensions, drawing height, enclosure width, base width]
+    condition_roles:
+      claim_required: [view, dimension_name]
+      comparison_dimensions: [view, dimension_name]
+      optional_context: [approximate]
+    supported_operations: [lookup]
+
+attributes:
+  model_number:
+    subject: Model
+    value_type: string
+    description: Exact source model designation; retain the full suffix.
+    aliases: [model, model number, generator model]
+
+  phase:
+    subject: Model
+    value_type: integer
+    description: Electrical phase count.
+    aliases: [phase, electrical phase]
+    allowed_values:
+      "1": {aliases: [single phase, single-phase]}
+      "3": {aliases: [three phase, three-phase]}
+
+  engine_type:
+    subject: Model
+    value_type: string
+    description: Engine family or type exactly as reported.
+    aliases: [engine type, engine family]
+
+  fuel:
+    subject: Claim
+    value_type: enum
+    description: Fuel for the measurement.
+    aliases: [fuel, fuel type]
+    allowed_values:
+      LP: {aliases: [propane, liquid propane, LP gas]}
+      NG: {aliases: [natural gas, NG]}
+
+  load_fraction:
+    subject: Claim
+    value_type: decimal
+    aliases: [load, load percentage]
+    allowed_values:
+      "0.5": {aliases: [half load, half-load, 50 percent load]}
+      "1.0": {aliases: [full load, full-load, 100 percent load]}
+
+  operating_mode:
+    subject: Claim
+    value_type: enum
+    aliases: [operating mode, sound mode]
+    allowed_values:
+      normal_load: {aliases: [normal load, normal operation]}
+      quiet_test: {aliases: [Quiet-Test, quiet test, low-speed exercise]}
+
+  load_description:
+    subject: Claim
+    value_type: string
+    description: Original load wording; normal load does not imply half or full load.
+
+  measurement_distance_m:
+    subject: Claim
+    value_type: decimal
+    description: Sound measurement distance in metres.
+    aliases: [sound distance]
+
+  measurement_side:
+    subject: Claim
+    value_type: enum
+    description: Measurement side explicitly supplied by qualifying evidence.
+    allowed_values:
+      front: {}
+
+  voltage:
+    subject: Claim
+    value_type: decimal
+    description: Voltage in V supported by same-model source evidence.
+
+  frequency:
+    subject: Claim
+    value_type: decimal
+    description: Frequency in Hz supported by same-model source evidence.
+
+  rating_basis:
+    subject: Claim
+    value_type: enum
+    description: Normalized basis explicitly stated in the measurement label.
+    allowed_values:
+      maximum_continuous:
+        aliases: [maximum continuous, rated maximum continuous]
+      esp:
+        aliases: [ESP, emergency standby power]
+
+  rating_label:
+    subject: Claim
+    value_type: string
+    description: Exact source measurement wording.
+    aliases: [rating type]
+
+  rating_definition:
+    subject: Claim
+    value_type: enum
+    description: Rating definition supplied by an explicitly linked source note.
+    allowed_values:
+      standby: {aliases: [Standby]}
+      optional_standby: {aliases: [Optional Standby]}
+
+  reference_state:
+    subject: Claim
+    value_type: enum
+    description: Gas-volume temperature and pressure basis.
+    allowed_values:
+      unknown: {}
+
+  component_scope:
+    subject: Claim
+    value_type: enum
+    description: Component whose measurement the claim represents.
+    allowed_values:
+      generator: {}
+      engine: {}
+      packaged_transfer_switch: {}
+
+  approximate:
+    subject: Claim
+    value_type: boolean
+    description: True only when the source explicitly marks the value as approximate.
+
+  view:
+    subject: Claim
+    value_type: enum
+    description: Drawing view; widths in different views are not interchangeable.
+    allowed_values:
+      left_side: {}
+      front: {}
+
+  dimension_name:
+    subject: Claim
+    value_type: enum
+    description: Normalized drawing measurement name.
+    allowed_values:
+      overall_height: {}
+      enclosure_width: {}
+      base_width: {}
+
+  revision:
+    subject: Document
+    value_type: string
+    description: Document revision, separate from a model-number suffix.
+    aliases: [document revision]
+  part_number:
+    subject: Document
+    value_type: string
+    description: Exact document part number used to group editions.
+    aliases: [document part number]
+  publication_date:
+    subject: Document
+    value_type: date
+    description: Publication date of this document edition.
+    aliases: [publication date, specification date]
+
+operations:
+  lookup: {description: Return matching entities or values with source citations.}
+  maximum: {description: Return every entity tied for the greatest comparable value.}
+  minimum: {description: Return every entity tied for the smallest comparable value.}
+  greater_than: {description: Filter comparable values above a threshold.}
+  less_than: {description: Filter comparable values below a threshold.}
+  filter: {description: Select entities or claims matching conditions.}
+  count: {description: Count distinct entities without inflating repeated source claims.}
+  latest: {description: Select the latest edition within one confirmed part-number family.}
+
+planning_rules:
+  - Match a model and document edition before selecting claim values.
+  - Never combine document revisions silently.
+  - Compare only matching metrics, canonical units, and comparison dimensions.
+  - Missing comparison dimensions form a separate group from known values.
+  - Ask for an underspecified required condition or return separately labelled groups.
+  - Preserve rating definitions; continuous wording does not establish continuous-duty service.
+  - VA and W are different metrics and are never converted without an approved derivation.
+  - Preserve approximations, qualifications, ranges, and upper bounds.
+  - Include all supported ties for maximum and minimum operations.
+  - Use only explicit per-model values or documented shared values.
+  - Fall back to text retrieval for an unsupported metric or interpretation.
+
+ingestion:
+  mapping_outcomes:
+    DETERMINISTIC: Exact source shape maps directly without conversion.
+    DETERMINISTIC_WITH_NORMALIZATION: Exact source shape uses an approved parser or conversion.
+    REQUIRES_REVIEW: Source resembles a fact but has an unapproved shape or interpretation.
+    SOURCE_TEXT_ONLY: Preserve provenance without creating a queryable claim.
+
+  unmatched_element_policy:
+    create_source_element: true
+    create_claim: false
+    record_review_item: true
+    reason: NO_APPROVED_MAPPING
+
+  model_expansion:
+    shared_value: emit one claim for every model in the containing section
+    values_by_model: emit one claim for every map entry
+    conflict: REQUIRES_REVIEW
+
+  claim_identity:
+    algorithm: sha256
+    serialization: canonical_json_utf8
+    fields:
+      - document_id
+      - document_revision
+      - model_number
+      - property_key
+      - normalized_value
+      - canonical_unit
+      - normalized_conditions
+      - source_element_id
+
+  parsers:
+    source_string:
+      accepts: [nonblank source string]
+    scalar_number:
+      accepts: [integer, decimal, comma-grouped number]
+    scalar_number_with_optional_unit:
+      accepts: [scalar number, scalar number followed by approved unit]
+    scalar_number_with_unit_and_footnote:
+      accepts: [scalar number followed by approved unit and optional asterisk]
+    ordered_numeric_pair:
+      accepts: [two scalar numbers separated by slash]
+    ordered_measurement_pair:
+      accepts: [two values whose order matches the source units array]
+    labelled_measurement_pair:
+      accepts: [two scalar values with explicit unit labels]
+    labelled_natural_gas_pair:
+      accepts: [imperial volume rate followed by metric volume rate in parentheses]
+    drawing_measurements:
+      accepts: [structured drawing views and measurements]
+
+  specification_mappings:
+    - id: rated_active_power_lp
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Generator, name: "Rated maximum continuous power capacity (LP)", units: [W]}
+      property_key: rated_active_power
+      parser: scalar_number_with_unit_and_footnote
+      value_source: shared_or_values_by_model
+      conditions: {fuel: LP, rating_basis: maximum_continuous}
+      preserve: [source_name, original_value]
+
+    - id: rated_active_power_ng
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Generator, name: "Rated maximum continuous power capacity (NG)", units: [W]}
+      property_key: rated_active_power
+      parser: scalar_number_with_unit_and_footnote
+      value_source: shared_or_values_by_model
+      conditions: {fuel: NG, rating_basis: maximum_continuous}
+      preserve: [source_name, original_value]
+
+    - id: rated_apparent_power_lp_esp
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Generator, name: "Rated Maximum Power Capacity—LP (ESP)", units: [VA]}
+      property_key: rated_apparent_power
+      parser: scalar_number_with_unit_and_footnote
+      value_source: shared_or_values_by_model
+      conditions: {fuel: LP, rating_basis: esp}
+      preserve: [source_name, original_value]
+
+    - id: rated_apparent_power_ng_esp
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Generator, name: "Rated Maximum Power Capacity—NG (ESP)", units: [VA]}
+      property_key: rated_apparent_power
+      parser: scalar_number_with_unit_and_footnote
+      value_source: shared_or_values_by_model
+      conditions: {fuel: NG, rating_basis: esp}
+      preserve: [source_name, original_value]
+
+    - id: rated_load_current_208
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Generator, name: "Rated maximum continuous load current – 208 volts (LP / NG)", units: [A]}
+      property_key: rated_load_current
+      parser: ordered_numeric_pair
+      value_source: shared_or_values_by_model
+      emit:
+        - {pair_index: 0, conditions: {fuel: LP, voltage: 208, rating_basis: maximum_continuous}}
+        - {pair_index: 1, conditions: {fuel: NG, voltage: 208, rating_basis: maximum_continuous}}
+      preserve: [source_name, original_value]
+
+    - id: rated_load_current_220
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Generator, name: "Rated Maximum Continuous Load Current – 220 Volts (LP/NG)", units: [A]}
+      property_key: rated_load_current
+      parser: ordered_numeric_pair
+      value_source: shared_or_values_by_model
+      emit:
+        - {pair_index: 0, conditions: {fuel: LP, voltage: 220, rating_basis: maximum_continuous}}
+        - {pair_index: 1, conditions: {fuel: NG, voltage: 220, rating_basis: maximum_continuous}}
+      preserve: [source_name, original_value]
+
+    - id: rated_load_current_240
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Generator, name: "Rated maximum continuous load current – 240 volts (LP/NG)", units: [A]}
+      property_key: rated_load_current
+      parser: ordered_numeric_pair
+      value_source: shared_or_values_by_model
+      emit:
+        - {pair_index: 0, conditions: {fuel: LP, voltage: 240, rating_basis: maximum_continuous}}
+        - {pair_index: 1, conditions: {fuel: NG, voltage: 240, rating_basis: maximum_continuous}}
+      preserve: [source_name, original_value]
+
+    - id: rated_voltage
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Generator, name_any: [Rated voltage, Rated Voltage], units: [V]}
+      property_key: rated_voltage
+      parser: scalar_number
+      value_source: shared_or_values_by_model
+      preserve: [original_value]
+
+    - id: rated_frequency
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Generator, name_any: [Rated AC frequency, Rated AC Frequency], units: [Hz]}
+      property_key: rated_frequency
+      parser: scalar_number_with_optional_unit
+      value_source: shared_or_values_by_model
+      preserve: [original_value]
+
+    - id: phase
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Generator, name: Phase, units: []}
+      property_key: phase
+      parser: scalar_number
+      value_source: shared_or_values_by_model
+      allowed_values: [1, 3]
+
+    - id: engine_type
+      outcome: DETERMINISTIC
+      match: {element_type: specification, section: Engine, name_any: [Engine type, Type of Engine], units: []}
+      property_key: engine_type
+      parser: source_string
+      value_source: shared_or_values_by_model
+      preserve: [original_value]
+
+    - id: main_breaker_current
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Generator, name_any: [Main line circuit breaker, Main Line Circuit Breaker], units: [A]}
+      property_key: main_breaker_current
+      parser: scalar_number_with_optional_unit
+      value_source: shared_or_values_by_model
+      preserve: [original_value]
+
+    - id: transfer_switch_current
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Transfer Switch Specifications, name: "Current rating (amps)", units: [A]}
+      property_key: transfer_switch_current
+      parser: scalar_number
+      value_source: shared_or_values_by_model
+      conditions: {component_scope: packaged_transfer_switch}
+      preserve: [original_value]
+
+    - id: normal_load_sound
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match:
+        element_type: specification
+        section: Generator
+        name_any:
+          - "Sound output in dB(A) at 23 ft (7 m) with generator operating at normal load**"
+          - "Sound output in dB(A) at 7m (23 ft) with generator operating at normal load**"
+        units: ["dB(A)"]
+      property_key: sound_level
+      parser: scalar_number
+      value_source: shared_or_values_by_model
+      conditions: {operating_mode: normal_load, load_description: normal load, measurement_distance_m: 7}
+      preserve: [original_value]
+
+    - id: quiet_test_sound
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match:
+        element_type: specification
+        section: Generator
+        name_any:
+          - "Sound output in dB(A) at 23 ft (7 m) with generator in Quiet-Test™ low-speed exercise mode**"
+          - "Sound output in dB(A) at 7m (23 ft) with generator in Quiet-Test™ low-speed exercise mode**"
+        units: ["dB(A)"]
+      property_key: sound_level
+      parser: scalar_number
+      value_source: shared_or_values_by_model
+      conditions: {operating_mode: quiet_test, measurement_distance_m: 7}
+      preserve: [original_value]
+
+    - id: unit_mass_kg_lb
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Generator, name: "Unit Weight (kg/lb)", units: [kg, lb]}
+      property_key: unit_mass
+      parser: ordered_measurement_pair
+      select_unit: kg
+      value_source: shared_or_values_by_model
+      preserve: [original_value]
+
+    - id: unit_mass_lb_kg
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Generator, name_any: ["Unit weight (lb / kg)", "Unit weight (lb/kg)"], units: [lb, kg]}
+      property_key: unit_mass
+      parser: ordered_measurement_pair
+      select_unit: kg
+      value_source: shared_or_values_by_model
+      preserve: [original_value]
+
+    - id: oil_capacity_qt_l
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Engine, name: Oil capacity including filter, units: [qt, L]}
+      property_key: oil_capacity
+      parser: labelled_measurement_pair
+      select_unit: L
+      value_source: shared_or_values_by_model
+      detect_approximate: true
+      preserve: [original_value]
+
+    - id: oil_capacity_l_qt
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Engine, name: Oil Capacity Including Filter, units: [L, qt]}
+      property_key: oil_capacity
+      parser: labelled_measurement_pair
+      select_unit: L
+      value_source: shared_or_values_by_model
+      detect_approximate: true
+      preserve: [original_value]
+
+    - id: engine_displacement
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Engine, name: Displacement, units: [cc]}
+      property_key: engine_displacement
+      parser: scalar_number_with_optional_unit
+      canonical_unit: cm3
+      value_source: shared_or_values_by_model
+      preserve: [original_value]
+
+    - id: engine_speed
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Engine, name: Operating rpm, units: [rpm]}
+      property_key: engine_speed
+      parser: scalar_number
+      value_source: shared_or_values_by_model
+      preserve: [original_value]
+
+    - id: exercise_duration
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: specification, section: Generator, name: Exercise duration, units: [min]}
+      property_key: exercise_duration
+      parser: scalar_number_with_optional_unit
+      canonical_unit: s
+      conversion: minutes_to_seconds
+      value_source: shared_or_values_by_model
+      preserve: [original_value]
+
+  fuel_consumption_mappings:
+    - id: natural_gas_consumption
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: fuel_consumption, fuel_type: Natural Gas, units: "ft³/hr (m³/hr)"}
+      property_key: natural_gas_consumption
+      parser: labelled_natural_gas_pair
+      value_source: measurements_by_model
+      select_unit: m3/h
+      emit:
+        - {measurement_field: halfLoad, conditions: {fuel: NG, load_fraction: 0.5, reference_state: unknown}}
+        - {measurement_field: fullLoad, conditions: {fuel: NG, load_fraction: 1.0, reference_state: unknown}}
+      preserve: [original_value]
+
+    - id: natural_gas_consumption_metric_first
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: fuel_consumption, fuel_type: Natural Gas, units: "m³/hr (ft³/hr)"}
+      property_key: natural_gas_consumption
+      parser: labelled_natural_gas_pair
+      value_source: measurements_by_model
+      select_unit: m3/h
+      emit:
+        - {measurement_field: halfLoad, conditions: {fuel: NG, load_fraction: 0.5, reference_state: unknown}}
+        - {measurement_field: fullLoad, conditions: {fuel: NG, load_fraction: 1.0, reference_state: unknown}}
+      preserve: [original_value]
+
+  dimension_mappings:
+    - id: generator_drawing_dimensions
+      outcome: DETERMINISTIC_WITH_NORMALIZATION
+      match: {element_type: dimension_drawing}
+      property_key: drawing_dimension
+      parser: drawing_measurements
+      canonical_unit: mm
+      value_source: views
+      emit_per_measurement: true
+      condition_sources: {view: normalized_view_name, dimension_name: normalized_measurement_name}
+      conditions: {approximate: true}
+      preserve: [original_value, warning]
+      review_unknown_view_or_measurement: true
+
+  context_enrichment:
+    - id: electrical_configuration
+      applies_to: [rated_active_power, rated_apparent_power, rated_load_current]
+      scope: {same_document: true, same_model: true, section: Generator}
+      properties:
+        phase: {from_property: phase}
+        frequency: {from_property: rated_frequency}
+        voltage: {from_property: rated_voltage}
+      provenance: {add_supporting_source_elements: true}
+
+    - id: rating_definition
+      applies_to: [rated_active_power, rated_apparent_power, rated_load_current]
+      source:
+        element_type: technical_note
+        subject: Specification qualifications
+        must_qualify_claim_source_element: true
+      target_condition: rating_definition
+      exact_text_classification:
+        - {contains: "Rating definitions - Standby:", value: standby}
+        - {contains: "Rating definitions – Standby:", value: standby}
+        - {contains: "Rating definitions - Optional Standby:", value: optional_standby}
+        - {contains: "Rating definitions – Optional Standby:", value: optional_standby}
+      on_no_match: omit_condition
+      provenance: {add_supporting_source_elements: true}
+
+    - id: sound_measurement_side
+      applies_to: [sound_level]
+      source:
+        element_type: technical_note
+        subject: Specification qualifications
+        must_qualify_claim_source_element: true
+      target_condition: measurement_side
+      exact_text_classification:
+        - {contains: "Sound levels are taken from the front of the generator.", value: front}
+      on_no_match: omit_condition
+      provenance: {add_supporting_source_elements: true}
+
+source_text_only:
+  description: Preserve and retrieve these topics from source chunks without numeric graph ranking.
+  topics:
+    - LP consumption columns mixing liquid and gas volumes with unspecified gallon definitions.
+    - Warranty scope and duration, certifications, standards, and jurisdictional restrictions.
+    - Conditional accessory compatibility and alternative battery requirements.
+    - Fault-current ratings with missing units, wire-size ranges, and ambiguous exercise schedules.
+    - UPC rows with unsuffixed model names, conflicting overall dimensions, and transfer-switch drawing symbols.

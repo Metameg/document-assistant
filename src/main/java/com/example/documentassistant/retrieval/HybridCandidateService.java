@@ -16,9 +16,6 @@ import java.util.Set;
 public class HybridCandidateService {
 
   private static final int RRF_CONSTANT = 60;
-  private static final int DOCUMENT_LIMIT = 12;
-  private static final int CHUNKS_PER_DOCUMENT = 2;
-  private static final int MAX_CANDIDATES = 40;
 
   private final ChunkRetrievalService vectorSearch;
   private final KeywordChunkSearchService keywordSearch;
@@ -46,10 +43,8 @@ public class HybridCandidateService {
           "topK must not exceed " + properties.maxTopK());
     }
 
-    int keywordLimit = Math.min(100, topK * 3);
-    int candidateLimit = Math.min(
-        MAX_CANDIDATES,
-        Math.max(30, topK * 3));
+    int keywordLimit = properties.keywordLimit();
+    int candidateLimit = properties.candidateLimit();
 
     RetrievalResponse vector = vectorSearch.search(
         new RetrievalRequest(request.query(), topK));
@@ -59,8 +54,8 @@ public class HybridCandidateService {
 
     List<KeywordCandidate> acrossDocuments = keywordSearch.searchAcrossDocuments(
         request.query(),
-        CHUNKS_PER_DOCUMENT,
-        DOCUMENT_LIMIT);
+        properties.diversityChunksPerDocument(),
+        properties.diversityDocumentLimit());
 
     Map<String, Accumulator> byChunk = new LinkedHashMap<>();
 
@@ -158,8 +153,8 @@ public class HybridCandidateService {
         request.query(),
         topK,
         keywordLimit,
-        DOCUMENT_LIMIT,
-        CHUNKS_PER_DOCUMENT,
+        properties.diversityDocumentLimit(),
+        properties.diversityChunksPerDocument(),
         candidateLimit,
         vector.resultCount(),
         keyword.size(),

@@ -1,0 +1,582 @@
+[
+  {
+    "id": "question-001",
+    "question": "What is the Rated Maximum Power Capacity—LP (ESP) for Generac model G007144-0?",
+    "referenceAnswer": "For model G007144-0, the Rated Maximum Power Capacity—LP (ESP) is 8,000 VA*.",
+    "requiredClaims": [
+      "Model G007144-0 has Rated Maximum Power Capacity—LP (ESP) of 8,000 VA*."
+    ],
+    "relevantChunkIds": [
+      "product_1:13"
+    ]
+  },
+  {
+    "id": "question-002",
+    "question": "What is the Rated Maximum Power Capacity—NG (ESP) for Generac model G007144-0?",
+    "referenceAnswer": "For model G007144-0, the Rated Maximum Power Capacity—NG (ESP) is 7,000 VA*.",
+    "requiredClaims": [
+      "Model G007144-0 has Rated Maximum Power Capacity—NG (ESP) of 7,000 VA*."
+    ],
+    "relevantChunkIds": [
+      "product_1:13"
+    ]
+  },
+  {
+    "id": "question-003",
+    "question": "What is the Rated Voltage for Generac model G007144-0?",
+    "referenceAnswer": "For model G007144-0, the Rated Voltage is 220.",
+    "requiredClaims": [
+      "Model G007144-0 has Rated Voltage of 220."
+    ],
+    "relevantChunkIds": [
+      "product_1:13"
+    ]
+  },
+  {
+    "id": "question-004",
+    "question": "What is the Rated maximum continuous load current – 208 volts (LP / NG) for Generac model G007077-1?",
+    "referenceAnswer": "For model G007077-1, the Rated maximum continuous load current – 208 volts (LP / NG) is 69.4 / 59.0.",
+    "requiredClaims": [
+      "Model G007077-1 has Rated maximum continuous load current – 208 volts (LP / NG) of 69.4 / 59.0."
+    ],
+    "relevantChunkIds": [
+      "product_11:11"
+    ]
+  },
+  {
+    "id": "question-005",
+    "question": "What is the Main line circuit breaker for Generac model G007077-1?",
+    "referenceAnswer": "For model G007077-1, the Main line circuit breaker is 80 amp.",
+    "requiredClaims": [
+      "Model G007077-1 has Main line circuit breaker of 80 amp."
+    ],
+    "relevantChunkIds": [
+      "product_11:11"
+    ]
+  },
+  {
+    "id": "question-006",
+    "question": "What is the Unit weight (lb / kg) for Generac model G007077-1?",
+    "referenceAnswer": "For model G007077-1, the Unit weight (lb / kg) is 466 / 211.",
+    "requiredClaims": [
+      "Model G007077-1 has Unit weight (lb / kg) of 466 / 211."
+    ],
+    "relevantChunkIds": [
+      "product_11:11"
+    ]
+  },
+  {
+    "id": "question-007",
+    "question": "What is the Sound output in dB(A) at 23 ft (7 m) with generator operating at normal load** for Generac model G007038-1?",
+    "referenceAnswer": "For model G007038-1, the Sound output in dB(A) at 23 ft (7 m) with generator operating at normal load** is 67.",
+    "requiredClaims": [
+      "Model G007038-1 has Sound output in dB(A) at 23 ft (7 m) with generator operating at normal load** of 67."
+    ],
+    "relevantChunkIds": [
+      "product_12:11"
+    ]
+  },
+  {
+    "id": "question-008",
+    "question": "What is the Sound output in dB(A) at 23 ft (7 m) with generator in Quiet-Test™ low-speed exercise mode** for Generac model G007038-1?",
+    "referenceAnswer": "For model G007038-1, the Sound output in dB(A) at 23 ft (7 m) with generator in Quiet-Test™ low-speed exercise mode** is 55.",
+    "requiredClaims": [
+      "Model G007038-1 has Sound output in dB(A) at 23 ft (7 m) with generator in Quiet-Test™ low-speed exercise mode** of 55."
+    ],
+    "relevantChunkIds": [
+      "product_12:11"
+    ]
+  },
+  {
+    "id": "question-009",
+    "question": "What is the Displacement for Generac model G007038-1?",
+    "referenceAnswer": "For model G007038-1, the Displacement is 999 cc.",
+    "requiredClaims": [
+      "Model G007038-1 has Displacement of 999 cc."
+    ],
+    "relevantChunkIds": [
+      "product_12:21"
+    ]
+  },
+  {
+    "id": "question-010",
+    "question": "What is the Operating rpm for Generac model G007035-1?",
+    "referenceAnswer": "For model G007035-1, the Operating rpm is 3,600.",
+    "requiredClaims": [
+      "Model G007035-1 has Operating rpm of 3,600."
+    ],
+    "relevantChunkIds": [
+      "product_14:19"
+    ]
+  },
+  {
+    "id": "question-011",
+    "question": "What is the Oil capacity including filter for Generac model G007035-1?",
+    "referenceAnswer": "For model G007035-1, the Oil capacity including filter is Approx. 1.9 qt / 1.8 L.",
+    "requiredClaims": [
+      "Model G007035-1 has Oil capacity including filter of Approx. 1.9 qt / 1.8 L."
+    ],
+    "relevantChunkIds": [
+      "product_14:19"
+    ]
+  },
+  {
+    "id": "question-012",
+    "question": "What is the Power factor for Generac model G007035-1?",
+    "referenceAnswer": "For model G007035-1, the Power factor is 1.0.",
+    "requiredClaims": [
+      "Model G007035-1 has Power factor of 1.0."
+    ],
+    "relevantChunkIds": [
+      "product_14:12"
+    ]
+  },
+  {
+    "id": "question-013",
+    "question": "What is the Phase for Generac model G007038-1?",
+    "referenceAnswer": "For model G007038-1, the Phase is 1.",
+    "requiredClaims": [
+      "Model G007038-1 has Phase of 1."
+    ],
+    "relevantChunkIds": [
+      "product_16:12"
+    ]
+  },
+  {
+    "id": "question-014",
+    "question": "What is the Rated AC frequency for Generac model G007038-1?",
+    "referenceAnswer": "For model G007038-1, the Rated AC frequency is 60 Hz.",
+    "requiredClaims": [
+      "Model G007038-1 has Rated AC frequency of 60 Hz."
+    ],
+    "relevantChunkIds": [
+      "product_16:12"
+    ]
+  },
+  {
+    "id": "question-015",
+    "question": "What is the Battery requirement (not included) for Generac model G007038-1?",
+    "referenceAnswer": "For model G007038-1, the Battery requirement (not included) is 12 Volts, Group 26R 540 CCA minimum or Group 35AGM 650 CCA minimum.",
+    "requiredClaims": [
+      "Model G007038-1 has Battery requirement (not included) of 12 Volts, Group 26R 540 CCA minimum or Group 35AGM 650 CCA minimum."
+    ],
+    "relevantChunkIds": [
+      "product_16:12"
+    ]
+  },
+  {
+    "id": "question-016",
+    "question": "What is the Total Harmonic Distortion for Generac model G007290-0?",
+    "referenceAnswer": "For model G007290-0, the Total Harmonic Distortion is Less than 5%.",
+    "requiredClaims": [
+      "Model G007290-0 has Total Harmonic Distortion of Less than 5%."
+    ],
+    "relevantChunkIds": [
+      "product_18:11"
+    ]
+  },
+  {
+    "id": "question-017",
+    "question": "What is the Automatic Low Oil Pressure/High Oil Temperature Shutdown for Generac model G007290-0?",
+    "referenceAnswer": "For model G007290-0, the Automatic Low Oil Pressure/High Oil Temperature Shutdown is Standard.",
+    "requiredClaims": [
+      "Model G007290-0 has Automatic Low Oil Pressure/High Oil Temperature Shutdown of Standard."
+    ],
+    "relevantChunkIds": [
+      "product_18:19"
+    ]
+  },
+  {
+    "id": "question-018",
+    "question": "What is the Automatic Voltage Regulation with Over and Under Voltage Protection for Generac model G007290-0?",
+    "referenceAnswer": "For model G007290-0, the Automatic Voltage Regulation with Over and Under Voltage Protection is Standard.",
+    "requiredClaims": [
+      "Model G007290-0 has Automatic Voltage Regulation with Over and Under Voltage Protection of Standard."
+    ],
+    "relevantChunkIds": [
+      "product_18:19"
+    ]
+  },
+  {
+    "id": "question-019",
+    "question": "What is the Charger Fault/Missing AC Warning for Generac model G007171-0?",
+    "referenceAnswer": "For model G007171-0, the Charger Fault/Missing AC Warning is Standard.",
+    "requiredClaims": [
+      "Model G007171-0 has Charger Fault/Missing AC Warning of Standard."
+    ],
+    "relevantChunkIds": [
+      "product_2:45"
+    ]
+  },
+  {
+    "id": "question-020",
+    "question": "What is the Circuit breaker protected for Generac model G007175-0?",
+    "referenceAnswer": "For model G007175-0, the Circuit breaker protected is 22,000.",
+    "requiredClaims": [
+      "Model G007175-0 has Circuit breaker protected of 22,000."
+    ],
+    "relevantChunkIds": [
+      "product_2:60"
+    ]
+  },
+  {
+    "id": "question-021",
+    "question": "What is the Circuit breaker protected Available RMS Symmetrical Fault Current @ 250 Volts for Generac model G007172-0?",
+    "referenceAnswer": "For model G007172-0, the Circuit breaker protected Available RMS Symmetrical Fault Current @ 250 Volts is 10,000.",
+    "requiredClaims": [
+      "Model G007172-0 has Circuit breaker protected Available RMS Symmetrical Fault Current @ 250 Volts of 10,000."
+    ],
+    "relevantChunkIds": [
+      "product_2:55"
+    ]
+  },
+  {
+    "id": "question-022",
+    "question": "What is the Common External Fault Capability for Generac model G007171-0?",
+    "referenceAnswer": "For model G007171-0, the Common External Fault Capability is Standard.",
+    "requiredClaims": [
+      "Model G007171-0 has Common External Fault Capability of Standard."
+    ],
+    "relevantChunkIds": [
+      "product_3:40"
+    ]
+  },
+  {
+    "id": "question-023",
+    "question": "What is the Compression ratio for Generac model G007171-0?",
+    "referenceAnswer": "For model G007171-0, the Compression ratio is 9.5:1.",
+    "requiredClaims": [
+      "Model G007171-0 has Compression ratio of 9.5:1."
+    ],
+    "relevantChunkIds": [
+      "product_3:19"
+    ]
+  },
+  {
+    "id": "question-024",
+    "question": "What is the Current rating (amps) for Generac model G007172-0?",
+    "referenceAnswer": "For model G007172-0, the Current rating (amps) is 100.",
+    "requiredClaims": [
+      "Model G007172-0 has Current rating (amps) of 100."
+    ],
+    "relevantChunkIds": [
+      "product_3:49"
+    ]
+  },
+  {
+    "id": "question-025",
+    "question": "What is the Current rating (amps) for Generac model G007225-0?",
+    "referenceAnswer": "For model G007225-0, the Current rating (amps) is 200.",
+    "requiredClaims": [
+      "Model G007225-0 has Current rating (amps) of 200."
+    ],
+    "relevantChunkIds": [
+      "product_5:54"
+    ]
+  },
+  {
+    "id": "question-026",
+    "question": "How much natural gas does Generac model G007144-0 consume at half load?",
+    "referenceAnswer": "At half load, model G007144-0 consumes 2.21 (78) m³/hr (ft³/hr) of natural gas.",
+    "requiredClaims": [
+      "The fuel is Natural Gas.",
+      "The operating condition is half load.",
+      "Model G007144-0's consumption is 2.21 (78) m³/hr (ft³/hr)."
+    ],
+    "relevantChunkIds": [
+      "product_1:19"
+    ]
+  },
+  {
+    "id": "question-027",
+    "question": "How much liquid propane does Generac model G007077-1 consume at full load?",
+    "referenceAnswer": "At full load, model G007077-1 consumes 130 (3.56) [13.48] ft3/hr (gal/hr) [L/hr] of liquid propane.",
+    "requiredClaims": [
+      "The fuel is Liquid Propane.",
+      "The operating condition is full load.",
+      "Model G007077-1's consumption is 130 (3.56) [13.48] ft3/hr (gal/hr) [L/hr]."
+    ],
+    "relevantChunkIds": [
+      "product_11:14"
+    ]
+  },
+  {
+    "id": "question-028",
+    "question": "How much natural gas does Generac model G007042-10 consume at half load?",
+    "referenceAnswer": "At half load, model G007042-10 consumes 228 (6.46) ft³/hr (m³/hr) of natural gas.",
+    "requiredClaims": [
+      "The fuel is Natural Gas.",
+      "The operating condition is half load.",
+      "Model G007042-10's consumption is 228 (6.46) ft³/hr (m³/hr)."
+    ],
+    "relevantChunkIds": [
+      "product_12:33"
+    ]
+  },
+  {
+    "id": "question-029",
+    "question": "How much liquid propane does Generac model G007038-1 consume at full load?",
+    "referenceAnswer": "At full load, model G007038-1 consumes 130 (3.56) [13.48] ft3/hr (gal/hr) [L/hr] of liquid propane.",
+    "requiredClaims": [
+      "The fuel is Liquid Propane.",
+      "The operating condition is full load.",
+      "Model G007038-1's consumption is 130 (3.56) [13.48] ft3/hr (gal/hr) [L/hr]."
+    ],
+    "relevantChunkIds": [
+      "product_14:36"
+    ]
+  },
+  {
+    "id": "question-030",
+    "question": "How much natural gas does Generac model G007038-3 consume at half load?",
+    "referenceAnswer": "At half load, model G007038-3 consumes 164 (4.64) ft³/hr (m³/hr) of natural gas.",
+    "requiredClaims": [
+      "The fuel is Natural Gas.",
+      "The operating condition is half load.",
+      "Model G007038-3's consumption is 164 (4.64) ft³/hr (m³/hr)."
+    ],
+    "relevantChunkIds": [
+      "product_16:36"
+    ]
+  },
+  {
+    "id": "question-031",
+    "question": "How much liquid propane does Generac model G007291-0 consume at full load?",
+    "referenceAnswer": "At full load, model G007291-0 consumes 132 (3.63) [13.73] ft3/hr (gal/hr) [L/hr] of liquid propane.",
+    "requiredClaims": [
+      "The fuel is Liquid Propane.",
+      "The operating condition is full load.",
+      "Model G007291-0's consumption is 132 (3.63) [13.73] ft3/hr (gal/hr) [L/hr]."
+    ],
+    "relevantChunkIds": [
+      "product_18:18"
+    ]
+  },
+  {
+    "id": "question-032",
+    "question": "How much natural gas does Generac model G007177-0 consume at half load?",
+    "referenceAnswer": "At half load, model G007177-0 consumes 182 (5.15) ft³/hr (m³/hr) of natural gas.",
+    "requiredClaims": [
+      "The fuel is Natural Gas.",
+      "The operating condition is half load.",
+      "Model G007177-0's consumption is 182 (5.15) ft³/hr (m³/hr)."
+    ],
+    "relevantChunkIds": [
+      "product_2:35"
+    ]
+  },
+  {
+    "id": "question-033",
+    "question": "How much liquid propane does Generac model G007171-0 consume at full load?",
+    "referenceAnswer": "At full load, model G007171-0 consumes 54 (1.48) [5.62] ft3/hr (gal/hr) [L/hr] of liquid propane.",
+    "requiredClaims": [
+      "The fuel is Liquid Propane.",
+      "The operating condition is full load.",
+      "Model G007171-0's consumption is 54 (1.48) [5.62] ft3/hr (gal/hr) [L/hr]."
+    ],
+    "relevantChunkIds": [
+      "product_3:33"
+    ]
+  },
+  {
+    "id": "question-034",
+    "question": "Compare the Rated Maximum Power Capacity—LP (ESP) of Generac models G007144-0 and G007145-0.",
+    "referenceAnswer": "Model G007144-0 is 8,000 VA*, while model G007145-0 is 10,000 VA* for Rated Maximum Power Capacity—LP (ESP).",
+    "requiredClaims": [
+      "Model G007144-0 has Rated Maximum Power Capacity—LP (ESP) of 8,000 VA*.",
+      "Model G007145-0 has Rated Maximum Power Capacity—LP (ESP) of 10,000 VA*."
+    ],
+    "relevantChunkIds": [
+      "product_1:13",
+      "product_1:14"
+    ]
+  },
+  {
+    "id": "question-035",
+    "question": "Compare the Rated maximum continuous power capacity (NG) of Generac models G007038-1 and G007039-1.",
+    "referenceAnswer": "Model G007038-1 is 18,000 Watts*, while model G007039-1 is 18,000 Watts* for Rated maximum continuous power capacity (NG).",
+    "requiredClaims": [
+      "Model G007038-1 has Rated maximum continuous power capacity (NG) of 18,000 Watts*.",
+      "Model G007039-1 has Rated maximum continuous power capacity (NG) of 18,000 Watts*."
+    ],
+    "relevantChunkIds": [
+      "product_12:11",
+      "product_12:12"
+    ]
+  },
+  {
+    "id": "question-036",
+    "question": "Compare the Rated voltage of Generac models G007035-1 and G007036-1.",
+    "referenceAnswer": "Model G007035-1 is 240, while model G007036-1 is 240 for Rated voltage.",
+    "requiredClaims": [
+      "Model G007035-1 has Rated voltage of 240.",
+      "Model G007036-1 has Rated voltage of 240."
+    ],
+    "relevantChunkIds": [
+      "product_14:12",
+      "product_14:13"
+    ]
+  },
+  {
+    "id": "question-037",
+    "question": "Compare the Main line circuit breaker of Generac models G007038-1 and G007039-1.",
+    "referenceAnswer": "Model G007038-1 is 90 amp, while model G007039-1 is 90 amp for Main line circuit breaker.",
+    "requiredClaims": [
+      "Model G007038-1 has Main line circuit breaker of 90 amp.",
+      "Model G007039-1 has Main line circuit breaker of 90 amp."
+    ],
+    "relevantChunkIds": [
+      "product_16:12",
+      "product_16:13"
+    ]
+  },
+  {
+    "id": "question-038",
+    "question": "Compare the Unit weight (lb/kg) of Generac models G007171-0 and G007172-0.",
+    "referenceAnswer": "Model G007171-0 is 338/153, while model G007172-0 is 338/153 for Unit weight (lb/kg).",
+    "requiredClaims": [
+      "Model G007171-0 has Unit weight (lb/kg) of 338/153.",
+      "Model G007172-0 has Unit weight (lb/kg) of 338/153."
+    ],
+    "relevantChunkIds": [
+      "product_2:13",
+      "product_2:14"
+    ]
+  },
+  {
+    "id": "question-039",
+    "question": "What does the INNOVATIVE ENGINE DESIGN & RIGOROUS TESTING feature do on Generac model G007144-0?",
+    "referenceAnswer": "are at the heart of Generac's success in providing the most reliable generators possible. Generac's G-Force engine lineup offers added peace of mind and reliability for when you need it the most. The G-Force series engines are purpose built and designed to handle the rigors of extended run times in high temperatures and extreme operating conditions.",
+    "requiredClaims": [
+      "are at the heart of Generac's success in providing the most reliable generators possible. Generac's G-Force engine lineup offers added peace of mind and reliability for when you need it the most. The G-Force series engines are purpose built and designed to handle the rigors of extended run times in high temperatures and extreme operating conditions."
+    ],
+    "relevantChunkIds": [
+      "product_1:3"
+    ]
+  },
+  {
+    "id": "question-040",
+    "question": "What does the INNOVATIVE ENGINE DESIGN & RIGOROUS TESTING feature do on Generac model G007077-1?",
+    "referenceAnswer": "are at the heart of Generac's success in providing the most reliable generators possible. Generac's GForce engine lineup offers added peace of mind and reliability for when it's needed the most. The G-Force series engines are purpose built and designed to handle the rigors of extended run times in high temperatures and extreme operating conditions.",
+    "requiredClaims": [
+      "are at the heart of Generac's success in providing the most reliable generators possible. Generac's GForce engine lineup offers added peace of mind and reliability for when it's needed the most. The G-Force series engines are purpose built and designed to handle the rigors of extended run times in high temperatures and extreme operating conditions."
+    ],
+    "relevantChunkIds": [
+      "product_11:2"
+    ]
+  },
+  {
+    "id": "question-041",
+    "question": "What does the SOLID-STATE, FREQUENCY COMPENSATED VOLTAGE REGULATION feature do on Generac model G007038-1?",
+    "referenceAnswer": "This state-of-the-art power maximizing regulation system is standard on all Generac models. It provides optimized FAST RESPONSE to changing load conditions and MAXIMUM MOTOR STARTING CAPABILITY by electronically torque-matching the surge loads to the engine. Digital voltage regulation at ±1%.",
+    "requiredClaims": [
+      "This state-of-the-art power maximizing regulation system is standard on all Generac models. It provides optimized FAST RESPONSE to changing load conditions and MAXIMUM MOTOR STARTING CAPABILITY by electronically torque-matching the surge loads to the engine. Digital voltage regulation at ±1%."
+    ],
+    "relevantChunkIds": [
+      "product_12:3"
+    ]
+  },
+  {
+    "id": "question-042",
+    "question": "What does the Two transfer switch options available feature do on Generac model G007035-1?",
+    "referenceAnswer": "100 amp, 16 circuit switch or 200 amp service rated smart switch",
+    "requiredClaims": [
+      "100 amp, 16 circuit switch or 200 amp service rated smart switch"
+    ],
+    "relevantChunkIds": [
+      "product_14:1"
+    ]
+  },
+  {
+    "id": "question-043",
+    "question": "What does the TRUE POWER™ ELECTRICAL TECHNOLOGY feature do on Generac model G007038-1?",
+    "referenceAnswer": "Superior harmonics and sine wave form produce less than 5% Total Harmonic Distortion for utility quality power. This allows confident operation of sensitive electronic equipment and micro-chip based appliances, such as variable speed HVAC systems.",
+    "requiredClaims": [
+      "Superior harmonics and sine wave form produce less than 5% Total Harmonic Distortion for utility quality power. This allows confident operation of sensitive electronic equipment and micro-chip based appliances, such as variable speed HVAC systems."
+    ],
+    "relevantChunkIds": [
+      "product_16:4"
+    ]
+  },
+  {
+    "id": "question-044",
+    "question": "Which Battery Pad Warmer is listed for Generac model G007144-0, and what is it used for?",
+    "referenceAnswer": "For model G007144-0, the listed Battery Pad Warmer is G007101-0. The pad warmer rests under the battery. Recommended for use if the temperature regularly falls below -18°C (0°F). (Not necessary for use with AGM-style batteries).",
+    "requiredClaims": [
+      "The listed accessory model is G007101-0.",
+      "The pad warmer rests under the battery. Recommended for use if the temperature regularly falls below -18°C (0°F). (Not necessary for use with AGM-style batteries)."
+    ],
+    "relevantChunkIds": [
+      "product_1:28"
+    ]
+  },
+  {
+    "id": "question-045",
+    "question": "Which 26R Wet Cell Battery is listed for Generac model G007077-1, and what is it used for?",
+    "referenceAnswer": "For model G007077-1, the listed 26R Wet Cell Battery is G005819-0. Every standby generator requires a battery to start the system. Generac offers the recommended 26R wet cell battery for use with all air-cooled standby product.",
+    "requiredClaims": [
+      "The listed accessory model is G005819-0.",
+      "Every standby generator requires a battery to start the system. Generac offers the recommended 26R wet cell battery for use with all air-cooled standby product."
+    ],
+    "relevantChunkIds": [
+      "product_11:16"
+    ]
+  },
+  {
+    "id": "question-046",
+    "question": "Which Battery Pad Warmer is listed for Generac model G007038-1, and what is it used for?",
+    "referenceAnswer": "For model G007038-1, the listed Battery Pad Warmer is G007101-0. Pad warmer rests under the battery. Recommended for use if temperature regularly falls below 0 °F (-18 °C). (Not necessary for use with AGM-style batteries).",
+    "requiredClaims": [
+      "The listed accessory model is G007101-0.",
+      "Pad warmer rests under the battery. Recommended for use if temperature regularly falls below 0 °F (-18 °C). (Not necessary for use with AGM-style batteries)."
+    ],
+    "relevantChunkIds": [
+      "product_12:66"
+    ]
+  },
+  {
+    "id": "question-047",
+    "question": "Which 26R Wet Cell Battery is listed for Generac model G007035-1, and what is it used for?",
+    "referenceAnswer": "For model G007035-1, the listed 26R Wet Cell Battery is G005819-0. Every standby generator requires a battery to start the system. Generac offers the recommended 26R wet cell batter for use with all air-cooled standby product (excluding PowerPact™).",
+    "requiredClaims": [
+      "The listed accessory model is G005819-0.",
+      "Every standby generator requires a battery to start the system. Generac offers the recommended 26R wet cell batter for use with all air-cooled standby product (excluding PowerPact™)."
+    ],
+    "relevantChunkIds": [
+      "product_14:58"
+    ]
+  },
+  {
+    "id": "question-048",
+    "question": "What technical guidance is provided about Minimum installation distance for Generac model G007144-0?",
+    "referenceAnswer": "*Must be located away from doors, windows, and fresh air intakes and in accordance with local codes.",
+    "requiredClaims": [
+      "*Must be located away from doors, windows, and fresh air intakes and in accordance with local codes."
+    ],
+    "relevantChunkIds": [
+      "product_1:1"
+    ]
+  },
+  {
+    "id": "question-049",
+    "question": "What technical guidance is provided about Fuel consumption for Generac model G007077-1?",
+    "referenceAnswer": "Note: Fuel pipe must be sized for full load. Required fuel pressure to generator fuel inlet at all load ranges - 3.5–7 in water column (0.87–1.74 kPa) for NG, 10–12 in water column (2.49–2.99 kPa) for LP gas. For BTU content, multiply ft3/hr x 2500 (LP) or ft3/hr x 1000 (NG). For Megajoule content, multiply m³/hr x 93.15 (LP) or m³/hr x 37.26 (NG).",
+    "requiredClaims": [
+      "Note: Fuel pipe must be sized for full load. Required fuel pressure to generator fuel inlet at all load ranges - 3.5–7 in water column (0.87–1.74 kPa) for NG, 10–12 in water column (2.49–2.99 kPa) for LP gas. For BTU content, multiply ft3/hr x 2500 (LP) or ft3/hr x 1000 (NG). For Megajoule content, multiply m³/hr x 93.15 (LP) or m³/hr x 37.26 (NG)."
+    ],
+    "relevantChunkIds": [
+      "product_11:13"
+    ]
+  },
+  {
+    "id": "question-050",
+    "question": "What technical guidance is provided about Product certification for Generac model G007038-1?",
+    "referenceAnswer": "Note: CETL or CUL certification only applies to unbundled units and units packaged with limited circuit switches. Units packaged with the Smart Switch are ETL or UL certified in the USA only.",
+    "requiredClaims": [
+      "Note: CETL or CUL certification only applies to unbundled units and units packaged with limited circuit switches. Units packaged with the Smart Switch are ETL or UL certified in the USA only."
+    ],
+    "relevantChunkIds": [
+      "product_12:79"
+    ]
+  }
+]
