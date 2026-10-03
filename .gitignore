@@ -36,6 +36,3 @@ build/
 /config/application-local.properties
 /.env
 
-## Data
-/data/raw/
-/data/processed/

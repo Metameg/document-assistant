@@ -1,0 +1,1506 @@
+{
+  "schemaVersion": "1.3",
+  "documentId": "product_11",
+  "sourceFile": "product_11.pdf",
+  "documentType": "generator_spec_sheet",
+  "pageCount": 5,
+  "models": [
+    "G007077-1"
+  ],
+  "revision": {
+    "partNumber": "10000003872",
+    "revision": "K",
+    "publicationDate": "10/13/2022",
+    "copyrightYear": 2022
+  },
+  "sections": [
+    {
+      "title": "Overview",
+      "pageNumber": 1,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p1.overview.paragraph.20-kw",
+          "type": "paragraph",
+          "text": "20 kW",
+          "pageNumber": 1
+        }
+      ]
+    },
+    {
+      "title": "INCLUDES:",
+      "pageNumber": 1,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p1.includes.list-item.true-power-electrical-technology",
+          "type": "list_item",
+          "text": "True Power™ Electrical Technology",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.includes.list-item.two-line-multilingual-digital-lcd-evolution-controller-english-spanish-french",
+          "type": "list_item",
+          "text": "Two-line multilingual digital LCD Evolution™ controller (English/Spanish/French/Portuguese)",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.includes.list-item.electronic-governor",
+          "type": "list_item",
+          "text": "Electronic governor",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.includes.list-item.system-status-maintenance-interval-led-indicators",
+          "type": "list_item",
+          "text": "System status & maintenance interval LED indicators",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.includes.list-item.standard-wi-fi-connectivity-available-on-1-models",
+          "type": "list_item",
+          "text": "Standard Wi-Fi™ connectivity available on -1 models",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.includes.list-item.sound-attenuated-enclosure",
+          "type": "list_item",
+          "text": "Sound attenuated enclosure",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.includes.list-item.flexible-fuel-line-connector",
+          "type": "list_item",
+          "text": "Flexible fuel line connector",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.includes.list-item.natural-gas-or-lp-gas-operation",
+          "type": "list_item",
+          "text": "Natural gas or LP gas operation",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.includes.list-item.5-year-limited-warranty",
+          "type": "list_item",
+          "text": "5 Year limited warranty",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.includes.list-item.listed-and-labeled-for-installation-as-close-as-18-in-457-mm-to-a-structure",
+          "type": "list_item",
+          "text": "Listed and labeled for installation as close as 18 in (457 mm) to a structure.* *Must be located away from doors, windows, and fresh air intakes and in accordance with local codes.",
+          "pageNumber": 1
+        }
+      ]
+    },
+    {
+      "title": "FEATURES",
+      "pageNumber": 1,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p1.features.feature.innovative-engine-design-rigorous-testing",
+          "type": "feature",
+          "name": "INNOVATIVE ENGINE DESIGN & RIGOROUS TESTING",
+          "description": "are at the heart of Generac's success in providing the most reliable generators possible. Generac's GForce engine lineup offers added peace of mind and reliability for when it's needed the most. The G-Force series engines are purpose built and designed to handle the rigors of extended run times in high temperatures and extreme operating conditions.",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.features.feature.true-power-electrical-technology",
+          "type": "feature",
+          "name": "TRUE POWER™ ELECTRICAL TECHNOLOGY",
+          "description": "Superior harmonics and sine wave form produce less than 5% Total Harmonic Distortion for utility quality power. This allows confident operation of sensitive electronic equipment and micro-chip based appliances, such as variable speed HVAC systems.",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.features.list-item.test-criteria",
+          "type": "list_item",
+          "text": "TEST CRITERIA:",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.features.feature.mobile-link-connectivity",
+          "type": "feature",
+          "name": "MOBILE LINK™ CONNECTIVITY",
+          "description": "FREE with select Guardian Series Home standby generators, Mobile Link Wi-Fi allows users to monitor the status of the generator from anywhere in the world using a smartphone, tablet, or PC. Easily access information such as the current operating status and maintenance alerts. Users can connect an account to an authorized service dealer for fast, friendly, and proactive service. With Mobile Link, users are taken care of before the next power outage.",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.features.list-item.prototype-tested",
+          "type": "list_item",
+          "text": "PROTOTYPE TESTED",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.features.list-item.system-torsional-tested",
+          "type": "list_item",
+          "text": "SYSTEM TORSIONAL TESTED",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.features.list-item.nema-mg1-22-evaluation-motor-starting-ability",
+          "type": "list_item",
+          "text": "NEMA MG1-22 EVALUATION MOTOR STARTING ABILITY",
+          "pageNumber": 1
+        }
+      ]
+    },
+    {
+      "title": "GUARDIAN ® SERIES",
+      "pageNumber": 1,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p1.guardian-series.paragraph.residential-commercial-standby-generators-air-cooled-gas-engine",
+          "type": "paragraph",
+          "text": "Residential & Commercial Standby Generators Air-Cooled Gas Engine",
+          "pageNumber": 1
+        }
+      ]
+    },
+    {
+      "title": "Standby Power Rating",
+      "pageNumber": 1,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p1.standby-power-rating.paragraph.g007077-1-aluminum-bisque-20-kw-60-hz",
+          "type": "paragraph",
+          "text": "G007077-1 (Aluminum - Bisque) - 20 kW 60 Hz",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.standby-power-rating.paragraph.or",
+          "type": "paragraph",
+          "text": "or",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.standby-power-rating.feature.solid-state-frequency-compensated-voltage-regulation",
+          "type": "feature",
+          "name": "SOLID-STATE, FREQUENCY COMPENSATED VOLTAGE REGULATION",
+          "description": "This state-of-the-art power maximizing regulation system is standard on all Generac models. It provides optimized FAST RESPONSE to changing load conditions and MAXIMUM MOTOR STARTING CAPABILITY by electronically torque-matching the surge loads to the engine. Digital voltage regulation at ±1%.",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.standby-power-rating.feature.single-source-service-response",
+          "type": "feature",
+          "name": "SINGLE SOURCE SERVICE RESPONSE",
+          "description": "from Generac's extensive dealer network provides parts and service know-how for the entire unit, from the engine to the smallest electronic component.",
+          "pageNumber": 1
+        },
+        {
+          "elementId": "p1.standby-power-rating.feature.generac-transfer-switches",
+          "type": "feature",
+          "name": "GENERAC TRANSFER SWITCHES",
+          "description": "Long life and reliability are synonymous with GENERAC POWER SYSTEMS. One reason for this confidence is that the GENERAC product line is offered with its own transfer systems and controls for total system compatibility.",
+          "pageNumber": 1
+        }
+      ]
+    },
+    {
+      "title": "Engine",
+      "pageNumber": 2,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p2.engine.list-item.generac-g-force-design",
+          "type": "list_item",
+          "text": "Generac G-Force design",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.engine.list-item.quiet-test",
+          "type": "list_item",
+          "text": "Quiet-Test™",
+          "pageNumber": 2
+        }
+      ]
+    },
+    {
+      "title": "Features and Benefits",
+      "pageNumber": 2,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p2.features-and-benefits.feature.spiny-lok-cast-iron-cylinder-walls",
+          "type": "feature",
+          "name": "'Spiny-lok' cast iron cylinder walls",
+          "description": "Maximizes engine 'breathing' for increased fuel efficiency. Plateau honed cylinder walls and plasma moly rings help the engine run cooler, reducing oil consumption and resulting in longer engine life. Greatly reduces sound output and fuel consumption during bi-weekly exercise. Rigid construction and added durability provide long engine life.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.features-and-benefits.feature.electronic-ignition-spark-advance",
+          "type": "feature",
+          "name": "Electronic ignition/spark advance",
+          "description": "These features combine to assure smooth, quick starting every time.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.features-and-benefits.feature.full-pressure-lubrication-system",
+          "type": "feature",
+          "name": "Full pressure lubrication system",
+          "description": "Pressurized lubrication to all vital bearings means better performance, less maintenance, and longer engine life. Now featuring up to a 2 year/200 hour oil change interval.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.features-and-benefits.feature.low-oil-pressure-shutdown-system",
+          "type": "feature",
+          "name": "Low oil pressure shutdown system",
+          "description": "Shutdown protection prevents catastrophic engine damage due to low oil.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.features-and-benefits.feature.high-temperature-shutdown",
+          "type": "feature",
+          "name": "High temperature shutdown",
+          "description": "Prevents damage due to overheating.",
+          "pageNumber": 2
+        }
+      ]
+    },
+    {
+      "title": "Generator",
+      "pageNumber": 2,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p2.generator.feature.revolving-field",
+          "type": "feature",
+          "name": "Revolving field",
+          "description": "Allows for a smaller, light weight unit that operates 25% more efficiently than a revolving armature generator.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.generator.feature.skewed-stator",
+          "type": "feature",
+          "name": "Skewed stator",
+          "description": "Produces a smooth output waveform for compatibility with electronic equipment.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.generator.feature.displaced-phase-excitation",
+          "type": "feature",
+          "name": "Displaced phase excitation",
+          "description": "Maximizes motor starting capability.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.generator.feature.automatic-voltage-regulation",
+          "type": "feature",
+          "name": "Automatic voltage regulation",
+          "description": "Regulating output voltage to ±1% prevents damaging voltage spikes.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.generator.feature.ul-2200-listed",
+          "type": "feature",
+          "name": "UL 2200 listed",
+          "description": "For your safety.",
+          "pageNumber": 2
+        }
+      ]
+    },
+    {
+      "title": "Evolution™ Controls",
+      "pageNumber": 2,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p2.evolution-controls.feature.auto-manual-off-illuminated-buttons",
+          "type": "feature",
+          "name": "AUTO/MANUAL/OFF illuminated buttons",
+          "description": "Selects the operating mode and provides easy, at-a-glance status indication in any condition.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.evolution-controls.feature.two-line-multilingual-lcd",
+          "type": "feature",
+          "name": "Two-line multilingual LCD",
+          "description": "Provides homeowners easily visible logs of history, maintenance, and events up to 50 occurrences.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.evolution-controls.feature.sealed-raised-buttons",
+          "type": "feature",
+          "name": "Sealed, raised buttons",
+          "description": "Smooth, weather-resistant user interface for programming and operations.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.evolution-controls.feature.utility-voltage-sensing",
+          "type": "feature",
+          "name": "Utility voltage sensing",
+          "description": "Constantly monitors utility voltage, defaults 132 V dropout, 175 V pick up.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.evolution-controls.feature.generator-voltage-sensing",
+          "type": "feature",
+          "name": "Generator voltage sensing",
+          "description": "Constantly monitors generator voltage to ensure the cleanest power delivered to the home.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.evolution-controls.feature.utility-interrupt-delay",
+          "type": "feature",
+          "name": "Utility interrupt delay",
+          "description": "Prevents nuisance start-ups of the engine, adjustable 2-1500 seconds from the factory default setting of 5 seconds by a qualified dealer.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.evolution-controls.feature.engine-warm-up",
+          "type": "feature",
+          "name": "Engine warm-up",
+          "description": "Verifies engine is ready to assume the load, setpoint approximately 5 seconds.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.evolution-controls.feature.engine-cool-down",
+          "type": "feature",
+          "name": "Engine cool-down",
+          "description": "Allows engine to cool prior to shutdown, setpoint approximately 1 minute.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.evolution-controls.feature.programmable-exercise",
+          "type": "feature",
+          "name": "Programmable exercise",
+          "description": "Operates engine to prevent oil seal drying and damage between power outages by running the generator for 5 minutes every other week. Also offers a selectable setting for weekly or monthly operation providing flexibility and potentially lower fuel costs to the owner.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.evolution-controls.feature.smart-battery-charger",
+          "type": "feature",
+          "name": "Smart battery charger",
+          "description": "Delivers charge to the battery only when needed at varying rates depending on outdoor air temperature. Compatible with lead acid and AGM-style batteries.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.evolution-controls.feature.electronic-governor",
+          "type": "feature",
+          "name": "Electronic governor",
+          "description": "Maintains constant 60 Hz frequency.",
+          "pageNumber": 2
+        }
+      ]
+    },
+    {
+      "title": "Unit",
+      "pageNumber": 2,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p2.unit.feature.sae-weather-protective-enclosure",
+          "type": "feature",
+          "name": "SAE weather protective enclosure",
+          "description": "Sound attenuated enclosures ensure quiet operation and protection against mother nature, withstanding winds up to 150 mph (241 km/h). Hinged key locking roof panel for security. Lift-out front for easy access to all routine maintenance items. Electrostatically applied textured epoxy paint for added durability.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.unit.feature.enclosed-critical-grade-muffler",
+          "type": "feature",
+          "name": "Enclosed critical grade muffler",
+          "description": "Quiet, critical grade muffler is mounted inside the unit to prevent injuries.",
+          "pageNumber": 2
+        },
+        {
+          "elementId": "p2.unit.feature.small-compact-attractive",
+          "type": "feature",
+          "name": "Small, compact, attractive",
+          "description": "Makes for an easy, eye appealing installation, as close as 18 in (457 mm) away from a structure.",
+          "pageNumber": 2
+        }
+      ]
+    },
+    {
+      "title": "Installation System",
+      "pageNumber": 3,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p3.installation-system.feature.14-in-35-6-cm-flexible-fuel-line-connector",
+          "type": "feature",
+          "name": "14 in (35.6 cm) flexible fuel line connector",
+          "description": "Listed ANSI Z21.75/CSA 6.27 outdoor appliance connector for the required connection to the gas supply piping.",
+          "pageNumber": 3
+        },
+        {
+          "elementId": "p3.installation-system.feature.integral-sediment-trap",
+          "type": "feature",
+          "name": "Integral sediment trap",
+          "description": "Meets IFGC and NFPA 54 installation requirements.",
+          "pageNumber": 3
+        }
+      ]
+    },
+    {
+      "title": "Generator",
+      "pageNumber": 4,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p4.generator.specification.rated-maximum-continuous-power-capacity-lp",
+          "type": "specification",
+          "name": "Rated maximum continuous power capacity (LP)",
+          "units": [
+            "W"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "20,000 Watts*"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.generator.specification.rated-maximum-continuous-power-capacity-ng",
+          "type": "specification",
+          "name": "Rated maximum continuous power capacity (NG)",
+          "units": [
+            "W"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "17,000 Watts*"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.generator.specification.rated-voltage",
+          "type": "specification",
+          "name": "Rated voltage",
+          "units": [
+            "V"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "208"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.generator.specification.rated-maximum-continuous-load-current-208-volts-lp-ng",
+          "type": "specification",
+          "name": "Rated maximum continuous load current – 208 volts (LP / NG)",
+          "units": [
+            "A"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "69.4 / 59.0"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.generator.specification.total-harmonic-distortion",
+          "type": "specification",
+          "name": "Total harmonic distortion",
+          "units": [
+            "%"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Less than 5%"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.generator.specification.main-line-circuit-breaker",
+          "type": "specification",
+          "name": "Main line circuit breaker",
+          "units": [
+            "A"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "80 amp"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.generator.specification.phase",
+          "type": "specification",
+          "name": "Phase",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "3"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.generator.specification.number-of-rotor-poles",
+          "type": "specification",
+          "name": "Number of rotor poles",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "2"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.generator.specification.rated-ac-frequency",
+          "type": "specification",
+          "name": "Rated AC frequency",
+          "units": [
+            "Hz"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "60 Hz"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.generator.specification.power-factor",
+          "type": "specification",
+          "name": "Power factor",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "0.8"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.generator.specification.battery-requirement-not-included",
+          "type": "specification",
+          "name": "Battery requirement (not included)",
+          "units": [
+            "V",
+            "CCA"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "12 volts, Group 26R 540 CCA minimum or Group 35AGM 650 CCA minimum"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.generator.specification.unit-weight-lb-kg",
+          "type": "specification",
+          "name": "Unit weight (lb / kg)",
+          "units": [
+            "lb",
+            "kg"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "466 / 211"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.generator.specification.dimensions-l-x-w-x-h-in-cm",
+          "type": "specification",
+          "name": "Dimensions (L x W x H) in / cm",
+          "units": [
+            "in",
+            "cm"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "48 x 25 x 29 / 121.8 x 63.8 x 73.2"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.generator.specification.sound-output-in-db-a-at-23-ft-7-m-with-generator-operating-at-normal-load",
+          "type": "specification",
+          "name": "Sound output in dB(A) at 23 ft (7 m) with generator operating at normal load**",
+          "units": [
+            "dB(A)"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "67"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.generator.specification.sound-output-in-db-a-at-23-ft-7-m-with-generator-in-quiet-test-low-speed-exercise-mode",
+          "type": "specification",
+          "name": "Sound output in dB(A) at 23 ft (7 m) with generator in Quiet-Test™ low-speed exercise mode**",
+          "units": [
+            "dB(A)"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "58"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.generator.specification.exercise-duration",
+          "type": "specification",
+          "name": "Exercise duration",
+          "units": [
+            "min"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "5 min"
+          },
+          "pageNumber": 4
+        }
+      ]
+    },
+    {
+      "title": "Engine",
+      "pageNumber": 4,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p4.engine.specification.engine-type",
+          "type": "specification",
+          "name": "Engine type",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "GENERAC G-Force 1000 Series"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.engine.specification.number-of-cylinders",
+          "type": "specification",
+          "name": "Number of cylinders",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "2"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.engine.specification.displacement",
+          "type": "specification",
+          "name": "Displacement",
+          "units": [
+            "cc"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "999 cc"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.engine.specification.cylinder-block",
+          "type": "specification",
+          "name": "Cylinder block",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Aluminum w/ cast iron sleeve"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.engine.specification.valve-arrangement",
+          "type": "specification",
+          "name": "Valve arrangement",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Overhead valve"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.engine.specification.ignition-system",
+          "type": "specification",
+          "name": "Ignition system",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Solid-state w/ magneto"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.engine.specification.governor-system",
+          "type": "specification",
+          "name": "Governor system",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Electronic"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.engine.specification.compression-ratio",
+          "type": "specification",
+          "name": "Compression ratio",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "9.5:1"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.engine.specification.starter",
+          "type": "specification",
+          "name": "Starter",
+          "units": [
+            "VDC"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "12 VDC"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.engine.specification.oil-capacity-including-filter",
+          "type": "specification",
+          "name": "Oil capacity including filter",
+          "units": [
+            "qt",
+            "L"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Approx. 1.9 qt / 1.8 L"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.engine.specification.operating-rpm",
+          "type": "specification",
+          "name": "Operating rpm",
+          "units": [
+            "rpm"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "3,600"
+          },
+          "pageNumber": 4
+        }
+      ]
+    },
+    {
+      "title": "Fuel Consumption",
+      "pageNumber": 4,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p4.fuel-consumption.fuel-consumption.natural-gas",
+          "type": "fuel_consumption",
+          "fuelType": "Natural Gas",
+          "units": "ft³/hr (m³/hr)",
+          "measurementsByModel": {
+            "G007077-1": {
+              "halfLoad": "219 (6.20)",
+              "fullLoad": "307 (8.69)"
+            }
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.fuel-consumption.fuel-consumption.liquid-propane",
+          "type": "fuel_consumption",
+          "fuelType": "Liquid Propane",
+          "units": "ft3/hr (gal/hr) [L/hr]",
+          "measurementsByModel": {
+            "G007077-1": {
+              "halfLoad": "87 (2.39) [9.03]",
+              "fullLoad": "130 (3.56) [13.48]"
+            }
+          },
+          "pageNumber": 4
+        }
+      ]
+    },
+    {
+      "title": "Technical Notes",
+      "pageNumber": 4,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p4.technical-notes.technical-note.fuel-consumption",
+          "type": "technical_note",
+          "text": "Note: Fuel pipe must be sized for full load. Required fuel pressure to generator fuel inlet at all load ranges - 3.5–7 in water column (0.87–1.74 kPa) for NG, 10–12 in water column (2.49–2.99 kPa) for LP gas. For BTU content, multiply ft3/hr x 2500 (LP) or ft3/hr x 1000 (NG). For Megajoule content, multiply m³/hr x 93.15 (LP) or m³/hr x 37.26 (NG).",
+          "subject": "Fuel consumption",
+          "qualifiesElementIds": [
+            "p4.fuel-consumption.fuel-consumption.natural-gas",
+            "p4.fuel-consumption.fuel-consumption.liquid-propane"
+          ],
+          "applicability": null,
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.technical-notes.technical-note.specification-qualifications",
+          "type": "technical_note",
+          "text": "Rating definitions - Optional Standby: Applicable for supplying backup power for the duration of the utility power outage with correct maintenance performed. No overload capability is available for this rating. (All ratings in accordance with BS5514, ISO3046, UL2200, and DIN6271). * Maximum kilovolt amps and current are subject to and limited by such factors as fuel BTU/megajoule content, ambient temperature, altitude, engine power and condition, etc. Maximum power decreases approximately 3.5% for each 1,000 ft (304.8 m) above sea level; and also will decrease approximately 1% for each 10 °F (6 °C) above 60 °F (16 °C). **Sound levels are taken from the front of the generator. Sound levels taken from other sides of the generator may be higher depending on installation parameters.",
+          "subject": "Specification qualifications",
+          "qualifiesElementIds": [
+            "p4.generator.specification.rated-maximum-continuous-power-capacity-lp",
+            "p4.generator.specification.rated-maximum-continuous-power-capacity-ng",
+            "p4.generator.specification.sound-output-in-db-a-at-23-ft-7-m-with-generator-operating-at-normal-load",
+            "p4.generator.specification.sound-output-in-db-a-at-23-ft-7-m-with-generator-in-quiet-test-low-speed-exercise-mode"
+          ],
+          "applicability": null,
+          "pageNumber": 4
+        }
+      ]
+    },
+    {
+      "title": "Controls",
+      "pageNumber": 4,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p4.controls.specification.two-line-plain-text-multilingual-lcd",
+          "type": "specification",
+          "name": "Two-line plain text multilingual LCD",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Simple user interface for ease of operation."
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.mode-buttons-auto",
+          "type": "specification",
+          "name": "Mode buttons: AUTO",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Automatic start on utility failure. 7 day exerciser."
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.manual",
+          "type": "specification",
+          "name": "MANUAL",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Start with starter control, unit stays on. If utility fails, transfer to load takes place."
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.off",
+          "type": "specification",
+          "name": "OFF",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Stops unit. Power is removed. Control and charger still operate."
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.ready-to-run-maintenance-messages",
+          "type": "specification",
+          "name": "Ready to Run/Maintenance messages",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Standard"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.engine-run-hours-indication",
+          "type": "specification",
+          "name": "Engine Run Hours indication",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Standard"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.programmable-start-delay-between-2-1500-seconds",
+          "type": "specification",
+          "name": "Programmable start delay between 2–1500 seconds",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Standard (programmable by dealer only)"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.utility-voltage-loss-return-to-utility-adjustable-brownout-setting",
+          "type": "specification",
+          "name": "Utility Voltage Loss/Return to Utility adjustable (brownout setting)",
+          "units": [
+            "V"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "From 121-148 V/175-187 V"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.future-set-capable-exerciser-exercise-set-error-warning",
+          "type": "specification",
+          "name": "Future Set Capable Exerciser/Exercise Set Error warning",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Standard"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.run-alarm-maintenance-logs",
+          "type": "specification",
+          "name": "Run/Alarm/Maintenance logs",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "50 events each"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.engine-start-sequence",
+          "type": "specification",
+          "name": "Engine start sequence",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Cyclic cranking: 16 sec on, 7 rest (90 sec maximum duration)."
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.starter-lock-out",
+          "type": "specification",
+          "name": "Starter lock-out",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Starter cannot re-engage until 5 sec after engine has stopped."
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.smart-battery-charger",
+          "type": "specification",
+          "name": "Smart Battery Charger",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Standard"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.charger-fault-missing-ac-warning",
+          "type": "specification",
+          "name": "Charger Fault/Missing AC warning",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Standard"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.low-battery-battery-problem-protection-and-battery-condition-indication",
+          "type": "specification",
+          "name": "Low Battery/Battery Problem Protection and Battery Condition indication",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Standard"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.automatic-voltage-regulation-with-over-and-under-voltage-protection",
+          "type": "specification",
+          "name": "Automatic voltage regulation with over and under voltage protection",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Standard"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.under-frequency-overload-stepper-overcurrent-protection",
+          "type": "specification",
+          "name": "Under-Frequency/Overload/Stepper Overcurrent protection",
+          "units": [
+            "Hz"
+          ],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Standard"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.safety-fused-fuse-problem-protection",
+          "type": "specification",
+          "name": "Safety Fused/Fuse Problem protection",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Standard"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.automatic-low-oil-pressure-high-oil-temperature-shutdown",
+          "type": "specification",
+          "name": "Automatic Low Oil Pressure/High Oil Temperature Shutdown",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Standard"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.overcrank-overspeed-72-hz-rpm-sense-loss-shutdown",
+          "type": "specification",
+          "name": "Overcrank/Overspeed (@ 72 Hz)/rpm Sense Loss Shutdown",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Standard"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.high-engine-temperature-shutdown",
+          "type": "specification",
+          "name": "High Engine Temperature Shutdown",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Standard"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.internal-fault-incorrect-wiring-protection",
+          "type": "specification",
+          "name": "Internal Fault/Incorrect Wiring protection",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Standard"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.common-external-fault-capability",
+          "type": "specification",
+          "name": "Common external fault capability",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Standard"
+          },
+          "pageNumber": 4
+        },
+        {
+          "elementId": "p4.controls.specification.field-upgradable-firmware",
+          "type": "specification",
+          "name": "Field upgradable firmware",
+          "units": [],
+          "sharedValue": null,
+          "valuesByModel": {
+            "G007077-1": "Standard"
+          },
+          "pageNumber": 4
+        }
+      ]
+    },
+    {
+      "title": "Available Accessories",
+      "pageNumber": 5,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p5.available-accessories.accessory.g005819-0",
+          "type": "accessory",
+          "accessoryModelNumbers": [
+            "G005819-0"
+          ],
+          "applicableGeneratorModels": [
+            "G007077-1"
+          ],
+          "generatorModelsByAccessory": {
+            "G005819-0": [
+              "G007077-1"
+            ]
+          },
+          "modelText": "G005819-0",
+          "product": "26R Wet Cell Battery",
+          "description": "Every standby generator requires a battery to start the system. Generac offers the recommended 26R wet cell battery for use with all air-cooled standby product.",
+          "pageNumber": 5
+        },
+        {
+          "elementId": "p5.available-accessories.accessory.g007101-0",
+          "type": "accessory",
+          "accessoryModelNumbers": [
+            "G007101-0"
+          ],
+          "applicableGeneratorModels": [
+            "G007077-1"
+          ],
+          "generatorModelsByAccessory": {
+            "G007101-0": [
+              "G007077-1"
+            ]
+          },
+          "modelText": "G007101-0",
+          "product": "Battery Pad Warmer",
+          "description": "The pad warmer rests under the battery. Recommended for use if the temperature regularly falls below 0°F (-18 °C). (Not necessary for use with AGM-style batteries).",
+          "pageNumber": 5
+        },
+        {
+          "elementId": "p5.available-accessories.accessory.g007102-0",
+          "type": "accessory",
+          "accessoryModelNumbers": [
+            "G007102-0"
+          ],
+          "applicableGeneratorModels": [
+            "G007077-1"
+          ],
+          "generatorModelsByAccessory": {
+            "G007102-0": [
+              "G007077-1"
+            ]
+          },
+          "modelText": "G007102-0",
+          "product": "Oil Warmer",
+          "description": "Oil warmer slips directly over the oil filter. Recommended for use if the temperature regularly falls below 0°F (-18 °C).",
+          "pageNumber": 5
+        },
+        {
+          "elementId": "p5.available-accessories.accessory.g007103-1",
+          "type": "accessory",
+          "accessoryModelNumbers": [
+            "G007103-1"
+          ],
+          "applicableGeneratorModels": [
+            "G007077-1"
+          ],
+          "generatorModelsByAccessory": {
+            "G007103-1": [
+              "G007077-1"
+            ]
+          },
+          "modelText": "G007103-1",
+          "product": "Breather Warmer",
+          "description": "The breather warmer is for use in extreme cold weather applications. For use with Evolution controllers only in climates where heavy icing occurs.",
+          "pageNumber": 5
+        },
+        {
+          "elementId": "p5.available-accessories.accessory.g007027-0",
+          "type": "accessory",
+          "accessoryModelNumbers": [
+            "G007027-0"
+          ],
+          "applicableGeneratorModels": [
+            "G007077-1"
+          ],
+          "generatorModelsByAccessory": {
+            "G007027-0": [
+              "G007077-1"
+            ]
+          },
+          "modelText": "G007027-0 - Bisque",
+          "product": "Fascia Base Wrap Kit",
+          "description": "The fascia base wrap snaps together around the bottom of the new air-cooled generators. This offers a sleek, contoured appearance as well as offering protection from rodents and insects by covering the lifting holes located in the base.",
+          "pageNumber": 5
+        },
+        {
+          "elementId": "p5.available-accessories.accessory.g005703-0",
+          "type": "accessory",
+          "accessoryModelNumbers": [
+            "G005703-0"
+          ],
+          "applicableGeneratorModels": [
+            "G007077-1"
+          ],
+          "generatorModelsByAccessory": {
+            "G005703-0": [
+              "G007077-1"
+            ]
+          },
+          "modelText": "G005703-0 - Bisque",
+          "product": "Touch-Up Paint Kit",
+          "description": "If the generator enclosure is scratched or damaged, it is important to touch-up the paint to protect from future corrosion. The touch-up paint kit includes the necessary paint to correctly maintain or touch up a generator enclosure.",
+          "pageNumber": 5
+        },
+        {
+          "elementId": "p5.available-accessories.accessory.g006485-0",
+          "type": "accessory",
+          "accessoryModelNumbers": [
+            "G006485-0"
+          ],
+          "applicableGeneratorModels": [
+            "G007077-1"
+          ],
+          "generatorModelsByAccessory": {
+            "G006485-0": [
+              "G007077-1"
+            ]
+          },
+          "modelText": "G006485-0",
+          "product": "Scheduled Maintenance Kit",
+          "description": "Generac's scheduled maintenance kit provides all the items necessary to perform complete routine maintenance on a Generac automatic standby generator (oil not included).",
+          "pageNumber": 5
+        },
+        {
+          "elementId": "p5.available-accessories.accessory.g007009-0",
+          "type": "accessory",
+          "accessoryModelNumbers": [
+            "G007009-0"
+          ],
+          "applicableGeneratorModels": [
+            "G007077-1"
+          ],
+          "generatorModelsByAccessory": {
+            "G007009-0": [
+              "G007077-1"
+            ]
+          },
+          "modelText": "G007009-0",
+          "product": "LTE LP Tank Fuel Level Monitor",
+          "description": "The LTE enabled LP tank fuel level monitor provides constant monitoring of the connected LP fuel tank. Monitoring the LP tank's fuel level is an important step in verifying the generator is ready to run during an unexpected power failure. Status alerts are available through a free application to notify users when the LP tank is in need of a refill.",
+          "pageNumber": 5
+        },
+        {
+          "elementId": "p5.available-accessories.accessory.g007169-0",
+          "type": "accessory",
+          "accessoryModelNumbers": [
+            "G007169-0"
+          ],
+          "applicableGeneratorModels": [
+            "G007077-1"
+          ],
+          "generatorModelsByAccessory": {
+            "G007169-0": [
+              "G007077-1"
+            ]
+          },
+          "modelText": "G007169-0",
+          "product": "Mobile Link® 4G LTE Cellular Accessory",
+          "description": "The Mobile Link 4G LTE Cellular Accessory allows users to monitor the status of the generator from anywhere in the world, using a smart phone, tablet, or PC. Easily access information such as the current operating status and maintenance alerts. Users can connect an account with an authorized service dealer for fast, friendly, and proactive service. With Mobile Link, users are taken care of before the next power outage.",
+          "pageNumber": 5
+        },
+        {
+          "elementId": "p5.available-accessories.accessory.g007220-0",
+          "type": "accessory",
+          "accessoryModelNumbers": [
+            "G007220-0"
+          ],
+          "applicableGeneratorModels": [
+            "G007077-1"
+          ],
+          "generatorModelsByAccessory": {
+            "G007220-0": [
+              "G007077-1"
+            ]
+          },
+          "modelText": "G007220-0 - Bisque",
+          "product": "Base Plug Kit",
+          "description": "Base plugs snap into the lifting holes on the base of air-cooled home standby generators. This offers a sleek, contoured appearance, as well as offers protection from rodents and insects by covering the lifting holes located in the base. Kit contains four plugs, sufficient for use on a single air-cooled home standby generator.",
+          "pageNumber": 5
+        }
+      ]
+    },
+    {
+      "title": "Model UPCs",
+      "pageNumber": 5,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p5.model-upcs.table.model-upcs",
+          "type": "table",
+          "title": "Model UPCs",
+          "sourceHeading": null,
+          "columns": [
+            "Model",
+            "UPC"
+          ],
+          "rows": [
+            {
+              "Model": "G007077-1",
+              "UPC": "696471074352"
+            }
+          ],
+          "pageNumber": 5
+        }
+      ]
+    },
+    {
+      "title": "Generator Dimension Drawings",
+      "pageNumber": 5,
+      "modelNumbers": [
+        "G007077-1"
+      ],
+      "sourceModelNumbers": [],
+      "elements": [
+        {
+          "elementId": "p5.generator-dimension-drawings.dimension-drawing.generator-dimensions",
+          "type": "dimension_drawing",
+          "views": [
+            {
+              "name": "left_side",
+              "measurements": [
+                {
+                  "name": "overall_height",
+                  "values": [
+                    {
+                      "value": "727.2",
+                      "unit": "mm"
+                    },
+                    {
+                      "value": "28.6",
+                      "unit": "in"
+                    }
+                  ]
+                },
+                {
+                  "name": "enclosure_width",
+                  "values": [
+                    {
+                      "value": "637.6",
+                      "unit": "mm"
+                    },
+                    {
+                      "value": "25.1",
+                      "unit": "in"
+                    }
+                  ]
+                },
+                {
+                  "name": "base_width",
+                  "values": [
+                    {
+                      "value": "648",
+                      "unit": "mm"
+                    },
+                    {
+                      "value": "25.5",
+                      "unit": "in"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "front",
+              "measurements": [
+                {
+                  "name": "enclosure_width",
+                  "values": [
+                    {
+                      "value": "1218",
+                      "unit": "mm"
+                    },
+                    {
+                      "value": "48.0",
+                      "unit": "in"
+                    }
+                  ]
+                },
+                {
+                  "name": "base_width",
+                  "values": [
+                    {
+                      "value": "1232",
+                      "unit": "mm"
+                    },
+                    {
+                      "value": "48.5",
+                      "unit": "in"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "warning": "Dimensions shown are approximate. See installation manual for exact dimensions. DO NOT USE THESE DIMENSIONS FOR INSTALLATION PURPOSES.",
+          "pageNumber": 5
+        }
+      ]
+    }
+  ],
+  "extraction": {
+    "strategy": "docling_narrative_pdfplumber_tables",
+    "doclingVersion": "2.129.0",
+    "pdfplumberVersion": "0.11.10",
+    "warnings": [
+      "Narrative headings and list structure come from Docling; grid tables come from pdfplumber.",
+      "Values are preserved as source text. Unit normalization and numeric conversion are intentionally deferred."
+    ]
+  }
+}
