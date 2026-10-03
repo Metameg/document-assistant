@@ -1,6 +1,8 @@
 package com.example.documentassistant.web;
 
 import com.example.documentassistant.rag.HybridAnswerService;
+import com.example.documentassistant.rag.HybridAnswerService.EvidencePoolRequest;
+import com.example.documentassistant.rag.HybridAnswerService.EvidencePoolResponse;
 import com.example.documentassistant.rag.HybridAnswerService.HybridAnswerResponse;
 import com.example.documentassistant.retrieval.RetrievalRequest;
 import org.springframework.http.HttpStatus;
@@ -29,6 +31,13 @@ public class AnswerController {
       @RequestBody RetrievalRequest request) {
 
     return answerService.answer(request);
+  }
+
+  @PostMapping("/evidence-pool")
+  public EvidencePoolResponse evidencePool(
+      @RequestBody EvidencePoolRequest request) {
+
+    return answerService.evidencePool(request);
   }
 
   @ExceptionHandler(IllegalArgumentException.class)

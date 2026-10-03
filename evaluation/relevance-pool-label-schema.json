@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "questionId": { "type": "string" },
+    "labels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "chunkId": { "type": "string" },
+          "relevant": { "type": "boolean" },
+          "reason": { "type": "string", "minLength": 1 }
+        },
+        "required": ["chunkId", "relevant", "reason"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["questionId", "labels"],
+  "additionalProperties": false
+}

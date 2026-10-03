@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Document Assistant · Generac specifications</title>
   <link rel="stylesheet" href="/styles.css">
-  <script src="/app.js" type="module"></script>
+<script src="/app.js" type="module"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -49,6 +49,7 @@
       </div></details>
     </section>
     <section id="evaluation" role="tabpanel" aria-labelledby="tab-evaluation" hidden>
+      <div class="section-header"><div><p class="eyebrow">EVALUATION RESULTS</p><h1>Quality and performance.</h1><p>Recorded plots for reviewing the demo’s answer quality and response times.</p></div></div>
       <div class="evaluation-controls panel">
         <div><h2>Run the evaluation</h2><p class="subtle">Runs the question suite with the configured answer model and judge, then updates the quality, evidence ranking and latency plots. Uses model API credits.</p></div>
         <div class="evaluation-plan">
@@ -58,23 +59,19 @@
           <p id="evaluation-k-help" class="subtle">Enter comma-separated values. Each value runs the entire question suite.</p>
           <p id="evaluation-k-error" class="status error" role="status" hidden></p>
           <p class="evaluation-estimate" role="status" aria-live="polite"><span id="evaluation-estimate">Loading the evaluation estimate…</span></p>
-          <p id="evaluation-estimate-basis" class="subtle estimate-basis"></p>
+          <p id="evaluation-workload" class="subtle"></p>
+          <details class="estimate-details"><summary>Estimate assumptions</summary><p id="evaluation-estimate-basis" class="subtle"></p></details>
         </div>
         <button id="run-evaluation" type="button" disabled>Run evaluation &amp; update plots</button>
         <p id="evaluation-message" class="status" role="status" aria-live="polite">Checking evaluation status…</p>
       </div>
-      <section class="evaluation-plot-section" aria-labelledby="correctness-plots"><h2 id="correctness-plots">Correctness</h2><div class="plot-grid">
-        <figure class="panel plot-card"><figcaption><h3>Answer correctness</h3><p>Precision@k counts correct answer claims; Recall@k counts expected facts covered, for answers generated with evidence limit k.</p></figcaption><a href="/api/demo/evaluation/plots/answer-correctness.png" target="_blank" rel="noopener" aria-label="Open answer correctness plot"><img src="/api/demo/evaluation/plots/answer-correctness.png" alt="Answer correctness evaluation plot"></a><p class="plot-unavailable" hidden>Plot unavailable. Run the evaluation to generate this plot.</p></figure>
-      </div></section>
-      <section class="evaluation-plot-section" aria-labelledby="retrieval-plots"><h2 id="retrieval-plots">Chunk retrieval</h2><div class="plot-grid">
-        <figure class="panel plot-card"><figcaption><h3>Precision and recall</h3><p>Precision@k measures relevant chunks in the selected slots. Recall@k measures coverage of all relevant corpus chunks.</p></figcaption><a href="/api/demo/evaluation/plots/retrieval-ranking.png" target="_blank" rel="noopener" aria-label="Open precision and recall plot"><img src="/api/demo/evaluation/plots/retrieval-ranking.png" alt="Precision and recall evaluation plot"></a><p class="plot-unavailable" hidden>Plot unavailable. Run the evaluation to generate this plot.</p></figure>
-        <figure class="panel plot-card"><figcaption><h3>mAP and MRR</h3><p>mAP@k rewards relevant chunks near the top and relevant-evidence coverage. MRR@k measures how soon the first relevant chunk appears.</p></figcaption><a href="/api/demo/evaluation/plots/retrieval-map-mrr.png" target="_blank" rel="noopener" aria-label="Open map and mrr plot"><img src="/api/demo/evaluation/plots/retrieval-map-mrr.png" alt="mAP and MRR evaluation plot"></a><p class="plot-unavailable" hidden>Plot unavailable. Run the evaluation to generate this plot.</p></figure>
-      </div></section>
-      <section class="evaluation-plot-section" aria-labelledby="latency-plots"><h2 id="latency-plots">Latency</h2><div class="plot-grid">
-        <figure class="panel plot-card"><figcaption><h3>Retrieval latency</h3><p>Mean and p95 time spent finding supporting excerpts.</p></figcaption><a href="/api/demo/evaluation/plots/retrieval-latency.png" target="_blank" rel="noopener" aria-label="Open retrieval latency plot"><img src="/api/demo/evaluation/plots/retrieval-latency.png" alt="Retrieval latency evaluation plot"></a><p class="plot-unavailable" hidden>Plot unavailable. Run the evaluation to generate this plot.</p></figure>
-        <figure class="panel plot-card"><figcaption><h3>Model inference latency</h3><p>Mean and p95 time spent generating answers after retrieval.</p></figcaption><a href="/api/demo/evaluation/plots/inference-latency.png" target="_blank" rel="noopener" aria-label="Open model inference latency plot"><img src="/api/demo/evaluation/plots/inference-latency.png" alt="Model inference latency evaluation plot"></a><p class="plot-unavailable" hidden>Plot unavailable. Run the evaluation to generate this plot.</p></figure>
-      </div></section>
-
+      <div class="plot-grid">
+        <figure class="panel plot-card"><figcaption><h2>Answer correctness</h2><p>Claim precision: how many answer claims are correct. Required-claim recall: how many expected facts the answer covers.</p></figcaption><a href="/api/demo/evaluation/plots/answer-correctness.png" target="_blank" rel="noopener" aria-label="Open answer correctness plot"><img src="/api/demo/evaluation/plots/answer-correctness.png" alt="Answer correctness evaluation plot"></a><p class="plot-unavailable" hidden>Plot unavailable. Generate answer-correctness.png by running the evaluation, or place it in evaluation/results/plots.</p></figure>
+        <figure class="panel plot-card"><figcaption><h2>Answer groundedness</h2><p>How well answer claims are supported by retrieved evidence.</p></figcaption><a href="/api/demo/evaluation/plots/answer-groundedness.png" target="_blank" rel="noopener" aria-label="Open answer groundedness plot"><img src="/api/demo/evaluation/plots/answer-groundedness.png" alt="Answer groundedness evaluation plot"></a><p class="plot-unavailable" hidden>Plot unavailable. Generate answer-groundedness.png by running the evaluation, or place it in evaluation/results/plots.</p></figure>
+        <figure class="panel plot-card"><figcaption><h2>Final evidence ranking</h2><p>Chunk relevance: Precision@k, Recall@k, mAP@k and MRR@k for the final evidence list, independently of answer wording.</p></figcaption><a href="/api/demo/evaluation/plots/retrieval-ranking.png" target="_blank" rel="noopener" aria-label="Open final evidence ranking plot"><img src="/api/demo/evaluation/plots/retrieval-ranking.png" alt="Final prompt evidence ranking evaluation plot"></a><p class="plot-unavailable" hidden>Plot unavailable. Run the evaluation to generate the final evidence ranking plot.</p></figure>
+        <figure class="panel plot-card"><figcaption><h2>Retrieval latency</h2><p>Time spent finding supporting document excerpts.</p></figcaption><a href="/api/demo/evaluation/plots/retrieval-latency.png" target="_blank" rel="noopener" aria-label="Open retrieval latency plot"><img src="/api/demo/evaluation/plots/retrieval-latency.png" alt="Retrieval latency evaluation plot"></a><p class="plot-unavailable" hidden>Plot unavailable. Generate retrieval-latency.png by running the evaluation, or place it in evaluation/results/plots.</p></figure>
+        <figure class="panel plot-card"><figcaption><h2>Model inference latency</h2><p>Time spent generating answers after retrieval.</p></figcaption><a href="/api/demo/evaluation/plots/inference-latency.png" target="_blank" rel="noopener" aria-label="Open model inference latency plot"><img src="/api/demo/evaluation/plots/inference-latency.png" alt="Model inference latency evaluation plot"></a><p class="plot-unavailable" hidden>Plot unavailable. Generate inference-latency.png by running the evaluation, or place it in evaluation/results/plots.</p></figure>
+      </div>
     </section>
   </main>
   <dialog id="sources-dialog" aria-labelledby="sources-title"><div class="dialog-header"><div><p class="eyebrow">SUPPORTING EVIDENCE</p><h2 id="sources-title">Sources</h2></div><button id="sources-close" class="secondary" type="button">Close</button></div><p id="sources-question" class="subtle"></p><p class="subtle">Documents are grouped by PDF. Citation numbers identify individual excerpts; RRF scores describe retrieval ranking, not confidence.</p><div id="retrieval-results"></div></dialog>

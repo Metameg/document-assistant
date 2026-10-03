@@ -52,10 +52,12 @@ public class HybridCandidateService {
     List<KeywordCandidate> keyword = keywordSearch.search(
         request.query(), keywordLimit);
 
-    List<KeywordCandidate> acrossDocuments = keywordSearch.searchAcrossDocuments(
-        request.query(),
-        properties.diversityChunksPerDocument(),
-        properties.diversityDocumentLimit());
+    List<KeywordCandidate> acrossDocuments = properties.diversityDocumentLimit() == 0
+        ? List.of()
+        : keywordSearch.searchAcrossDocuments(
+            request.query(),
+            properties.diversityChunksPerDocument(),
+            properties.diversityDocumentLimit());
 
     Map<String, Accumulator> byChunk = new LinkedHashMap<>();
 

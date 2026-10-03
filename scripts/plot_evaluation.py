@@ -24,23 +24,23 @@ def load_summary(path):
 
 
 def save_quality_plot(k_values, by_k, dimension, title, output):
-    colors = {"precision": "#2563eb", "recall": "#16a34a", "f1": "#dc2626"}
+    colors = {"precision": "#2563eb", "recall": "#16a34a"}
 
     plt.figure(figsize=(9, 5.5))
-    for metric in ["precision", "recall", "f1"]:
+    for metric in ["precision", "recall"]:
         values = [by_k[str(k)][dimension][metric] for k in k_values]
         plt.plot(
             k_values,
             values,
             marker="o",
             linewidth=2,
-            label=metric.capitalize(),
+            label=("Precision@k" if metric == "precision" else "Recall@k"),
             color=colors[metric],
         )
 
     plt.title(title)
-    plt.xlabel("Evidence chunks supplied to the answer model (k)")
-    plt.ylabel("Score")
+    plt.xlabel("Requested final evidence limit (k)")
+    plt.ylabel("Answer claim score")
     plt.ylim(0, 1.05)
     plt.xticks(k_values)
     plt.grid(alpha=0.25)
@@ -51,12 +51,14 @@ def save_quality_plot(k_values, by_k, dimension, title, output):
 
 
 def save_latency_plot(k_values, by_k, timing, title, output):
-    colors = {"mean": "#2563eb", "p50": "#16a34a", "p95": "#dc2626"}
+    colors = {"mean": "#2563eb", "p95": "#dc2626"}
 
     plt.figure(figsize=(9, 5.5))
-    for statistic in ["mean", "p50", "p95"]:
+    for statistic in ["mean", "p95"]:
         values = [
-            by_k[str(k)]["latencyMs"][timing][statistic] / 1000.0 for k in k_values
+            (by_k[str(k)]["latencyMs"][timing][statistic] / 1000.0
+             if by_k[str(k)]["latencyMs"][timing][statistic] is not None else None)
+            for k in k_values
         ]
         plt.plot(
             k_values,
@@ -68,7 +70,7 @@ def save_latency_plot(k_values, by_k, timing, title, output):
         )
 
     plt.title(title)
-    plt.xlabel("Evidence chunks supplied to the answer model (k)")
+    plt.xlabel("Requested final evidence limit (k)")
     plt.ylabel("Seconds")
     plt.xticks(k_values)
     plt.grid(alpha=0.25)
@@ -86,20 +88,29 @@ def main():
 
     k_values, by_k = load_summary(input_path)
 
-    save_quality_plot(
-        k_values,
-        by_k,
-        "correctness",
-        "Answer correctness by evidence depth",
-        output_directory / "answer-correctness.png",
-    )
-    save_quality_plot(
-        k_values,
-        by_k,
-        "groundedness",
-        "Answer groundedness by evidence depth",
-        output_directory / "answer-groundedness.png",
-    )
+    judged_k = [k for k in k_values if "correctness" in by_k[str(k)]]
+    if judged_k:
+        save_quality_plot(
+            judged_k,
+            by_k,
+            "correctness",
+            "Answer correctness (factual claims)",
+            output_directory / "answer-correctness.png",
+        )
+    ranked_k = [k for k in k_values if by_k[str(k)].get("evidenceRanking")]
+    if ranked_k:
+        ranking = {str(k): by_k[str(k)]["evidenceRanking"] for k in ranked_k}
+        save_additional_plot(
+            ranked_k, ranking,
+            {"precisionAtK": "Precision@k", "recallAtK": "Recall@k"},
+            "Chunk retrieval: precision and recall",
+            output_directory / "retrieval-ranking.png")
+        save_additional_plot(
+            ranked_k, ranking,
+            {"mapAtK": "mAP@k", "mrrAtK": "MRR@k"},
+            "Chunk retrieval: mAP and MRR",
+            output_directory / "retrieval-map-mrr.png")
+
     save_latency_plot(
         k_values,
         by_k,
@@ -116,6 +127,23 @@ def main():
     )
 
     print(f"Plots written to {output_directory}")
+
+
+def save_additional_plot(k_values, by_k, metrics, title, output):
+    plt.figure(figsize=(9, 5.5))
+    for metric, label in metrics.items():
+        plt.plot(k_values, [by_k[str(k)].get(metric) for k in k_values],
+                 marker="o", linewidth=2, label=label)
+    plt.title(title)
+    plt.xlabel("Requested final evidence limit (k)")
+    plt.ylabel("Score")
+    plt.ylim(0, 1.05)
+    plt.xticks(k_values)
+    plt.grid(alpha=0.25)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(output, dpi=180)
+    plt.close()
 
 
 if __name__ == "__main__":

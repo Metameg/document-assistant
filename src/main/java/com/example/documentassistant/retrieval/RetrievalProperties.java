@@ -42,11 +42,12 @@ public record RetrievalProperties(
           "keywordLimit must be between 1 and 100");
     }
 
-    if (diversityDocumentLimit < 1 || diversityDocumentLimit > 100
+    if (diversityDocumentLimit < 0 || diversityDocumentLimit > 100
         || diversityChunksPerDocument < 1
         || diversityChunksPerDocument > 100) {
       throw new IllegalArgumentException(
-          "Diversity limits must be between 1 and 100");
+          "diversityDocumentLimit must be between 0 and 100, and "
+              + "diversityChunksPerDocument must be between 1 and 100");
     }
 
     if (candidateLimit < 1

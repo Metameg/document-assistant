@@ -6,18 +6,8 @@
     "requiredClaims": [
       "Model G007144-0 has Rated Maximum Power Capacity—LP (ESP) of 8,000 VA*."
     ],
-    "relevantChunkIds": [
-      "product_1:13"
-    ]
-  },
-  {
-    "id": "question-002",
-    "question": "What is the Rated Maximum Power Capacity—NG (ESP) for Generac model G007144-0?",
-    "referenceAnswer": "For model G007144-0, the Rated Maximum Power Capacity—NG (ESP) is 7,000 VA*.",
-    "requiredClaims": [
-      "Model G007144-0 has Rated Maximum Power Capacity—NG (ESP) of 7,000 VA*."
-    ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_1:13"
     ]
   },
@@ -28,7 +18,8 @@
     "requiredClaims": [
       "Model G007144-0 has Rated Voltage of 220."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_1:13"
     ]
   },
@@ -39,29 +30,8 @@
     "requiredClaims": [
       "Model G007077-1 has Rated maximum continuous load current – 208 volts (LP / NG) of 69.4 / 59.0."
     ],
-    "relevantChunkIds": [
-      "product_11:11"
-    ]
-  },
-  {
-    "id": "question-005",
-    "question": "What is the Main line circuit breaker for Generac model G007077-1?",
-    "referenceAnswer": "For model G007077-1, the Main line circuit breaker is 80 amp.",
-    "requiredClaims": [
-      "Model G007077-1 has Main line circuit breaker of 80 amp."
-    ],
-    "relevantChunkIds": [
-      "product_11:11"
-    ]
-  },
-  {
-    "id": "question-006",
-    "question": "What is the Unit weight (lb / kg) for Generac model G007077-1?",
-    "referenceAnswer": "For model G007077-1, the Unit weight (lb / kg) is 466 / 211.",
-    "requiredClaims": [
-      "Model G007077-1 has Unit weight (lb / kg) of 466 / 211."
-    ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_11:11"
     ]
   },
@@ -72,18 +42,8 @@
     "requiredClaims": [
       "Model G007038-1 has Sound output in dB(A) at 23 ft (7 m) with generator operating at normal load** of 67."
     ],
-    "relevantChunkIds": [
-      "product_12:11"
-    ]
-  },
-  {
-    "id": "question-008",
-    "question": "What is the Sound output in dB(A) at 23 ft (7 m) with generator in Quiet-Test™ low-speed exercise mode** for Generac model G007038-1?",
-    "referenceAnswer": "For model G007038-1, the Sound output in dB(A) at 23 ft (7 m) with generator in Quiet-Test™ low-speed exercise mode** is 55.",
-    "requiredClaims": [
-      "Model G007038-1 has Sound output in dB(A) at 23 ft (7 m) with generator in Quiet-Test™ low-speed exercise mode** of 55."
-    ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_12:11"
     ]
   },
@@ -94,7 +54,8 @@
     "requiredClaims": [
       "Model G007038-1 has Displacement of 999 cc."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_12:21"
     ]
   },
@@ -105,30 +66,9 @@
     "requiredClaims": [
       "Model G007035-1 has Operating rpm of 3,600."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_14:19"
-    ]
-  },
-  {
-    "id": "question-011",
-    "question": "What is the Oil capacity including filter for Generac model G007035-1?",
-    "referenceAnswer": "For model G007035-1, the Oil capacity including filter is Approx. 1.9 qt / 1.8 L.",
-    "requiredClaims": [
-      "Model G007035-1 has Oil capacity including filter of Approx. 1.9 qt / 1.8 L."
-    ],
-    "relevantChunkIds": [
-      "product_14:19"
-    ]
-  },
-  {
-    "id": "question-012",
-    "question": "What is the Power factor for Generac model G007035-1?",
-    "referenceAnswer": "For model G007035-1, the Power factor is 1.0.",
-    "requiredClaims": [
-      "Model G007035-1 has Power factor of 1.0."
-    ],
-    "relevantChunkIds": [
-      "product_14:12"
     ]
   },
   {
@@ -138,7 +78,8 @@
     "requiredClaims": [
       "Model G007038-1 has Phase of 1."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_16:12"
     ]
   },
@@ -149,18 +90,8 @@
     "requiredClaims": [
       "Model G007038-1 has Rated AC frequency of 60 Hz."
     ],
-    "relevantChunkIds": [
-      "product_16:12"
-    ]
-  },
-  {
-    "id": "question-015",
-    "question": "What is the Battery requirement (not included) for Generac model G007038-1?",
-    "referenceAnswer": "For model G007038-1, the Battery requirement (not included) is 12 Volts, Group 26R 540 CCA minimum or Group 35AGM 650 CCA minimum.",
-    "requiredClaims": [
-      "Model G007038-1 has Battery requirement (not included) of 12 Volts, Group 26R 540 CCA minimum or Group 35AGM 650 CCA minimum."
-    ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_16:12"
     ]
   },
@@ -171,30 +102,9 @@
     "requiredClaims": [
       "Model G007290-0 has Total Harmonic Distortion of Less than 5%."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_18:11"
-    ]
-  },
-  {
-    "id": "question-017",
-    "question": "What is the Automatic Low Oil Pressure/High Oil Temperature Shutdown for Generac model G007290-0?",
-    "referenceAnswer": "For model G007290-0, the Automatic Low Oil Pressure/High Oil Temperature Shutdown is Standard.",
-    "requiredClaims": [
-      "Model G007290-0 has Automatic Low Oil Pressure/High Oil Temperature Shutdown of Standard."
-    ],
-    "relevantChunkIds": [
-      "product_18:19"
-    ]
-  },
-  {
-    "id": "question-018",
-    "question": "What is the Automatic Voltage Regulation with Over and Under Voltage Protection for Generac model G007290-0?",
-    "referenceAnswer": "For model G007290-0, the Automatic Voltage Regulation with Over and Under Voltage Protection is Standard.",
-    "requiredClaims": [
-      "Model G007290-0 has Automatic Voltage Regulation with Over and Under Voltage Protection of Standard."
-    ],
-    "relevantChunkIds": [
-      "product_18:19"
     ]
   },
   {
@@ -204,7 +114,8 @@
     "requiredClaims": [
       "Model G007171-0 has Charger Fault/Missing AC Warning of Standard."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_2:45"
     ]
   },
@@ -215,30 +126,9 @@
     "requiredClaims": [
       "Model G007175-0 has Circuit breaker protected of 22,000."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_2:60"
-    ]
-  },
-  {
-    "id": "question-021",
-    "question": "What is the Circuit breaker protected Available RMS Symmetrical Fault Current @ 250 Volts for Generac model G007172-0?",
-    "referenceAnswer": "For model G007172-0, the Circuit breaker protected Available RMS Symmetrical Fault Current @ 250 Volts is 10,000.",
-    "requiredClaims": [
-      "Model G007172-0 has Circuit breaker protected Available RMS Symmetrical Fault Current @ 250 Volts of 10,000."
-    ],
-    "relevantChunkIds": [
-      "product_2:55"
-    ]
-  },
-  {
-    "id": "question-022",
-    "question": "What is the Common External Fault Capability for Generac model G007171-0?",
-    "referenceAnswer": "For model G007171-0, the Common External Fault Capability is Standard.",
-    "requiredClaims": [
-      "Model G007171-0 has Common External Fault Capability of Standard."
-    ],
-    "relevantChunkIds": [
-      "product_3:40"
     ]
   },
   {
@@ -248,19 +138,9 @@
     "requiredClaims": [
       "Model G007171-0 has Compression ratio of 9.5:1."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_3:19"
-    ]
-  },
-  {
-    "id": "question-024",
-    "question": "What is the Current rating (amps) for Generac model G007172-0?",
-    "referenceAnswer": "For model G007172-0, the Current rating (amps) is 100.",
-    "requiredClaims": [
-      "Model G007172-0 has Current rating (amps) of 100."
-    ],
-    "relevantChunkIds": [
-      "product_3:49"
     ]
   },
   {
@@ -270,7 +150,8 @@
     "requiredClaims": [
       "Model G007225-0 has Current rating (amps) of 200."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_5:54"
     ]
   },
@@ -279,11 +160,10 @@
     "question": "How much natural gas does Generac model G007144-0 consume at half load?",
     "referenceAnswer": "At half load, model G007144-0 consumes 2.21 (78) m³/hr (ft³/hr) of natural gas.",
     "requiredClaims": [
-      "The fuel is Natural Gas.",
-      "The operating condition is half load.",
-      "Model G007144-0's consumption is 2.21 (78) m³/hr (ft³/hr)."
+      "At half load, model G007144-0 consumes 2.21 (78) m³/hr (ft³/hr) of natural gas."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_1:19"
     ]
   },
@@ -292,11 +172,10 @@
     "question": "How much liquid propane does Generac model G007077-1 consume at full load?",
     "referenceAnswer": "At full load, model G007077-1 consumes 130 (3.56) [13.48] ft3/hr (gal/hr) [L/hr] of liquid propane.",
     "requiredClaims": [
-      "The fuel is Liquid Propane.",
-      "The operating condition is full load.",
-      "Model G007077-1's consumption is 130 (3.56) [13.48] ft3/hr (gal/hr) [L/hr]."
+      "At full load, model G007077-1 consumes 130 (3.56) [13.48] ft3/hr (gal/hr) [L/hr] of liquid propane."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_11:14"
     ]
   },
@@ -305,25 +184,11 @@
     "question": "How much natural gas does Generac model G007042-10 consume at half load?",
     "referenceAnswer": "At half load, model G007042-10 consumes 228 (6.46) ft³/hr (m³/hr) of natural gas.",
     "requiredClaims": [
-      "The fuel is Natural Gas.",
-      "The operating condition is half load.",
-      "Model G007042-10's consumption is 228 (6.46) ft³/hr (m³/hr)."
+      "At half load, model G007042-10 consumes 228 (6.46) ft³/hr (m³/hr) of natural gas."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_12:33"
-    ]
-  },
-  {
-    "id": "question-029",
-    "question": "How much liquid propane does Generac model G007038-1 consume at full load?",
-    "referenceAnswer": "At full load, model G007038-1 consumes 130 (3.56) [13.48] ft3/hr (gal/hr) [L/hr] of liquid propane.",
-    "requiredClaims": [
-      "The fuel is Liquid Propane.",
-      "The operating condition is full load.",
-      "Model G007038-1's consumption is 130 (3.56) [13.48] ft3/hr (gal/hr) [L/hr]."
-    ],
-    "relevantChunkIds": [
-      "product_14:36"
     ]
   },
   {
@@ -331,51 +196,11 @@
     "question": "How much natural gas does Generac model G007038-3 consume at half load?",
     "referenceAnswer": "At half load, model G007038-3 consumes 164 (4.64) ft³/hr (m³/hr) of natural gas.",
     "requiredClaims": [
-      "The fuel is Natural Gas.",
-      "The operating condition is half load.",
-      "Model G007038-3's consumption is 164 (4.64) ft³/hr (m³/hr)."
+      "At half load, model G007038-3 consumes 164 (4.64) ft³/hr (m³/hr) of natural gas."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_16:36"
-    ]
-  },
-  {
-    "id": "question-031",
-    "question": "How much liquid propane does Generac model G007291-0 consume at full load?",
-    "referenceAnswer": "At full load, model G007291-0 consumes 132 (3.63) [13.73] ft3/hr (gal/hr) [L/hr] of liquid propane.",
-    "requiredClaims": [
-      "The fuel is Liquid Propane.",
-      "The operating condition is full load.",
-      "Model G007291-0's consumption is 132 (3.63) [13.73] ft3/hr (gal/hr) [L/hr]."
-    ],
-    "relevantChunkIds": [
-      "product_18:18"
-    ]
-  },
-  {
-    "id": "question-032",
-    "question": "How much natural gas does Generac model G007177-0 consume at half load?",
-    "referenceAnswer": "At half load, model G007177-0 consumes 182 (5.15) ft³/hr (m³/hr) of natural gas.",
-    "requiredClaims": [
-      "The fuel is Natural Gas.",
-      "The operating condition is half load.",
-      "Model G007177-0's consumption is 182 (5.15) ft³/hr (m³/hr)."
-    ],
-    "relevantChunkIds": [
-      "product_2:35"
-    ]
-  },
-  {
-    "id": "question-033",
-    "question": "How much liquid propane does Generac model G007171-0 consume at full load?",
-    "referenceAnswer": "At full load, model G007171-0 consumes 54 (1.48) [5.62] ft3/hr (gal/hr) [L/hr] of liquid propane.",
-    "requiredClaims": [
-      "The fuel is Liquid Propane.",
-      "The operating condition is full load.",
-      "Model G007171-0's consumption is 54 (1.48) [5.62] ft3/hr (gal/hr) [L/hr]."
-    ],
-    "relevantChunkIds": [
-      "product_3:33"
     ]
   },
   {
@@ -386,7 +211,8 @@
       "Model G007144-0 has Rated Maximum Power Capacity—LP (ESP) of 8,000 VA*.",
       "Model G007145-0 has Rated Maximum Power Capacity—LP (ESP) of 10,000 VA*."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_1:13",
       "product_1:14"
     ]
@@ -399,35 +225,10 @@
       "Model G007038-1 has Rated maximum continuous power capacity (NG) of 18,000 Watts*.",
       "Model G007039-1 has Rated maximum continuous power capacity (NG) of 18,000 Watts*."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_12:11",
       "product_12:12"
-    ]
-  },
-  {
-    "id": "question-036",
-    "question": "Compare the Rated voltage of Generac models G007035-1 and G007036-1.",
-    "referenceAnswer": "Model G007035-1 is 240, while model G007036-1 is 240 for Rated voltage.",
-    "requiredClaims": [
-      "Model G007035-1 has Rated voltage of 240.",
-      "Model G007036-1 has Rated voltage of 240."
-    ],
-    "relevantChunkIds": [
-      "product_14:12",
-      "product_14:13"
-    ]
-  },
-  {
-    "id": "question-037",
-    "question": "Compare the Main line circuit breaker of Generac models G007038-1 and G007039-1.",
-    "referenceAnswer": "Model G007038-1 is 90 amp, while model G007039-1 is 90 amp for Main line circuit breaker.",
-    "requiredClaims": [
-      "Model G007038-1 has Main line circuit breaker of 90 amp.",
-      "Model G007039-1 has Main line circuit breaker of 90 amp."
-    ],
-    "relevantChunkIds": [
-      "product_16:12",
-      "product_16:13"
     ]
   },
   {
@@ -438,7 +239,8 @@
       "Model G007171-0 has Unit weight (lb/kg) of 338/153.",
       "Model G007172-0 has Unit weight (lb/kg) of 338/153."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_2:13",
       "product_2:14"
     ]
@@ -448,21 +250,11 @@
     "question": "What does the INNOVATIVE ENGINE DESIGN & RIGOROUS TESTING feature do on Generac model G007144-0?",
     "referenceAnswer": "are at the heart of Generac's success in providing the most reliable generators possible. Generac's G-Force engine lineup offers added peace of mind and reliability for when you need it the most. The G-Force series engines are purpose built and designed to handle the rigors of extended run times in high temperatures and extreme operating conditions.",
     "requiredClaims": [
-      "are at the heart of Generac's success in providing the most reliable generators possible. Generac's G-Force engine lineup offers added peace of mind and reliability for when you need it the most. The G-Force series engines are purpose built and designed to handle the rigors of extended run times in high temperatures and extreme operating conditions."
+      "The G-Force engines are purpose built to handle extended run times in high temperatures and extreme operating conditions."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_1:3"
-    ]
-  },
-  {
-    "id": "question-040",
-    "question": "What does the INNOVATIVE ENGINE DESIGN & RIGOROUS TESTING feature do on Generac model G007077-1?",
-    "referenceAnswer": "are at the heart of Generac's success in providing the most reliable generators possible. Generac's GForce engine lineup offers added peace of mind and reliability for when it's needed the most. The G-Force series engines are purpose built and designed to handle the rigors of extended run times in high temperatures and extreme operating conditions.",
-    "requiredClaims": [
-      "are at the heart of Generac's success in providing the most reliable generators possible. Generac's GForce engine lineup offers added peace of mind and reliability for when it's needed the most. The G-Force series engines are purpose built and designed to handle the rigors of extended run times in high temperatures and extreme operating conditions."
-    ],
-    "relevantChunkIds": [
-      "product_11:2"
     ]
   },
   {
@@ -470,21 +262,12 @@
     "question": "What does the SOLID-STATE, FREQUENCY COMPENSATED VOLTAGE REGULATION feature do on Generac model G007038-1?",
     "referenceAnswer": "This state-of-the-art power maximizing regulation system is standard on all Generac models. It provides optimized FAST RESPONSE to changing load conditions and MAXIMUM MOTOR STARTING CAPABILITY by electronically torque-matching the surge loads to the engine. Digital voltage regulation at ±1%.",
     "requiredClaims": [
-      "This state-of-the-art power maximizing regulation system is standard on all Generac models. It provides optimized FAST RESPONSE to changing load conditions and MAXIMUM MOTOR STARTING CAPABILITY by electronically torque-matching the surge loads to the engine. Digital voltage regulation at ±1%."
+      "The regulation system responds to changing loads and improves motor starting capability by electronically torque-matching surge loads to the engine.",
+      "Digital voltage regulation is ±1%."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_12:3"
-    ]
-  },
-  {
-    "id": "question-042",
-    "question": "What does the Two transfer switch options available feature do on Generac model G007035-1?",
-    "referenceAnswer": "100 amp, 16 circuit switch or 200 amp service rated smart switch",
-    "requiredClaims": [
-      "100 amp, 16 circuit switch or 200 amp service rated smart switch"
-    ],
-    "relevantChunkIds": [
-      "product_14:1"
     ]
   },
   {
@@ -492,9 +275,11 @@
     "question": "What does the TRUE POWER™ ELECTRICAL TECHNOLOGY feature do on Generac model G007038-1?",
     "referenceAnswer": "Superior harmonics and sine wave form produce less than 5% Total Harmonic Distortion for utility quality power. This allows confident operation of sensitive electronic equipment and micro-chip based appliances, such as variable speed HVAC systems.",
     "requiredClaims": [
-      "Superior harmonics and sine wave form produce less than 5% Total Harmonic Distortion for utility quality power. This allows confident operation of sensitive electronic equipment and micro-chip based appliances, such as variable speed HVAC systems."
+      "True Power provides less than 5% total harmonic distortion.",
+      "The technology allows operation of sensitive electronic equipment and micro-chip based appliances."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_16:4"
     ]
   },
@@ -503,47 +288,13 @@
     "question": "Which Battery Pad Warmer is listed for Generac model G007144-0, and what is it used for?",
     "referenceAnswer": "For model G007144-0, the listed Battery Pad Warmer is G007101-0. The pad warmer rests under the battery. Recommended for use if the temperature regularly falls below -18°C (0°F). (Not necessary for use with AGM-style batteries).",
     "requiredClaims": [
-      "The listed accessory model is G007101-0.",
-      "The pad warmer rests under the battery. Recommended for use if the temperature regularly falls below -18°C (0°F). (Not necessary for use with AGM-style batteries)."
+      "The battery pad warmer accessory is G007101-0 and rests under the battery.",
+      "It is recommended when temperatures regularly fall below -18 °C (0 °F).",
+      "It is not necessary for AGM-style batteries."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_1:28"
-    ]
-  },
-  {
-    "id": "question-045",
-    "question": "Which 26R Wet Cell Battery is listed for Generac model G007077-1, and what is it used for?",
-    "referenceAnswer": "For model G007077-1, the listed 26R Wet Cell Battery is G005819-0. Every standby generator requires a battery to start the system. Generac offers the recommended 26R wet cell battery for use with all air-cooled standby product.",
-    "requiredClaims": [
-      "The listed accessory model is G005819-0.",
-      "Every standby generator requires a battery to start the system. Generac offers the recommended 26R wet cell battery for use with all air-cooled standby product."
-    ],
-    "relevantChunkIds": [
-      "product_11:16"
-    ]
-  },
-  {
-    "id": "question-046",
-    "question": "Which Battery Pad Warmer is listed for Generac model G007038-1, and what is it used for?",
-    "referenceAnswer": "For model G007038-1, the listed Battery Pad Warmer is G007101-0. Pad warmer rests under the battery. Recommended for use if temperature regularly falls below 0 °F (-18 °C). (Not necessary for use with AGM-style batteries).",
-    "requiredClaims": [
-      "The listed accessory model is G007101-0.",
-      "Pad warmer rests under the battery. Recommended for use if temperature regularly falls below 0 °F (-18 °C). (Not necessary for use with AGM-style batteries)."
-    ],
-    "relevantChunkIds": [
-      "product_12:66"
-    ]
-  },
-  {
-    "id": "question-047",
-    "question": "Which 26R Wet Cell Battery is listed for Generac model G007035-1, and what is it used for?",
-    "referenceAnswer": "For model G007035-1, the listed 26R Wet Cell Battery is G005819-0. Every standby generator requires a battery to start the system. Generac offers the recommended 26R wet cell batter for use with all air-cooled standby product (excluding PowerPact™).",
-    "requiredClaims": [
-      "The listed accessory model is G005819-0.",
-      "Every standby generator requires a battery to start the system. Generac offers the recommended 26R wet cell batter for use with all air-cooled standby product (excluding PowerPact™)."
-    ],
-    "relevantChunkIds": [
-      "product_14:58"
     ]
   },
   {
@@ -553,30 +304,352 @@
     "requiredClaims": [
       "*Must be located away from doors, windows, and fresh air intakes and in accordance with local codes."
     ],
-    "relevantChunkIds": [
+    "category": "specific",
+    "sourceChunkIds": [
       "product_1:1"
     ]
   },
   {
-    "id": "question-049",
-    "question": "What technical guidance is provided about Fuel consumption for Generac model G007077-1?",
-    "referenceAnswer": "Note: Fuel pipe must be sized for full load. Required fuel pressure to generator fuel inlet at all load ranges - 3.5–7 in water column (0.87–1.74 kPa) for NG, 10–12 in water column (2.49–2.99 kPa) for LP gas. For BTU content, multiply ft3/hr x 2500 (LP) or ft3/hr x 1000 (NG). For Megajoule content, multiply m³/hr x 93.15 (LP) or m³/hr x 37.26 (NG).",
+    "id": "general-001",
+    "category": "general",
+    "question": "What is the most powerful generator?",
+    "referenceAnswer": "Among the supplied specification sheets, G007290-0 and G007291-0 tie at 26 kW on LP. These models are rated at 22.5 kW on natural gas. State that the comparison interprets powerful as rated electrical output and is limited to the supplied catalog.",
     "requiredClaims": [
-      "Note: Fuel pipe must be sized for full load. Required fuel pressure to generator fuel inlet at all load ranges - 3.5–7 in water column (0.87–1.74 kPa) for NG, 10–12 in water column (2.49–2.99 kPa) for LP gas. For BTU content, multiply ft3/hr x 2500 (LP) or ft3/hr x 1000 (NG). For Megajoule content, multiply m³/hr x 93.15 (LP) or m³/hr x 37.26 (NG)."
+      "Among the supplied specification sheets, G007290-0 and G007291-0 tie at 26 kW on LP.",
+      "These models are rated at 22.5 kW on natural gas."
     ],
-    "relevantChunkIds": [
-      "product_11:13"
+    "sourceChunkIds": [
+      "product_18:11",
+      "product_18:12"
     ]
   },
   {
-    "id": "question-050",
-    "question": "What technical guidance is provided about Product certification for Generac model G007038-1?",
-    "referenceAnswer": "Note: CETL or CUL certification only applies to unbundled units and units packaged with limited circuit switches. Units packaged with the Smart Switch are ETL or UL certified in the USA only.",
+    "id": "general-002",
+    "category": "general",
+    "question": "Which generator has the highest output if I use natural gas?",
+    "referenceAnswer": "G007290-0 and G007291-0 tie at 22.5 kW on natural gas in the supplied catalog. Limit the maximum-output comparison to the supplied catalog.",
     "requiredClaims": [
-      "Note: CETL or CUL certification only applies to unbundled units and units packaged with limited circuit switches. Units packaged with the Smart Switch are ETL or UL certified in the USA only."
+      "G007290-0 and G007291-0 tie at 22.5 kW on natural gas in the supplied catalog."
     ],
-    "relevantChunkIds": [
-      "product_12:79"
+    "sourceChunkIds": [
+      "product_18:11",
+      "product_18:12"
+    ]
+  },
+  {
+    "id": "general-003",
+    "category": "general",
+    "question": "How much power do I lose by running the 26 kW generator on natural gas instead of propane?",
+    "referenceAnswer": "G007290-0 and G007291-0 have ratings of 26 kW on LP and 22.5 kW on natural gas. The natural-gas rating is 3.5 kW lower, about 13.5% below the LP rating.",
+    "requiredClaims": [
+      "G007290-0 and G007291-0 have ratings of 26 kW on LP and 22.5 kW on natural gas.",
+      "The natural-gas rating is 3.5 kW lower, about 13.5% below the LP rating."
+    ],
+    "sourceChunkIds": [
+      "product_18:11",
+      "product_18:12"
+    ]
+  },
+  {
+    "id": "general-004",
+    "category": "general",
+    "question": "I need at least 20 kW on natural gas. Is there an option here?",
+    "referenceAnswer": "Yes. G007290-0 and G007291-0 are rated 22.5 kW on natural gas; G007209-10 and G007210-10 are rated 21 kW. Any one is a qualifying example.",
+    "requiredClaims": [
+      "At least one named catalog generator is rated at least 20 kW on natural gas; valid examples include G007290-0/G007291-0 at 22.5 kW and G007209-10/G007210-10 at 21 kW."
+    ],
+    "sourceChunkIds": [
+      "product_18:11",
+      "product_18:12",
+      "product_12:19",
+      "product_12:20",
+      "product_16:20",
+      "product_16:21"
+    ]
+  },
+  {
+    "id": "general-005",
+    "category": "general",
+    "question": "Which is stronger on propane: the 20 kW model or the 26 kW model?",
+    "referenceAnswer": "G007077-1 is rated 20 kW on LP. G007290-0 or G007291-0 is rated 26 kW on LP, which is 6 kW higher.",
+    "requiredClaims": [
+      "G007077-1 is rated 20 kW on LP.",
+      "G007290-0 or G007291-0 is rated 26 kW on LP, which is 6 kW higher."
+    ],
+    "sourceChunkIds": [
+      "product_11:11",
+      "product_18:11",
+      "product_18:12"
+    ]
+  },
+  {
+    "id": "general-006",
+    "category": "general",
+    "question": "Can these generators run on both natural gas and propane?",
+    "referenceAnswer": "The supplied Generac standby generators support natural gas or LP gas operation. Describe alternative fuel operation without claiming simultaneous blending or automatic fuel switching.",
+    "requiredClaims": [
+      "The supplied Generac standby generators support natural gas or LP gas operation."
+    ],
+    "sourceChunkIds": [
+      "product_1:1",
+      "product_2:1",
+      "product_12:1"
+    ]
+  },
+  {
+    "id": "general-007",
+    "category": "general",
+    "question": "Are all the generators rated for the same voltage and frequency?",
+    "referenceAnswer": "The product_1 models G007144-0, G007145-0 and G007146-0 are 220 V, 50 Hz. G007077-1 is 208 V, 60 Hz. G007290-0 and G007291-0 are 240 V, 60 Hz.",
+    "requiredClaims": [
+      "The catalog includes different voltage and frequency ratings; a supported contrasting pair such as G007144-0 at 220 V/50 Hz and G007290-0 at 240 V/60 Hz demonstrates this."
+    ],
+    "sourceChunkIds": [
+      "product_1:13",
+      "product_1:14",
+      "product_1:15",
+      "product_11:11",
+      "product_18:11",
+      "product_18:12"
+    ]
+  },
+  {
+    "id": "general-008",
+    "category": "general",
+    "question": "Do you have a three-phase generator?",
+    "referenceAnswer": "G007077-1 is a three-phase generator rated at 208 V and 60 Hz.",
+    "requiredClaims": [
+      "G007077-1 is a three-phase generator rated at 208 V and 60 Hz."
+    ],
+    "sourceChunkIds": [
+      "product_11:11"
+    ]
+  },
+  {
+    "id": "general-009",
+    "category": "general",
+    "question": "How loud is the 26 kW generator?",
+    "referenceAnswer": "G007290-0 and G007291-0 are rated at 67 dB(A) at normal load, measured 23 ft (7 m) from the front. Their Quiet-Test exercise-mode rating is 57 dB(A) at that distance.",
+    "requiredClaims": [
+      "G007290-0 and G007291-0 are rated at 67 dB(A) at normal load, measured 23 ft (7 m) from the front.",
+      "Their Quiet-Test exercise-mode rating is 57 dB(A) at that distance."
+    ],
+    "sourceChunkIds": [
+      "product_18:11",
+      "product_18:12"
+    ]
+  },
+  {
+    "id": "general-010",
+    "category": "general",
+    "question": "Is the 26 kW generator louder than the 20 kW three-phase one?",
+    "referenceAnswer": "The 26 kW G007290-0/G007291-0 and 20 kW three-phase G007077-1 are both rated 67 dB(A) at normal load at 23 ft (7 m) from the front. Compare like-for-like normal-load measurements rather than mixing normal load with exercise mode.",
+    "requiredClaims": [
+      "The 26 kW G007290-0/G007291-0 and 20 kW three-phase G007077-1 are both rated 67 dB(A) at normal load at 23 ft (7 m) from the front."
+    ],
+    "sourceChunkIds": [
+      "product_18:11",
+      "product_18:12",
+      "product_11:11"
+    ]
+  },
+  {
+    "id": "general-011",
+    "category": "general",
+    "question": "What does Quiet-Test mean for noise?",
+    "referenceAnswer": "For G007290-0/G007291-0, Quiet-Test low-speed exercise mode is rated 57 dB(A), compared with 67 dB(A) at normal load, both at 23 ft (7 m). Explain that exercise-mode noise is a different operating condition from supplying a normal load.",
+    "requiredClaims": [
+      "Quiet-Test is a low-speed exercise mode rather than normal-load operation.",
+      "Quiet-Test is quieter than normal-load operation in a documented example: G007290-0/G007291-0 is rated 57 versus 67 dB(A) at 23 ft (7 m); another supported model-specific pair is also acceptable."
+    ],
+    "sourceChunkIds": [
+      "product_18:11",
+      "product_18:12"
+    ]
+  },
+  {
+    "id": "general-012",
+    "category": "general",
+    "question": "Can I monitor the generator from my phone?",
+    "referenceAnswer": "Mobile Link Wi-Fi on select Guardian home standby generators allows remote monitoring from a smartphone, tablet or PC. It provides operating status and maintenance alerts. Preserve the select-model qualification; do not promise compatibility for every model.",
+    "requiredClaims": [
+      "Mobile Link Wi-Fi on select Guardian home standby generators allows remote monitoring from a smartphone, tablet or PC.",
+      "It provides operating status and maintenance alerts."
+    ],
+    "sourceChunkIds": [
+      "product_12:3"
+    ]
+  },
+  {
+    "id": "general-013",
+    "category": "general",
+    "question": "Are these generators suitable for sensitive electronics?",
+    "referenceAnswer": "True Power technology is described as providing less than 5% total harmonic distortion. The manufacturer describes this as allowing operation of sensitive electronic equipment and micro-chip based appliances. Frame this as the documented capability, without guaranteeing compatibility with every device.",
+    "requiredClaims": [
+      "True Power technology is described as providing less than 5% total harmonic distortion.",
+      "The manufacturer describes this as allowing operation of sensitive electronic equipment and micro-chip based appliances."
+    ],
+    "sourceChunkIds": [
+      "product_12:3",
+      "product_16:4"
+    ]
+  },
+  {
+    "id": "general-014",
+    "category": "general",
+    "question": "What warranty comes with these generators?",
+    "referenceAnswer": "The supplied sheets list a five-year limited warranty. Do not invent warranty exclusions, coverage details or claim that every expense is covered.",
+    "requiredClaims": [
+      "The supplied sheets list a five-year limited warranty."
+    ],
+    "sourceChunkIds": [
+      "product_1:1",
+      "product_2:1",
+      "product_12:1",
+      "product_11:1"
+    ]
+  },
+  {
+    "id": "general-015",
+    "category": "general",
+    "question": "Does the generator come with the battery it needs?",
+    "referenceAnswer": "The battery requirements for the listed generators identify the starting battery as not included. Distinguish a battery requirement from a battery supplied with the generator.",
+    "requiredClaims": [
+      "The battery requirements for the listed generators identify the starting battery as not included."
+    ],
+    "sourceChunkIds": [
+      "product_1:13",
+      "product_11:11",
+      "product_18:11"
+    ]
+  },
+  {
+    "id": "general-016",
+    "category": "general",
+    "question": "What starting battery does the 26 kW generator need?",
+    "referenceAnswer": "G007290-0/G007291-0 requires a 12 V Group 26R battery with at least 540 CCA or a Group 35 AGM battery with at least 650 CCA. The battery is not included.",
+    "requiredClaims": [
+      "G007290-0/G007291-0 requires a 12 V Group 26R battery with at least 540 CCA or a Group 35 AGM battery with at least 650 CCA.",
+      "The battery is not included."
+    ],
+    "sourceChunkIds": [
+      "product_18:11",
+      "product_18:12"
+    ]
+  },
+  {
+    "id": "general-017",
+    "category": "general",
+    "question": "Should I get a battery warmer for cold weather?",
+    "referenceAnswer": "The G007101-0 battery pad warmer is recommended when temperatures regularly fall below 0 °F (-18 °C). The pad warmer is not necessary for AGM-style batteries. Qualify the recommendation by compatible generator and battery type.",
+    "requiredClaims": [
+      "The G007101-0 battery pad warmer is recommended when temperatures regularly fall below 0 °F (-18 °C).",
+      "The pad warmer is not necessary for AGM-style batteries."
+    ],
+    "sourceChunkIds": [
+      "product_1:28",
+      "product_12:66"
+    ]
+  },
+  {
+    "id": "general-018",
+    "category": "general",
+    "question": "How close to the house can I put a generator?",
+    "referenceAnswer": "The supplied sheets allow installation as close as 18 inches (457 mm) to a structure subject to their stated conditions. It must be away from doors, windows and fresh-air intakes and installed in accordance with local codes. Do not treat 18 inches as unconditional permission for any installation.",
+    "requiredClaims": [
+      "The supplied sheets allow installation as close as 18 inches (457 mm) to a structure subject to their stated conditions.",
+      "It must be away from doors, windows and fresh-air intakes and installed in accordance with local codes."
+    ],
+    "sourceChunkIds": [
+      "product_1:1",
+      "product_2:1"
+    ]
+  },
+  {
+    "id": "general-019",
+    "category": "general",
+    "question": "Does higher altitude affect generator output?",
+    "referenceAnswer": "The supplied rating notes say maximum output decreases approximately 3.5% for each 1,000 ft (304.8 m) above sea level.",
+    "requiredClaims": [
+      "The supplied rating notes say maximum output decreases approximately 3.5% for each 1,000 ft (304.8 m) above sea level."
+    ],
+    "sourceChunkIds": [
+      "product_18:11",
+      "product_2:13",
+      "product_1:13"
+    ]
+  },
+  {
+    "id": "general-020",
+    "category": "general",
+    "question": "Does hot weather reduce the rated output?",
+    "referenceAnswer": "The supplied rating notes state that maximum power decreases approximately 1% for each 10 °F (6 °C) above 60 °F (16 °C).",
+    "requiredClaims": [
+      "The supplied rating notes state that maximum power decreases approximately 1% for each 10 °F (6 °C) above 60 °F (16 °C)."
+    ],
+    "sourceChunkIds": [
+      "product_18:11",
+      "product_2:13",
+      "product_1:13"
+    ]
+  },
+  {
+    "id": "general-021",
+    "category": "general",
+    "question": "Can I use the dimensions in the spec sheet to plan the exact installation?",
+    "referenceAnswer": "The generator dimension drawings are approximate and explicitly say not to use those dimensions for installation. The drawings direct the reader to the installation manual for exact dimensions.",
+    "requiredClaims": [
+      "The generator dimension drawings are approximate and explicitly say not to use those dimensions for installation.",
+      "The drawings direct the reader to the installation manual for exact dimensions."
+    ],
+    "sourceChunkIds": [
+      "product_1:34",
+      "product_5:70"
+    ]
+  },
+  {
+    "id": "general-022",
+    "category": "general",
+    "question": "Will the biggest generator power my whole house?",
+    "referenceAnswer": "Whole-house adequacy cannot be determined without the household running-load and starting/surge requirements.",
+    "requiredClaims": [
+      "Whole-house adequacy cannot be determined without the household running-load and starting/surge requirements."
+    ],
+    "sourceChunkIds": [
+      "product_18:11",
+      "product_18:12"
+    ]
+  },
+  {
+    "id": "general-023",
+    "category": "general",
+    "question": "Which generator is the best value for money?",
+    "referenceAnswer": "Value for money cannot be ranked from the provided specification sheets because they do not provide generator prices.",
+    "requiredClaims": [
+      "Value for money cannot be ranked from the provided specification sheets because they do not provide generator prices."
+    ],
+    "sourceChunkIds": []
+  },
+  {
+    "id": "general-024",
+    "category": "general",
+    "question": "How much will the 26 kW generator cost including installation?",
+    "referenceAnswer": "Installed cost is not established by the supplied specification sheets.",
+    "requiredClaims": [
+      "Installed cost is not established by the supplied specification sheets."
+    ],
+    "sourceChunkIds": []
+  },
+  {
+    "id": "general-025",
+    "category": "general",
+    "question": "How many hours will the generator run on a tank of propane?",
+    "referenceAnswer": "Propane runtime cannot be calculated without usable tank quantity, generator model and operating load.",
+    "requiredClaims": [
+      "Propane runtime cannot be calculated without usable tank quantity, generator model and operating load."
+    ],
+    "sourceChunkIds": [
+      "product_11:14"
     ]
   }
 ]

@@ -131,6 +131,48 @@ public class HybridAnswerService {
         evidence);
   }
 
+  /** Retrieves every final evidence list requested, with one shared candidate search. */
+  public EvidencePoolResponse evidencePool(
+      EvidencePoolRequest request) {
+
+    Objects.requireNonNull(request, "request must not be null");
+
+    if (request.query() == null || request.query().isBlank()) {
+      throw new IllegalArgumentException("query must not be blank");
+    }
+
+    if (request.kValues() == null || request.kValues().isEmpty()
+        || request.kValues().size() > 100
+        || request.kValues().stream().anyMatch(
+            k -> k == null || k < 1
+                || k > retrievalProperties.maxEvidenceLimit())) {
+      throw new IllegalArgumentException(
+          "kValues must contain 1 to 100 integers from 1 to "
+              + retrievalProperties.maxEvidenceLimit());
+    }
+
+    List<Integer> kValues = request.kValues().stream()
+        .distinct()
+        .sorted()
+        .toList();
+
+    long retrievalStarted = System.nanoTime();
+    CandidateResponse candidates = candidateService.search(
+        new RetrievalRequest(request.query(), 20));
+
+    List<EvidenceAtK> evidenceByK = kValues.stream()
+        .map(k -> new EvidenceAtK(
+            k,
+            selectEvidence(candidates.candidates(), k)))
+        .toList();
+
+    return new EvidencePoolResponse(
+        request.query(),
+        candidates.candidates().size(),
+        elapsedMilliseconds(retrievalStarted),
+        evidenceByK);
+  }
+
   private double elapsedMilliseconds(
       long startedAtNanos) {
 
@@ -222,6 +264,35 @@ public class HybridAnswerService {
   public record Evidence(
       int sourceNumber,
       Candidate candidate) {
+  }
+
+  public record EvidencePoolRequest(
+      String query,
+      List<Integer> kValues) {
+
+    public EvidencePoolRequest {
+      kValues = kValues == null ? null : List.copyOf(kValues);
+    }
+  }
+
+  public record EvidenceAtK(
+      int k,
+      List<Evidence> evidence) {
+
+    public EvidenceAtK {
+      evidence = List.copyOf(evidence);
+    }
+  }
+
+  public record EvidencePoolResponse(
+      String query,
+      int retrievedCandidateCount,
+      double retrievalDurationMs,
+      List<EvidenceAtK> evidenceByK) {
+
+    public EvidencePoolResponse {
+      evidenceByK = List.copyOf(evidenceByK);
+    }
   }
 
   public record HybridAnswerResponse(

@@ -1,0 +1,417 @@
+[1/250] question-001 k=5
+[2/250] question-001 k=10
+[3/250] question-001 k=20
+[4/250] question-001 k=30
+[5/250] question-001 k=40
+[6/250] question-003 k=5
+[7/250] question-003 k=10
+[8/250] question-003 k=20
+[9/250] question-003 k=30
+[10/250] question-003 k=40
+[11/250] question-004 k=5
+[12/250] question-004 k=10
+[13/250] question-004 k=20
+[14/250] question-004 k=30
+[15/250] question-004 k=40
+[16/250] question-007 k=5
+[17/250] question-007 k=10
+[18/250] question-007 k=20
+[19/250] question-007 k=30
+[20/250] question-007 k=40
+[21/250] question-009 k=5
+[22/250] question-009 k=10
+[23/250] question-009 k=20
+[24/250] question-009 k=30
+[25/250] question-009 k=40
+[26/250] question-010 k=5
+[27/250] question-010 k=10
+[28/250] question-010 k=20
+[29/250] question-010 k=30
+[30/250] question-010 k=40
+[31/250] question-013 k=5
+[32/250] question-013 k=10
+[33/250] question-013 k=20
+[34/250] question-013 k=30
+[35/250] question-013 k=40
+[36/250] question-014 k=5
+[37/250] question-014 k=10
+[38/250] question-014 k=20
+[39/250] question-014 k=30
+[40/250] question-014 k=40
+[41/250] question-016 k=5
+[42/250] question-016 k=10
+[43/250] question-016 k=20
+[44/250] question-016 k=30
+[45/250] question-016 k=40
+[46/250] question-019 k=5
+[47/250] question-019 k=10
+[48/250] question-019 k=20
+[49/250] question-019 k=30
+[50/250] question-019 k=40
+[51/250] question-020 k=5
+[52/250] question-020 k=10
+[53/250] question-020 k=20
+[54/250] question-020 k=30
+[55/250] question-020 k=40
+[56/250] question-023 k=5
+[57/250] question-023 k=10
+[58/250] question-023 k=20
+[59/250] question-023 k=30
+[60/250] question-023 k=40
+[61/250] question-025 k=5
+[62/250] question-025 k=10
+[63/250] question-025 k=20
+[64/250] question-025 k=30
+[65/250] question-025 k=40
+[66/250] question-026 k=5
+[67/250] question-026 k=10
+[68/250] question-026 k=20
+[69/250] question-026 k=30
+[70/250] question-026 k=40
+[71/250] question-027 k=5
+[72/250] question-027 k=10
+[73/250] question-027 k=20
+[74/250] question-027 k=30
+[75/250] question-027 k=40
+[76/250] question-028 k=5
+[77/250] question-028 k=10
+[78/250] question-028 k=20
+[79/250] question-028 k=30
+[80/250] question-028 k=40
+[81/250] question-030 k=5
+[82/250] question-030 k=10
+[83/250] question-030 k=20
+[84/250] question-030 k=30
+[85/250] question-030 k=40
+[86/250] question-034 k=5
+[87/250] question-034 k=10
+[88/250] question-034 k=20
+[89/250] question-034 k=30
+[90/250] question-034 k=40
+[91/250] question-035 k=5
+[92/250] question-035 k=10
+[93/250] question-035 k=20
+[94/250] question-035 k=30
+[95/250] question-035 k=40
+[96/250] question-038 k=5
+[97/250] question-038 k=10
+[98/250] question-038 k=20
+[99/250] question-038 k=30
+[100/250] question-038 k=40
+[101/250] question-039 k=5
+[102/250] question-039 k=10
+[103/250] question-039 k=20
+[104/250] question-039 k=30
+[105/250] question-039 k=40
+[106/250] question-041 k=5
+[107/250] question-041 k=10
+[108/250] question-041 k=20
+[109/250] question-041 k=30
+[110/250] question-041 k=40
+[111/250] question-043 k=5
+[112/250] question-043 k=10
+[113/250] question-043 k=20
+[114/250] question-043 k=30
+[115/250] question-043 k=40
+[116/250] question-044 k=5
+[117/250] question-044 k=10
+[118/250] question-044 k=20
+[119/250] question-044 k=30
+[120/250] question-044 k=40
+[121/250] question-048 k=5
+[122/250] question-048 k=10
+[123/250] question-048 k=20
+[124/250] question-048 k=30
+[125/250] question-048 k=40
+[126/250] general-001 k=5
+[127/250] general-001 k=10
+[128/250] general-001 k=20
+[129/250] general-001 k=30
+[130/250] general-001 k=40
+  ERROR: HTTP 500 from http://localhost:8080/api/rag/answer
+[131/250] general-002 k=5
+[132/250] general-002 k=10
+[133/250] general-002 k=20
+[134/250] general-002 k=30
+[135/250] general-002 k=40
+[136/250] general-003 k=5
+[137/250] general-003 k=10
+[138/250] general-003 k=20
+[139/250] general-003 k=30
+[140/250] general-003 k=40
+[141/250] general-004 k=5
+[142/250] general-004 k=10
+[143/250] general-004 k=20
+[144/250] general-004 k=30
+[145/250] general-004 k=40
+[146/250] general-005 k=5
+[147/250] general-005 k=10
+[148/250] general-005 k=20
+[149/250] general-005 k=30
+[150/250] general-005 k=40
+[151/250] general-006 k=5
+[152/250] general-006 k=10
+[153/250] general-006 k=20
+[154/250] general-006 k=30
+[155/250] general-006 k=40
+[156/250] general-007 k=5
+[157/250] general-007 k=10
+[158/250] general-007 k=20
+[159/250] general-007 k=30
+[160/250] general-007 k=40
+[161/250] general-008 k=5
+[162/250] general-008 k=10
+[163/250] general-008 k=20
+[164/250] general-008 k=30
+[165/250] general-008 k=40
+[166/250] general-009 k=5
+[167/250] general-009 k=10
+[168/250] general-009 k=20
+[169/250] general-009 k=30
+[170/250] general-009 k=40
+[171/250] general-010 k=5
+[172/250] general-010 k=10
+[173/250] general-010 k=20
+[174/250] general-010 k=30
+[175/250] general-010 k=40
+[176/250] general-011 k=5
+[177/250] general-011 k=10
+[178/250] general-011 k=20
+[179/250] general-011 k=30
+[180/250] general-011 k=40
+[181/250] general-012 k=5
+[182/250] general-012 k=10
+[183/250] general-012 k=20
+[184/250] general-012 k=30
+[185/250] general-012 k=40
+[186/250] general-013 k=5
+[187/250] general-013 k=10
+[188/250] general-013 k=20
+[189/250] general-013 k=30
+  ERROR: Retrieved chunk product_14:15 is outside the frozen relevance pool. Rebuild and relabel the pool for these retrieval settings.
+[190/250] general-013 k=40
+[191/250] general-014 k=5
+[192/250] general-014 k=10
+[193/250] general-014 k=20
+[194/250] general-014 k=30
+[195/250] general-014 k=40
+[196/250] general-015 k=5
+[197/250] general-015 k=10
+[198/250] general-015 k=20
+[199/250] general-015 k=30
+[200/250] general-015 k=40
+[201/250] general-016 k=5
+[202/250] general-016 k=10
+[203/250] general-016 k=20
+[204/250] general-016 k=30
+[205/250] general-016 k=40
+[206/250] general-017 k=5
+[207/250] general-017 k=10
+[208/250] general-017 k=20
+[209/250] general-017 k=30
+[210/250] general-017 k=40
+[211/250] general-018 k=5
+[212/250] general-018 k=10
+[213/250] general-018 k=20
+[214/250] general-018 k=30
+[215/250] general-018 k=40
+[216/250] general-019 k=5
+[217/250] general-019 k=10
+[218/250] general-019 k=20
+[219/250] general-019 k=30
+[220/250] general-019 k=40
+[221/250] general-020 k=5
+[222/250] general-020 k=10
+[223/250] general-020 k=20
+[224/250] general-020 k=30
+[225/250] general-020 k=40
+[226/250] general-021 k=5
+[227/250] general-021 k=10
+[228/250] general-021 k=20
+[229/250] general-021 k=30
+[230/250] general-021 k=40
+[231/250] general-022 k=5
+[232/250] general-022 k=10
+[233/250] general-022 k=20
+[234/250] general-022 k=30
+[235/250] general-022 k=40
+[236/250] general-023 k=5
+[237/250] general-023 k=10
+[238/250] general-023 k=20
+[239/250] general-023 k=30
+[240/250] general-023 k=40
+[241/250] general-024 k=5
+[242/250] general-024 k=10
+[243/250] general-024 k=20
+[244/250] general-024 k=30
+[245/250] general-024 k=40
+[246/250] general-025 k=5
+[247/250] general-025 k=10
+[248/250] general-025 k=20
+[249/250] general-025 k=30
+[250/250] general-025 k=40
+{
+  "byK": {
+    "5": {
+      "caseCount": 50,
+      "judgedCaseCount": 50,
+      "errorCount": 0,
+      "meanEvidenceChunkCount": 5.0,
+      "latencyMs": {
+        "retrievalDurationMs": {
+          "mean": 396.80844744,
+          "p95": 558.3596682499999
+        },
+        "inferenceDurationMs": {
+          "mean": 7631.07718112,
+          "p95": 19580.120219599998
+        }
+      },
+      "correctness": {
+        "precision": 0.693,
+        "recall": 0.54
+      },
+      "correctnessCaseCounts": {
+        "precision": 50,
+        "recall": 50
+      },
+      "rankingCaseCount": 45,
+      "zeroRelevantCaseCount": 5,
+      "evidenceRanking": {
+        "precisionAtK": 0.3466666666666667,
+        "recallAtK": 0.34480033233593604,
+        "mapAtK": 0.3047695419761983,
+        "mrrAtK": 0.582962962962963
+      }
+    },
+    "10": {
+      "caseCount": 50,
+      "judgedCaseCount": 50,
+      "errorCount": 0,
+      "meanEvidenceChunkCount": 10.0,
+      "latencyMs": {
+        "retrievalDurationMs": {
+          "mean": 383.58481804,
+          "p95": 537.29206885
+        },
+        "inferenceDurationMs": {
+          "mean": 6796.32775514,
+          "p95": 17394.841778099995
+        }
+      },
+      "correctness": {
+        "precision": 0.726943722943723,
+        "recall": 0.62
+      },
+      "correctnessCaseCounts": {
+        "precision": 50,
+        "recall": 50
+      },
+      "rankingCaseCount": 45,
+      "zeroRelevantCaseCount": 5,
+      "evidenceRanking": {
+        "precisionAtK": 0.29333333333333333,
+        "recallAtK": 0.415494610853385,
+        "mapAtK": 0.3590821865883355,
+        "mrrAtK": 0.5861375661375662
+      }
+    },
+    "20": {
+      "caseCount": 50,
+      "judgedCaseCount": 50,
+      "errorCount": 0,
+      "meanEvidenceChunkCount": 20.0,
+      "latencyMs": {
+        "retrievalDurationMs": {
+          "mean": 438.83505326,
+          "p95": 712.2382274999999
+        },
+        "inferenceDurationMs": {
+          "mean": 7749.72705402,
+          "p95": 21341.1912607
+        }
+      },
+      "correctness": {
+        "precision": 0.8238383838383838,
+        "recall": 0.75
+      },
+      "correctnessCaseCounts": {
+        "precision": 50,
+        "recall": 50
+      },
+      "rankingCaseCount": 45,
+      "zeroRelevantCaseCount": 5,
+      "evidenceRanking": {
+        "precisionAtK": 0.26,
+        "recallAtK": 0.6004975734163153,
+        "mapAtK": 0.42380188787144374,
+        "mrrAtK": 0.5930966304650516
+      }
+    },
+    "30": {
+      "caseCount": 50,
+      "judgedCaseCount": 49,
+      "errorCount": 1,
+      "meanEvidenceChunkCount": 30.0,
+      "latencyMs": {
+        "retrievalDurationMs": {
+          "mean": 398.47500238,
+          "p95": 578.8085092499998
+        },
+        "inferenceDurationMs": {
+          "mean": 7072.64163492,
+          "p95": 21684.533762749998
+        }
+      },
+      "correctness": {
+        "precision": 0.9183673469387755,
+        "recall": 0.8775510204081632
+      },
+      "correctnessCaseCounts": {
+        "precision": 49,
+        "recall": 49
+      },
+      "rankingCaseCount": 44,
+      "zeroRelevantCaseCount": 5,
+      "evidenceRanking": {
+        "precisionAtK": 0.24772727272727274,
+        "recallAtK": 0.857720205733902,
+        "mapAtK": 0.4891174657251232,
+        "mrrAtK": 0.6030407458039037
+      }
+    },
+    "40": {
+      "caseCount": 49,
+      "judgedCaseCount": 49,
+      "errorCount": 1,
+      "meanEvidenceChunkCount": 39.142857142857146,
+      "latencyMs": {
+        "retrievalDurationMs": {
+          "mean": 395.01710402040817,
+          "p95": 557.9156975999999
+        },
+        "inferenceDurationMs": {
+          "mean": 7829.093094448979,
+          "p95": 23183.351153199983
+        }
+      },
+      "correctness": {
+        "precision": 0.980952380952381,
+        "recall": 0.9285714285714286
+      },
+      "correctnessCaseCounts": {
+        "precision": 49,
+        "recall": 49
+      },
+      "rankingCaseCount": 44,
+      "zeroRelevantCaseCount": 5,
+      "evidenceRanking": {
+        "precisionAtK": 0.22727272727272727,
+        "recallAtK": 1.0,
+        "mapAtK": 0.5287293725793469,
+        "mrrAtK": 0.5891698944330523
+      }
+    }
+  }
+}
+Report saved to /home/metameg/Work/RagPortfolio/document-assistant/evaluation/results/runs/6524e0d2-3bb1-441a-8148-77eda390ee6f/report.json
