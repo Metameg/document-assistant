@@ -15,6 +15,9 @@ target
 venv
 **/__pycache__
 **/*.pyc
-evaluation/results
+evaluation/results/*
+!evaluation/results/plots/
+evaluation/results/plots/*
+!evaluation/results/plots/*.png
 *.zip
 *.log
