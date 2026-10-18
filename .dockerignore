@@ -17,7 +17,15 @@ target
 .worktrees
 .aws
 data/corpora
-evaluation/results
+# Bundle the five existing Generac demo charts, excluding reports, logs and run history.
+evaluation/results/*
+!evaluation/results/plots/
+evaluation/results/plots/*
+!evaluation/results/plots/answer-correctness.png
+!evaluation/results/plots/inference-latency.png
+!evaluation/results/plots/retrieval-latency.png
+!evaluation/results/plots/retrieval-map-mrr.png
+!evaluation/results/plots/retrieval-ranking.png
 venv
 **/__pycache__
 **/*.pyc

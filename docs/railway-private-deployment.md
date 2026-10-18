@@ -109,8 +109,9 @@ are ready: Railway can automatically deploy a push to its tracked branch.
   to search. If R2 is unavailable before document removal can read its dependencies, removal
   fails without changing the active corpus.
 - Only corpus UUID directories under the configured R2 prefix are managed. Shared Docling
-  model caches are not uploaded. The built-in specification files remain bundled with the
-  image; the older demo evaluation outputs are not covered by research-corpus R2 storage.
+  model caches are not uploaded. The built-in specification files and five existing Generac
+  evaluation charts are bundled with the image. New Generac evaluation outputs are not
+  covered by research-corpus R2 storage.
 - Object storage is not a replacement for the database. Back up both, and keep credentials
   and the configured prefix stable across deployments. This version still assumes one
   running application instance; distributed workers require a separate change.

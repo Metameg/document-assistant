@@ -34,6 +34,8 @@ COPY evaluation/ ./evaluation/
 COPY src/main/java/com/example/documentassistant/rag/HybridAnswerService.java ./src/main/java/com/example/documentassistant/rag/HybridAnswerService.java
 # Fail clearly if the Git deployment omitted the nine demo documents.
 RUN /opt/venv/bin/python -c "from pathlib import Path; import json; raw=Path('data/raw/specsheets'); docs=list(Path('data/processed/specsheets').glob('*.json')); assert len(list(raw.glob('*.pdf')))==9, 'Bundle exactly nine PDFs in data/raw/specsheets'; assert len(docs)==9, 'Bundle nine processed JSON files in data/processed/specsheets'; names=[json.loads(p.read_text())['sourceFile'] for p in docs]; assert all(Path(n).name==n and (raw/n).is_file() for n in names), 'Processed sourceFile values must match bundled PDF filenames'"
+# Keep the saved Generac evaluation visible on a fresh deployment.
+RUN /opt/venv/bin/python -c "from pathlib import Path; from PIL import Image; plots=Path('evaluation/results/plots'); names=['answer-correctness.png','inference-latency.png','retrieval-latency.png','retrieval-map-mrr.png','retrieval-ranking.png']; [Image.open(plots/name).verify() for name in names]; assert {p.name for p in Path('evaluation/results').iterdir()}=={'plots'}, 'Only bundled demo charts belong in the image'"
 RUN groupadd --gid 10001 app && useradd --uid 10001 --gid app --no-create-home app \
     && mkdir -p target evaluation/results /app/data/corpora /home/app \
     && chown -R app:app /app /home/app
