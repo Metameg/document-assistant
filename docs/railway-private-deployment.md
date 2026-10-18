@@ -1,7 +1,8 @@
 # Private Railway deployment with Cloudflare R2
 
 For the first deployment, follow the [staging setup guide](railway-staging-deployment.md)
-to test `development` without deploying to production.
+to test `development` without deploying to production. That guide currently uses a
+temporary public Railway URL. This guide describes optional Cloudflare Access protection.
 
 The web service runs Java and CPU-only Docling in one container. PostgreSQL with
 pgvector holds the searchable passages, vectors, corpus registry, and job history.
@@ -15,7 +16,8 @@ files together. Keep the existing production PostgreSQL service and its persiste
 
 ## Private access
 
-1. Add a custom domain to the Railway web service and configure its DNS in Cloudflare.
+1. Set `APP_ACCESS_ENABLED=true` on the web service when completing this private setup.
+   Add a custom domain to the Railway web service and configure its DNS in Cloudflare.
 2. Create a Cloudflare Access **self-hosted application** for that hostname, covering
    every path. Use an Allow policy restricted to your own email address. Enable your
    preferred login method, such as a one-time email code. Do not add a public Bypass policy.
@@ -44,6 +46,7 @@ Set these variables on the Railway **web service**, not in a committed configura
 | `R2_ACCESS_KEY_ID` | R2 S3 Access Key ID |
 | `R2_SECRET_ACCESS_KEY` | R2 S3 Secret Access Key |
 | `R2_PREFIX` | Optional; defaults to `document-assistant-production` |
+| `APP_ACCESS_ENABLED` | `true` to enable the private setup described here; defaults to `false` |
 | `CF_ACCESS_TEAM_DOMAIN` | For example `your-team.cloudflareaccess.com` |
 | `CF_ACCESS_AUDIENCE` | Access application's audience tag |
 | `APP_INTERNAL_TOKEN` | A new random secret of at least 32 characters; generate with `openssl rand -hex 32` |

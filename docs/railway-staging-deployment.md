@@ -1,7 +1,7 @@
 # Staging deployment on Railway
 
 This setup deploys `development` into a new `staging` environment. Production keeps
-tracking `main`. Staging gets its own database, R2 bucket, domain, and Access application.
+tracking `main`. Staging gets its own database, R2 bucket, Railway-provided domain, and storage credentials.
 The instructions below use the case-sensitive database service name **Postgres**.
 
 ## 1. Create an empty environment
@@ -47,20 +47,16 @@ Cloudflare; for a standard bucket it is `https://<account-id>.r2.cloudflarestora
 Jurisdiction-specific buckets require their corresponding endpoint. This endpoint is
 not a public file URL and does not include the bucket name.
 
-## 4. Prepare private login
+## 4. Use a public Railway URL temporarily
 
-Use a staging subdomain on a domain you manage through Cloudflare, for example
-`rag-staging.example.com`.
+No custom domain or Cloudflare Access application is needed for this staging setup.
+The default Railway configuration leaves access protection disabled. Set
+`APP_ACCESS_ENABLED=false` on the web service explicitly. You do not need
+`CF_ACCESS_TEAM_DOMAIN`, `CF_ACCESS_AUDIENCE`, or `APP_INTERNAL_TOKEN` in this mode.
 
-In Cloudflare Zero Trust / Access controls / Applications, create a **Self-hosted**
-application for that hostname, covering all paths. Add an **Allow** policy that includes
-only your email address. If using email codes, enable the **One-time PIN** identity
-provider and make it available to this application. Do not add an Everyone or Bypass policy.
-
-Save your team domain, such as `your-team.cloudflareaccess.com` (no scheme or trailing
-slash), and this staging application's **Application Audience (AUD) Tag**. In the current
-dashboard the AUD tag is under the application's Additional settings. It is not the
-application's display name, UUID, or a custom label/tag.
+The site and its upload, deletion, chat, and evaluation endpoints are accessible to
+anyone who can reach the URL. Use disposable documents and monitor model usage while
+running this temporary public staging deployment.
 
 ## 5. Add the web service from GitHub
 
@@ -73,8 +69,7 @@ empty so Railway uses the Dockerfile. Configure one replica and health-check pat
 `/actuator/health`. The web service does not need a Railway volume for research files.
 
 If connecting GitHub starts an immediate deployment, it can fail until variables are
-configured; set them below and deploy again. Do not disable the access filter to get
-past missing Cloudflare settings.
+configured; set them below and deploy again. Use the public-access setting shown below.
 
 ## 6. Set the web service variables
 
@@ -95,13 +90,8 @@ R2_BUCKET=document-assistant-staging
 R2_ACCESS_KEY_ID=REPLACE_WITH_STAGING_R2_ACCESS_KEY_ID
 R2_SECRET_ACCESS_KEY=REPLACE_WITH_STAGING_R2_SECRET_ACCESS_KEY
 R2_PREFIX=document-assistant-staging
-CF_ACCESS_TEAM_DOMAIN=REPLACE_WITH_YOUR_TEAM.cloudflareaccess.com
-CF_ACCESS_AUDIENCE=REPLACE_WITH_STAGING_APPLICATION_AUD_TAG
-APP_INTERNAL_TOKEN=REPLACE_WITH_A_SEPARATE_NEW_RANDOM_SECRET
+APP_ACCESS_ENABLED=false
 ```
-
-Generate another value with `openssl rand -hex 32` for `APP_INTERNAL_TOKEN`. It must be
-at least 32 characters; use a different value from the database password.
 
 `PORT=8080` makes routing explicit; the app also defaults to 8080. Explicitly set
 `R2_PREFIX` for staging because the configuration's fallback prefix is for production.
@@ -118,22 +108,21 @@ with 1536 dimensions for embeddings, and `openai/gpt-oss-120b` for benchmark gen
 and judging. Staging model calls use provider credits. If production uses explicit model
 overrides, copy those model choices deliberately; do not copy its database/storage secrets.
 
-## 7. Deploy and connect the staging domain
+## 7. Deploy and generate the staging URL
 
 Deploy the web service after the database is ready and variables are saved. The app
 creates its registry/vector tables on startup. It does not import your local research
 corpora. Use sufficient memory for Java and Docling together and monitor the first PDF
 run; a successful web startup alone does not establish PDF-processing capacity.
 
-In the staging web service's Networking settings, add `rag-staging.example.com` as a
-custom domain, with target port **8080**. Add the DNS records Railway shows in Cloudflare.
-Enable Cloudflare proxying for the hostname so Access can protect it. Wait for DNS and
-Railway's certificate provisioning; use HTTPS with Full (strict) SSL/TLS once the origin
-certificate is ready. Use the exact same hostname configured in the Access application.
+In the staging web service's Settings / Networking / Public Networking, click **Generate
+Domain**, with target port **8080**. Open its generated HTTPS URL, such as
+`https://<generated-name>.up.railway.app`. No DNS configuration or domain purchase is
+needed. The app should open directly; `/actuator/health` should return 200.
 
-Open that hostname, complete the Cloudflare login, and check the app loads. Direct
-unauthenticated access to a generated Railway URL should return 401; that is expected.
-The direct `/actuator/health` endpoint remains available to Railway and should return 200.
+If you later enable Cloudflare Access, follow the private deployment guide, including
+its domain requirements and additional variables. Do not set `APP_ACCESS_ENABLED=true`
+until that setup is complete.
 
 ## 8. Test before touching production
 
@@ -152,5 +141,5 @@ configuration into production during this testing phase.
 References: [Railway environments](https://docs.railway.com/environments),
 [branch deployment settings](https://docs.railway.com/deployments/github-autodeploys),
 [R2 credentials](https://developers.cloudflare.com/r2/api/tokens/),
-[Cloudflare Access setup](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/),
+[Railway-generated domains](https://docs.railway.com/networking/domains/working-with-domains),
 [pgvector](https://github.com/pgvector/pgvector).
