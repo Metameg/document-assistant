@@ -684,3 +684,37 @@ dialog::backdrop {
 .evaluation-plot-section { margin-top: 28px; }
 .evaluation-plot-section > h2 { margin-bottom: 16px; }
 .plot-card h3 { margin-top: 0; }
+
+.corpus-picker { display:flex; align-items:center; gap:16px; padding:14px 20px; margin-bottom:20px; flex-wrap:wrap; }
+.corpus-picker p { margin:0; }
+select, input[type="text"], input[type="number"], input:not([type]), .benchmark-question textarea { font:inherit; border:1px solid #bbc5d0; border-radius:8px; padding:9px 12px; background:white; color:var(--ink); max-width:100%; }
+.corpus-upload { padding:22px; margin-bottom:20px; }
+.inline-form { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+.inline-form input { flex:1; min-width:120px; }
+#benchmark-count { max-width:100px; }
+.process-controls { display:flex; gap:20px; align-items:center; flex-wrap:wrap; margin-top:20px; }
+.checkbox-label { display:flex; align-items:center; gap:10px; }
+#paper-files { display:block; margin:10px 0; max-width:100%; }
+progress { width:100%; }
+.benchmark-question { border:1px solid var(--line); border-radius:10px; padding:18px; margin:16px 0; }
+.benchmark-question label { display:block; font-weight:600; margin-top:10px; }
+.benchmark-question textarea { width:100%; display:block; }
+.benchmark-question pre { white-space:pre-wrap; max-height:280px; overflow:auto; font:inherit; background:var(--background); padding:12px; }
+#benchmark-select, #evaluation-history { display:block; width:100%; margin:10px 0; }
+#research-report details { border-top:1px solid var(--line); padding:12px 0; }
+#research-report pre { white-space:pre-wrap; font:inherit; }
+#research-k-values { display:block; margin:10px 0; }
+#research-report a { margin-right:10px; }
+#version-history button { margin:8px; }
+.danger { background:#a32222; border-color:#a32222; color:white; }
+.danger.secondary { background:white; color:#a32222; border:1px solid #d6aaaa; }
+.danger:hover { background:#7f1717; color:white; }
+.remove-document { display:block; margin-top:10px; font-size:.85rem; padding:6px 12px; }
+.corpus-delete { margin-top:24px; padding-top:18px; border-top:1px solid var(--line); }
+.corpus-delete p { margin-bottom:0; }
+#deletion-dialog { max-width:min(560px,calc(100vw - 32px)); padding:28px; border:1px solid var(--line); border-radius:14px; color:var(--ink); }
+#deletion-dialog::backdrop { background:rgba(15,23,42,.5); }
+#delete-description { line-height:1.6; overflow-wrap:anywhere; }
+#delete-name-label { display:block; margin:20px 0; }
+#delete-name-label[hidden] { display:none; }
+#delete-name { display:block; width:100%; margin-top:8px; }

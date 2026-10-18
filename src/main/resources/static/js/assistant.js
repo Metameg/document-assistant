@@ -1,4 +1,5 @@
-import {getCatalogDocument, pdfLink, selectDocument} from "./documents.js";
+import {currentCorpus} from "./corpora.js?v=corpus-deletion-5";
+import {getCatalogDocument, pdfLink, selectDocument} from "./documents.js?v=corpus-deletion-5";
 
 let queryBusy = false;
 
@@ -141,12 +142,17 @@ function openSources(evidence, sourceNumber = null, question = activeQuestion) {
     for (const item of items) {
       const details = window.document.createElement("details"); details.className = "source-excerpt"; details.id = `source-${item.sourceNumber}`; details.tabIndex = -1; details.open = item.sourceNumber === sourceNumber;
       const summary = window.document.createElement("summary");
-      summary.textContent = `[${item.sourceNumber}] ${item.candidate.section || "Document excerpt"}`;
+      summary.textContent = `[${item.sourceNumber}] ${item.candidate.section || "Document excerpt"}${item.candidate.pageNumbers?.length ? ` · pages ${item.candidate.pageNumbers.join(", ")}` : ""}`;
       if (typeof item.candidate.rrfScore === "number" && Number.isFinite(item.candidate.rrfScore)) {
         const score = window.document.createElement("span"); score.className = "rrf"; score.textContent = ` · RRF ${item.candidate.rrfScore.toFixed(5)}`; summary.append(score);
       }
       const text = window.document.createElement("pre"); text.className = "source-text"; text.textContent = item.candidate.text;
-      details.append(summary, text); card.append(details);
+      details.append(summary, text);
+      if (item.candidate.pageNumbers?.length && catalogDocument?.pdfAvailable) {
+        const page = pdfLink(id, `Open page ${item.candidate.pageNumbers[0]} ↗`);
+        page.href += `#page=${item.candidate.pageNumbers[0]}`; details.append(page);
+      }
+      card.append(details);
     }
     container.append(card);
   }
@@ -208,6 +214,8 @@ async function runQuery(withAnswer) {
   const query = input.value.trim();
   if (!query) { input.setCustomValidity("Enter a question."); input.reportValidity(); input.setCustomValidity(""); return; }
   activeQuestion = query;
+  const corpusId = currentCorpus().id;
+  const indexVersion = currentCorpus().activeVersion;
   const message = document.querySelector("#retrieval-message");
   message.classList.remove("error", "complete");
   const timing = document.querySelector("#retrieval-timing");
@@ -215,13 +223,13 @@ async function runQuery(withAnswer) {
   timing.textContent = "";
   const startedAt = performance.now();
   appendMessage("user", query);
-  const reply = appendMessage("assistant", withAnswer ? "Finding evidence and generating your answer…" : "Searching specification excerpts…");
+  const reply = appendMessage("assistant", withAnswer ? "Finding evidence and generating your answer…" : "Searching document excerpts…");
   setQueryBusy(true);
   message.textContent = withAnswer ? "Retrieving sources and generating an answer…" : "Searching vector sources…";
   let succeeded = false;
   try {
     const response = await fetch(withAnswer ? "/api/rag/answer" : "/api/retrieval/search", {
-      method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({query})
+      method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({query, corpusId})
     });
     if (!response.ok) {
       let detail;
@@ -229,10 +237,11 @@ async function runQuery(withAnswer) {
       throw new Error(detail || `HTTP ${response.status}`);
     }
     const data = await response.json();
+    if (currentCorpus().id !== corpusId || currentCorpus().activeVersion !== indexVersion) return;
     const evidence = withAnswer ? (data.evidence || []) : (data.results || []).map((candidate, index) => ({sourceNumber: index + 1, candidate}));
     reply.body.replaceChildren();
     if (withAnswer) renderMarkdown(reply.body, data.answer, evidence);
-    else reply.body.textContent = evidence.length ? "Vector search completed. Inspect the matching excerpts in Sources." : "No matching excerpts were returned. Try a more specific model or specification.";
+    else reply.body.textContent = evidence.length ? "Vector search completed. Inspect the matching excerpts in Sources." : "No matching excerpts were returned. Try a more specific question about the documents.";
     const count = new Set(evidence.map(item => item.candidate.documentId)).size;
     const actions = document.createElement("div"); actions.className = "answer-actions";
     const button = document.createElement("button"); button.type = "button"; button.className = "secondary"; button.textContent = `View sources · ${count} PDF${count === 1 ? "" : "s"}`;
@@ -249,6 +258,7 @@ async function runQuery(withAnswer) {
     timing.textContent = `Completed in ${elapsedSeconds.toFixed(1)} seconds`;
     timing.hidden = false;
   } catch (error) {
+    if (currentCorpus().id !== corpusId || currentCorpus().activeVersion !== indexVersion) return;
     reply.body.textContent = `Could not ${withAnswer ? "generate an answer" : "search sources"}: ${error.message}. Your question is still in the composer so you can retry.`;
     message.classList.add("error"); message.textContent = `Request failed: ${error.message}`;
   } finally {
@@ -259,6 +269,14 @@ async function runQuery(withAnswer) {
 
 export function initializeAssistant() {
   setQueryBusy(false);
+  window.addEventListener("corpuschange", () => {
+    document.querySelectorAll(".message").forEach(message => message.remove());
+    document.querySelector("#chat-empty").hidden = false;
+    document.querySelector("#retrieval-message").textContent = `Ready to ask about ${currentCorpus().name}.`;
+    document.querySelector("#retrieval-timing").hidden = true;
+    document.querySelector("#retrieval-query").value = "";
+    sourcesDialog.close(); activeQuestion = "";
+  });
   document.querySelector("#retrieval-form").addEventListener("submit", event => {
     event.preventDefault();
     runQuery(true);

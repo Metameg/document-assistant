@@ -21,6 +21,11 @@ import java.util.regex.Pattern;
 @Service
 public class ChunkRetrievalService {
 
+  @org.springframework.beans.factory.annotation.Autowired(required = false)
+  private com.example.documentassistant.corpus.CorpusService corpora;
+  @org.springframework.beans.factory.annotation.Autowired(required = false)
+  private com.example.documentassistant.corpus.CorpusVectorStores corpusStores;
+
   private final VectorStore vectorStore;
   private final RetrievalProperties properties;
   private static final Pattern MODEL_NUMBER_PATTERN = Pattern.compile(
@@ -61,13 +66,18 @@ public class ChunkRetrievalService {
         .similarityThreshold(
             properties.similarityThreshold());
 
-    extractModelNumber(request.query())
+    if ("specifications".equals(request.corpusId())) extractModelNumber(request.query())
         .ifPresent(modelNumber -> searchRequestBuilder.filterExpression(
             "modelNumbers == '" + modelNumber + "'"));
 
     SearchRequest searchRequest = searchRequestBuilder.build();
 
-    List<Document> matches = vectorStore.similaritySearch(searchRequest);
+    VectorStore selectedStore = vectorStore;
+    if (!"specifications".equals(request.corpusId())) {
+      if (corpora == null || corpusStores == null) throw new IllegalStateException("Corpus retrieval is unavailable");
+      selectedStore = corpusStores.get(corpora.selection(request.corpusId(), request.versionId()).tableName());
+    }
+    List<Document> matches = selectedStore.similaritySearch(searchRequest);
 
     if (matches == null) {
       matches = List.of();

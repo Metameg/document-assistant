@@ -68,6 +68,8 @@ def parse_arguments():
         help="UTF-8 judge system prompt file. Defaults to the project evaluation directory.",
     )
     parser.add_argument("--dataset", default="evaluation/questions.json")
+    parser.add_argument("--corpus-id", default="specifications")
+    parser.add_argument("--version-id")
     parser.add_argument("--chunks-directory", type=Path,
                         default=PROJECT_ROOT / "data/chunked/specsheets")
     parser.add_argument("--qrels", type=Path, default=PROJECT_ROOT / "evaluation/qrels.tsv")
@@ -207,7 +209,7 @@ def read_qrels(path, all_cases, selected_cases, corpus):
         if chunk_id in labels[case_id]:
             raise ValueError(f"Duplicate qrels entry: {case_id} {chunk_id}")
         labels[case_id][chunk_id] = int(relevance)
-    pooled = metadata.get("labelingMode") == "retrieved-pool-question-batch-codex"
+    pooled = metadata.get("labelingMode") in {"retrieved-pool-question-batch-codex", "retrieved-pool-model-judge"}
     expected_by_case = metadata.get("judgedChunkIdsByQuestion") if pooled else None
     if pooled and (not isinstance(expected_by_case, dict)
                    or set(expected_by_case) != case_ids):
@@ -541,6 +543,8 @@ def main():
 
     configuration = {
         "schemaVersion": 8,
+        "corpusId": args.corpus_id,
+        "versionId": args.version_id,
         "datasetHash": fingerprint(cases),
         "corpusHash": fingerprint(corpus),
         "rankingStage": "Final evidence order supplied to the answer model",
@@ -620,7 +624,7 @@ def main():
                 if result["response"] is None:
                     response = post_json(
                         args.application_url.rstrip("/") + "/api/rag/answer",
-                        {"query": case["question"], "topK": k},
+                        {"query": case["question"], "topK": k, "corpusId": args.corpus_id, "versionId": args.version_id},
                     )
                     validate_answer_response(response, k)
                     result["response"] = response

@@ -1,3 +1,4 @@
+import {currentCorpus} from "./corpora.js?v=corpus-deletion-5";
 import {getJson} from "./api.js";
 
 export function initializeEvaluation() {
@@ -103,7 +104,7 @@ export function initializeEvaluation() {
   });
   
   function refreshEvaluationPlots(version) {
-    for (const img of document.querySelectorAll(".plot-card img")) {
+    for (const img of document.querySelectorAll("#legacy-evaluation .plot-card img")) {
       const url = new URL(img.src);
       url.searchParams.set("v", version);
       img.closest("figure").querySelector("a").href = url.href;

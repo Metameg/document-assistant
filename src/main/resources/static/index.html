@@ -3,32 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Document Assistant · Generac specifications</title>
+  <title>Document Assistant · Research library</title>
   <link rel="stylesheet" href="/styles.css">
-  <script src="/app.js" type="module"></script>
+  <script src="/app.js?v=corpus-deletion-5" type="module"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <a class="brand" href="/" aria-label="Document Assistant home"><span class="brand-mark" aria-hidden="true">DA</span><span>Document Assistant<small>Generac specification explorer</small></span></a>
+    <a class="brand" href="/" aria-label="Document Assistant home"><span class="brand-mark" aria-hidden="true">DA</span><span>Document Assistant<small>Research and specification explorer</small></span></a>
     <span class="demo-label">RAG DEMO</span>
   </header>
   <main id="main" tabindex="-1">
+    <div class="corpus-picker panel"><label for="active-corpus">Current corpus</label><select id="active-corpus" disabled><option>Loading corpora…</option></select><p id="active-corpus-status" class="subtle" role="status"></p></div>
     <nav class="tabs" role="tablist" aria-label="Workspace">
       <button id="tab-assistant" role="tab" aria-selected="true" aria-controls="assistant" type="button">Ask Assistant</button>
       <button id="tab-corpus" role="tab" aria-selected="false" aria-controls="corpus" tabindex="-1" type="button">Corpus</button>
       <button id="tab-evaluation" role="tab" aria-selected="false" aria-controls="evaluation" tabindex="-1" type="button">Evaluation</button>
     </nav>
     <section id="assistant" role="tabpanel" aria-labelledby="tab-assistant">
-      <div class="section-header"><div><p class="eyebrow">ANSWERS WITH EVIDENCE</p><h1>Ask your specifications.</h1><p>Explore generator details and inspect the excerpts behind each answer.</p></div></div>
+      <div class="section-header"><div><p class="eyebrow">ANSWERS WITH EVIDENCE</p><h1>Ask your documents.</h1><p>Explore your selected corpus and inspect the excerpts behind each answer.</p></div></div>
       <div class="chat-shell">
         <div id="conversation" class="conversation" aria-label="Conversation">
-          <div id="chat-empty" class="chat-empty"><span class="empty-mark" aria-hidden="true">?</span><h2>What would you like to know?</h2><p>Include a model, fuel, or operating condition for a more focused question.</p><p class="subtle">Each question is answered independently using retrieved document excerpts.</p></div>
+          <div id="chat-empty" class="chat-empty"><span class="empty-mark" aria-hidden="true">?</span><h2>What would you like to know?</h2><p>Ask about findings, methods, comparisons, or details in your selected documents.</p><p class="subtle">Each question is answered independently using retrieved document excerpts.</p></div>
         </div>
         <div class="composer">
           <form id="retrieval-form">
             <label for="retrieval-query">Your question</label>
-            <textarea id="retrieval-query" name="query" rows="3" required disabled placeholder="For example: What is the LP power rating of model G007290-0?"></textarea>
+            <textarea id="retrieval-query" name="query" rows="3" required disabled placeholder="For example: What findings do these papers report, and what are their limitations?"></textarea>
             <div class="composer-actions"><div class="button-group"><button id="retrieval-submit" type="button" class="secondary" disabled>Search sources</button><button id="answer-submit" type="submit" disabled>Ask assistant <span aria-hidden="true">↗</span></button></div></div>
           </form>
           <p id="retrieval-message" class="status" role="status" aria-live="polite">Ready for your question.</p>
@@ -38,17 +39,46 @@
       <noscript><p class="status error">Enable JavaScript to ask questions and browse documents.</p></noscript>
     </section>
     <section id="corpus" role="tabpanel" aria-labelledby="tab-corpus" hidden>
-      <div class="section-header"><div><p class="eyebrow">DOCUMENT LIBRARY</p><h1>Inspect the original specifications.</h1><p>Select a document to replace the PDF in the shared viewer.</p></div></div>
+      <div class="section-header"><div><p class="eyebrow">DOCUMENT LIBRARY</p><h1>Build and inspect your corpus.</h1><p>Select a document to replace the PDF in the shared viewer.</p></div></div>
+      <section class="panel corpus-upload" aria-labelledby="create-corpus-heading">
+        <h2 id="create-corpus-heading">Create a research corpus</h2>
+        <form id="create-corpus-form" class="inline-form"><label for="corpus-name">Corpus name</label><input id="corpus-name" maxlength="120" required placeholder="For example: RAG research papers"><button type="submit">Create corpus</button></form>
+        <p id="create-corpus-message" class="status" role="status"></p>
+      </section>
+      <section id="research-ingestion" class="panel corpus-upload" hidden>
+        <h2>Upload and process research papers</h2>
+        <p>Choose PDFs and press Process and index to upload and index the collection. Upload PDFs saves them without indexing. Your previous index stays available until the new index is ready.</p>
+        <form id="upload-papers-form"><label for="paper-files">PDF papers</label><input id="paper-files" type="file" accept="application/pdf,.pdf" multiple required><p class="subtle">Up to 100 files per upload, 50 MiB per file, and 500 MiB per request. Duplicate file contents are reported and skipped. PDFs must contain selectable text.</p><button type="submit">Upload PDFs</button></form>
+        <p id="upload-message" class="status" role="status" aria-live="polite"></p>
+        <div class="process-controls"><button id="process-papers" type="button">Process and index</button></div>
+        <p id="research-processing-message" class="status" role="status" aria-live="polite">Upload papers to begin.</p>
+        <progress id="research-progress" hidden></progress><p id="research-job-detail" class="subtle"></p><button id="retry-corpus-job" type="button" class="secondary" hidden>Retry failed job</button>
+        <details><summary>Index history and rollback</summary><ul id="version-history"></ul></details>
+        <div class="corpus-delete"><button id="delete-corpus" class="danger secondary" type="button">Delete corpus</button><p class="subtle">Permanently remove this research corpus and its stored data.</p></div>
+      </section>
+      <p id="corpus-management-message" class="status" role="status" aria-live="polite"></p>
       <div class="library-layout">
         <aside class="document-nav panel" aria-labelledby="documents-heading"><h2 id="documents-heading">Source documents</h2><p id="documents-message" class="status" role="status">Loading documents…</p><ul id="document-list"></ul></aside>
-        <section class="pdf-panel panel" aria-labelledby="pdf-title"><div class="pdf-toolbar"><div><p class="eyebrow">PDF PREVIEW</p><h2 id="pdf-title">Choose a document</h2></div><div id="pdf-actions" class="button-group" hidden><a id="pdf-open" class="text-link" target="_blank" rel="noopener">Open PDF ↗</a><a id="pdf-download" class="text-link">Download</a></div></div><p id="pdf-message" class="status" role="status">Select a specification from the document list.</p><iframe id="pdf-viewer" title="Selected specification PDF" hidden></iframe><p class="subtle viewer-note">If the preview does not display in your browser, use Open PDF.</p></section>
+        <section class="pdf-panel panel" aria-labelledby="pdf-title"><div class="pdf-toolbar"><div><p class="eyebrow">PDF PREVIEW</p><h2 id="pdf-title">Choose a document</h2></div><div id="pdf-actions" class="button-group" hidden><a id="pdf-open" class="text-link" target="_blank" rel="noopener">Open PDF ↗</a><a id="pdf-download" class="text-link">Download</a></div></div><p id="pdf-message" class="status" role="status">Select a document from the list.</p><iframe id="pdf-viewer" title="Selected document PDF" hidden></iframe><p class="subtle viewer-note">If the preview does not display in your browser, use Open PDF.</p></section>
       </div>
-      <details class="index-management panel"><summary>Corpus status &amp; indexing</summary><div class="management-grid">
+      <details id="legacy-indexing" class="index-management panel"><summary>Corpus status &amp; indexing</summary><div class="management-grid">
         <section aria-labelledby="corpus-heading"><h2 id="corpus-heading">Corpus status</h2><p id="corpus-message" class="status" role="status">Loading corpus status…</p><dl class="metrics"><dt>Indexed</dt><dd id="corpus-indexed">—</dd><dt>In sync</dt><dd id="corpus-in-sync">—</dd><dt>Available documents</dt><dd id="corpus-catalog-count">—</dd><dt>Indexed documents</dt><dd id="corpus-indexed-count">—</dd><dt>Stored chunks</dt><dd id="corpus-chunk-count">—</dd></dl><p id="corpus-differences" class="subtle"></p></section>
         <section aria-labelledby="indexing-heading"><h2 id="indexing-heading">Rebuild the index</h2><p class="subtle">Rebuilds the index from all processed documents.</p><button id="begin-indexing" type="button" disabled>Rebuild index</button><p id="indexing-message" class="status" role="status" aria-live="polite">Ready to begin an indexing job.</p><dl class="metrics"><dt>Stage</dt><dd id="indexing-stage">Idle</dd><dt>Current document</dt><dd id="indexing-document">—</dd><dt>Documents discovered</dt><dd id="indexing-discovered">0</dd><dt>Documents chunked</dt><dd id="indexing-chunked">0</dd><dt>Chunks generated</dt><dd id="indexing-generated">0</dd><dt>Documents indexed</dt><dd id="indexing-indexed">0</dd><dt>Chunks stored</dt><dd id="indexing-stored">0</dd></dl></section>
       </div></details>
     </section>
     <section id="evaluation" role="tabpanel" aria-labelledby="tab-evaluation" hidden>
+      <div id="research-evaluation" hidden>
+        <section class="panel evaluation-controls"><h2>Prepare a benchmark</h2><p>Generate questions and reference answers from the indexed papers, then review and approve them before evaluation. Generation and evaluation use model API credits.</p>
+          <form id="generate-benchmark-form" class="inline-form"><label for="benchmark-count">Questions</label><input id="benchmark-count" type="number" min="1" max="100" value="20" required><button type="submit">Generate benchmark draft</button></form>
+          <p id="benchmark-workload" class="subtle"></p><label for="benchmark-select">Benchmark history</label><select id="benchmark-select"></select><p id="benchmark-state" class="status" role="status"></p>
+          <form id="benchmark-review-form"><div id="benchmark-editor"></div><div id="benchmark-review-actions" class="button-group" hidden><button type="submit">Save reviewed draft</button><button id="approve-benchmark" type="button" class="secondary">Approve benchmark</button></div></form>
+        </section>
+        <section class="panel evaluation-controls"><h2>Run evaluation</h2><p>Runs the same RAG answer model, labels a frozen retrieval pool, and uses the judge to assess factual claims. Retrieval recall and average precision are measured against the judged pool, not every relevant passage in the corpus.</p>
+          <label for="research-k-values">Evidence limits (k)</label><input id="research-k-values" value="5, 10, 20, 30, 40"><p id="research-evaluation-workload" class="subtle"></p><button id="run-research-evaluation" type="button" disabled>Run evaluation and update plots</button>
+          <p id="research-evaluation-message" class="status" role="status" aria-live="polite"></p><label for="evaluation-history">Evaluation history</label><select id="evaluation-history"></select><div id="research-report"></div>
+        </section><div id="research-plots" class="plot-grid"></div>
+      </div>
+      <div id="legacy-evaluation">
       <div class="evaluation-controls panel">
         <div><h2>Run the evaluation</h2><p class="subtle">Runs the question suite with the configured answer model and judge, then updates the quality, evidence ranking and latency plots. Uses model API credits.</p></div>
         <div class="evaluation-plan">
@@ -74,9 +104,17 @@
         <figure class="panel plot-card"><figcaption><h3>Retrieval latency</h3><p>Mean and p95 time spent finding supporting excerpts.</p></figcaption><a href="/api/demo/evaluation/plots/retrieval-latency.png" target="_blank" rel="noopener" aria-label="Open retrieval latency plot"><img src="/api/demo/evaluation/plots/retrieval-latency.png" alt="Retrieval latency evaluation plot"></a><p class="plot-unavailable" hidden>Plot unavailable. Run the evaluation to generate this plot.</p></figure>
         <figure class="panel plot-card"><figcaption><h3>Model inference latency</h3><p>Mean and p95 time spent generating answers after retrieval.</p></figcaption><a href="/api/demo/evaluation/plots/inference-latency.png" target="_blank" rel="noopener" aria-label="Open model inference latency plot"><img src="/api/demo/evaluation/plots/inference-latency.png" alt="Model inference latency evaluation plot"></a><p class="plot-unavailable" hidden>Plot unavailable. Run the evaluation to generate this plot.</p></figure>
       </div></section>
-
+      </div>
     </section>
   </main>
   <dialog id="sources-dialog" aria-labelledby="sources-title"><div class="dialog-header"><div><p class="eyebrow">SUPPORTING EVIDENCE</p><h2 id="sources-title">Sources</h2></div><button id="sources-close" class="secondary" type="button">Close</button></div><p id="sources-question" class="subtle"></p><p class="subtle">Documents are grouped by PDF. Citation numbers identify individual excerpts; RRF scores describe retrieval ranking, not confidence.</p><div id="retrieval-results"></div></dialog>
+  <dialog id="deletion-dialog" aria-labelledby="delete-title" aria-describedby="delete-description">
+    <form id="delete-form">
+      <h2 id="delete-title">Confirm removal</h2><p id="delete-description"></p>
+      <label id="delete-name-label" hidden><span id="delete-name-prompt"></span><input id="delete-name" type="text" autocomplete="off"></label>
+      <p id="delete-message" class="status" role="status" aria-live="polite"></p>
+      <div class="button-group"><button id="cancel-delete" type="button" class="secondary" autofocus>Cancel</button><button id="confirm-delete" type="submit" class="danger">Remove</button></div>
+    </form>
+  </dialog>
 </body>
 </html>

@@ -1,0 +1,13 @@
+server.address=127.0.0.1
+server.port=8081
+spring.datasource.url=jdbc:postgresql://127.0.0.1:5433/document_assistant_development
+spring.datasource.username=rag_dev
+spring.datasource.password=${POSTGRES_PASSWORD}
+document-assistant.corpora.python-executable=.venv-docling/bin/python
+document-assistant.evaluation.python-executable=.venv-docling/bin/python
+document-assistant.evaluation.application-url=http://127.0.0.1:8081
+# Keep the answer and embedding models from application-local.properties.
+document-assistant.evaluation.judge-model=openai/gpt-oss-120b
+
+# Revalidate browser modules after local rebuilds.
+spring.web.resources.cache.cachecontrol.no-cache=true

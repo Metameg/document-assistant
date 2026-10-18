@@ -16,6 +16,12 @@ import java.util.Set;
 public class HybridCandidateService {
 
   private static final int RRF_CONSTANT = 60;
+  @org.springframework.beans.factory.annotation.Autowired(required = false)
+  private com.example.documentassistant.corpus.CorpusService corpora;
+  @org.springframework.beans.factory.annotation.Autowired(required = false)
+  private com.example.documentassistant.corpus.CorpusVectorStores corpusStores;
+  @org.springframework.beans.factory.annotation.Autowired(required = false)
+  private org.springframework.jdbc.core.JdbcTemplate corpusJdbc;
 
   private final ChunkRetrievalService vectorSearch;
   private final KeywordChunkSearchService keywordSearch;
@@ -46,15 +52,23 @@ public class HybridCandidateService {
     int keywordLimit = properties.keywordLimit();
     int candidateLimit = properties.candidateLimit();
 
+    KeywordChunkSearchService selectedKeywords = keywordSearch;
+    String versionId = request.versionId();
+    if (!"specifications".equals(request.corpusId())) {
+      if (corpora == null) throw new IllegalStateException("Corpus retrieval is unavailable");
+      var version = corpora.selection(request.corpusId(), versionId);
+      versionId = version.id().toString();
+      selectedKeywords = new KeywordChunkSearchService(corpusJdbc, corpusStores.schema(), version.tableName());
+    }
     RetrievalResponse vector = vectorSearch.search(
-        new RetrievalRequest(request.query(), topK));
+        new RetrievalRequest(request.query(), topK, request.corpusId(), versionId));
 
-    List<KeywordCandidate> keyword = keywordSearch.search(
+    List<KeywordCandidate> keyword = selectedKeywords.search(
         request.query(), keywordLimit);
 
     List<KeywordCandidate> acrossDocuments = properties.diversityDocumentLimit() == 0
         ? List.of()
-        : keywordSearch.searchAcrossDocuments(
+        : selectedKeywords.searchAcrossDocuments(
             request.query(),
             properties.diversityChunksPerDocument(),
             properties.diversityDocumentLimit());
@@ -73,7 +87,8 @@ public class HybridCandidateService {
               chunk.sourceFile(),
               chunk.chunkIndex(),
               chunk.section(),
-              chunk.text()));
+              chunk.text(),
+              chunk.pageNumbers()));
 
       candidate.channels.add("vector");
       candidate.vectorSimilarityScore = chunk.similarityScore();
@@ -179,7 +194,8 @@ public class HybridCandidateService {
             chunk.sourceFile(),
             chunk.chunkIndex(),
             chunk.section(),
-            chunk.text()));
+            chunk.text(),
+            chunk.pageNumbers()));
   }
 
   private String chunkId(
@@ -200,6 +216,7 @@ public class HybridCandidateService {
     private final int chunkIndex;
     private final String section;
     private final String text;
+    private final List<Integer> pageNumbers;
     private final Set<String> channels = new LinkedHashSet<>();
 
     private Double vectorSimilarityScore;
@@ -212,13 +229,15 @@ public class HybridCandidateService {
         String sourceFile,
         int chunkIndex,
         String section,
-        String text) {
+        String text,
+        List<Integer> pageNumbers) {
 
       this.documentId = documentId;
       this.sourceFile = sourceFile;
       this.chunkIndex = chunkIndex;
       this.section = section;
       this.text = text;
+      this.pageNumbers = List.copyOf(pageNumbers);
     }
 
     private Candidate toCandidate() {
@@ -228,6 +247,7 @@ public class HybridCandidateService {
           chunkIndex,
           section,
           text,
+          pageNumbers,
           List.copyOf(channels),
           vectorSimilarityScore,
           keywordScore,
@@ -242,6 +262,7 @@ public class HybridCandidateService {
       int chunkIndex,
       String section,
       String text,
+      List<Integer> pageNumbers,
       List<String> retrievalChannels,
       Double vectorSimilarityScore,
       Double keywordScore,
@@ -249,6 +270,7 @@ public class HybridCandidateService {
       boolean selectedByDiversity) {
 
     public Candidate {
+      pageNumbers = List.copyOf(pageNumbers);
       retrievalChannels = List.copyOf(retrievalChannels);
     }
   }

@@ -1,12 +1,15 @@
 import {getJson} from "./api.js";
+import {currentCorpus, corpusUrl, corpusBusy, requestDocumentRemoval} from "./corpora.js?v=corpus-deletion-5";
 
 let catalog = new Map();
 
-async function loadDocuments() {
+export async function loadDocuments() {
+  const corpusId = currentCorpus().id;
   const message = document.querySelector("#documents-message");
   const list = document.querySelector("#document-list");
   try {
-    const documents = await getJson("/api/demo/documents");
+    const documents = await getJson(corpusUrl("/documents"))
+    ; if (currentCorpus().id !== corpusId) return;
     catalog = new Map(documents.map(item => [item.documentId, item]));
     list.replaceChildren();
     for (const item of documents) {
@@ -19,7 +22,7 @@ async function loadDocuments() {
       select.addEventListener("click", () => selectDocument(item));
       row.append(select);
       const details = document.createElement("p");
-      details.textContent = `${item.pageCount} pages · Revision ${item.revision?.revision || "unspecified"} · Models: ${item.modelNumbers.join(", ") || "none listed"} · ID: ${item.documentId}`;
+      details.textContent = currentCorpus().profile === "research" ? `${item.pageCount} pages · ${item.indexed ? "Indexed" : "Pending processing"}` : `${item.pageCount} pages · Revision ${item.revision?.revision || "unspecified"} · Models: ${item.modelNumbers.join(", ") || "none listed"}`;
       row.append(details);
       const actions = document.createElement("p");
       if (item.pdfAvailable) {
@@ -31,11 +34,20 @@ async function loadDocuments() {
       } else {
         actions.textContent = "PDF unavailable";
       }
+      if (currentCorpus().profile === "research") {
+        const remove = document.createElement("button");
+        remove.type = "button"; remove.className = "danger secondary remove-document";
+        remove.textContent = "Remove"; remove.setAttribute("aria-label", `Remove ${item.sourceFile}`);
+        remove.disabled = corpusBusy();
+        remove.onclick = () => requestDocumentRemoval(item);
+        actions.append(remove);
+      }
       row.append(actions);
       list.append(row);
     }
-    message.textContent = documents.length ? `${documents.length} documents available.` : "No processed documents were found.";
+    message.textContent = documents.length ? `${documents.length} documents available.` : "No documents yet. Upload PDFs to build this corpus.";
     if (documents.length) selectDocument(documents.find(item => item.pdfAvailable) || documents[0]);
+    else { document.querySelector("#pdf-viewer").removeAttribute("src"); document.querySelector("#pdf-viewer").hidden = true; document.querySelector("#pdf-actions").hidden = true; document.querySelector("#pdf-title").textContent = "Choose a document"; document.querySelector("#pdf-message").textContent = "Upload a PDF to build this corpus."; }
   } catch (error) {
     message.classList.add("error");
     message.textContent = `Could not load documents: ${error.message}`;
@@ -43,7 +55,7 @@ async function loadDocuments() {
 }
 
 function pdfUrl(documentId) {
-  return `/api/demo/documents/${encodeURIComponent(documentId)}/pdf`;
+  return corpusUrl(`/documents/${encodeURIComponent(documentId)}/pdf`);
 }
 
 export function pdfLink(documentId, text) {
@@ -68,7 +80,7 @@ export function selectDocument(item) {
     document.querySelector("#pdf-message").textContent = "The PDF for this document is unavailable.";
     return;
   }
-  viewer.title = `Specification PDF: ${item.sourceFile}`;
+  viewer.title = `Document PDF: ${item.sourceFile}`;
   viewer.src = pdfUrl(item.documentId);
   const open = document.querySelector("#pdf-open");
   open.href = viewer.src;
@@ -84,5 +96,7 @@ export function getCatalogDocument(documentId) {
 
 export function initializeDocuments() {
   loadDocuments();
+  window.addEventListener("corpuschange", loadDocuments);
+  window.addEventListener("corpusupdated", loadDocuments);
 }
 

@@ -39,6 +39,7 @@ public class KeywordChunkSearchService {
       )
       """;
 
+  private static final tools.jackson.databind.json.JsonMapper JSON = tools.jackson.databind.json.JsonMapper.builder().build();
   private final JdbcTemplate jdbcTemplate;
   private final String qualifiedTable;
 
@@ -74,6 +75,7 @@ public class KeywordChunkSearchService {
           section,
           chunk_index,
           model_numbers,
+          page_numbers,
           content
         FROM scored
         ORDER BY
@@ -145,6 +147,7 @@ public class KeywordChunkSearchService {
           r.section,
           r.chunk_index,
           r.model_numbers,
+          r.page_numbers,
           r.content
         FROM ranked r
         JOIN selected_documents d
@@ -186,6 +189,7 @@ public class KeywordChunkSearchService {
             v.metadata->>'section' AS section,
             (v.metadata->>'chunkIndex')::integer AS chunk_index,
             v.metadata->>'modelNumbers' AS model_numbers,
+            coalesce((v.metadata->'pageNumbers')::text, '[]') AS page_numbers,
             v.content
           FROM %s v
           CROSS JOIN terms t
@@ -208,7 +212,8 @@ public class KeywordChunkSearchService {
         result.getString("section"),
         result.getInt("chunk_index"),
         result.getString("model_numbers"),
-        result.getString("content"));
+        result.getString("content"),
+        List.of(JSON.readValue(result.getString("page_numbers"), Integer[].class)));
   }
 
   private void validateQuery(String query) {
@@ -232,6 +237,7 @@ public class KeywordChunkSearchService {
       String section,
       int chunkIndex,
       String modelNumbers,
-      String text) {
+      String text,
+      List<Integer> pageNumbers) {
   }
 }

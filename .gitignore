@@ -35,4 +35,10 @@ build/
 ## API Keys
 /config/application-local.properties
 /.env
+/data/corpora/
+/.venv-docling/
+/.env.development
+/config/application-development.properties
 
+
+__pycache__/
