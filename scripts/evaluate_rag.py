@@ -8,6 +8,7 @@ import os
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
@@ -107,6 +108,14 @@ def post_json(url, payload, api_key=None):
     headers = {"Content-Type": "application/json"}
     if api_key:
         headers["Authorization"] = f"Bearer {api_key}"
+    else:
+        # Send the worker secret only to the two local app endpoints, never a model provider.
+        target = urllib.parse.urlparse(url)
+        worker_token = os.environ.get("DOCUMENT_ASSISTANT_WORKER_TOKEN")
+        if worker_token and target.hostname in {"localhost", "127.0.0.1", "::1"} and target.path in {
+            "/api/rag/answer", "/api/rag/evidence-pool"
+        }:
+            headers["X-Document-Assistant-Worker"] = worker_token
 
     request = urllib.request.Request(
         url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST"

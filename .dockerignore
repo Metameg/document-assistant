@@ -4,6 +4,7 @@
 **/.env
 **/.env.*
 config/application-local.properties
+config/application-development.properties
 **/application-local.properties
 target
 .idea
@@ -12,6 +13,11 @@ target
 .project
 .classpath
 .venv
+.venv-docling
+.worktrees
+.aws
+data/corpora
+evaluation/results
 venv
 **/__pycache__
 **/*.pyc

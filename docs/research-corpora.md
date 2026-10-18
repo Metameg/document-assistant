@@ -68,4 +68,7 @@ Real pgvector integration tests are enabled with `-DrunCorpusIntegrationTests=tr
 
 For a live smoke test, upload a public research PDF, process it, inspect page-linked source excerpts, ask a sourced question, generate and review a small benchmark, then evaluate at a small k before increasing the workload. Generation, embeddings, relevance labeling, and answer judging use provider credits.
 
-This version is intended for local, single-user use. Production deployment, authentication, distributed workers, and storage lifecycle policies require a separate rollout.
+Local development defaults to filesystem storage and no access filter. For a private,
+single-instance Railway deployment using R2 and Cloudflare Access, see
+[the deployment guide](railway-private-deployment.md). Distributed workers and automatic
+storage lifecycle policies are not implemented.

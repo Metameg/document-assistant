@@ -46,6 +46,7 @@ public class CorpusEvaluationService {
       Job job=new Job(UUID.randomUUID(),corpus,"BENCHMARK","QUEUED",false,"Preparing benchmark draft",null,0,count,0,Instant.now(),null,benchmark);
       Path dir=benchmarkDirectory(corpus,benchmark);Files.createDirectories(dir);
       Files.writeString(dir.resolve("request.json"),repo.encode(Map.of("versionId",version.id(),"count",count,"judgeModel",judgeModel)));
+      processes.artifacts().publish(dir);
       repo.insertJob(job);worker.submit(()->generate(job,version,count));return job;
     }
   }
@@ -53,6 +54,8 @@ public class CorpusEvaluationService {
     try {
       repo.saveJob(job.progress("GENERATING_BENCHMARK","Generating source-grounded questions; model API credits are used",false,null,0,count,0));
       Path dir=benchmarkDirectory(job.corpusId(),job.referenceId());Path output=dir.resolve("questions.json");
+      processes.artifacts().restore(dir);
+      processes.artifacts().restore(corpora.versionDirectory(version.corpusId(),version.id()).resolve("chunks"));
       processes.execute("prepare_benchmark.py",List.of("generate","--chunks-directory",corpora.versionDirectory(version.corpusId(),version.id()).resolve("chunks").toString(),"--output",output.toString(),"--judge-model",judgeModel,"--count",Integer.toString(count)),dir.resolve("generation.log"),environment());
       JsonNode dataset=repo.tree(Files.readString(output));validateDataset(version,dataset);
       if(dataset.size()!=count) throw new IOException("Generated benchmark question count does not match request");
@@ -107,9 +110,11 @@ public class CorpusEvaluationService {
   private void evaluate(Job job,Benchmark benchmark,Version version,List<Integer> ks) {
     try {
       Path dir=evaluationDirectory(job.corpusId(),job.jobId());Files.createDirectories(dir);
+      processes.artifacts().restore(dir);
       Path dataset=dir.resolve("questions.json");Files.writeString(dataset,repo.encode(benchmark.dataset()));
       Files.writeString(dir.resolve("run-config.json"),repo.encode(repo.evaluationConfig(job.jobId())));
       Path chunks=corpora.versionDirectory(version.corpusId(),version.id()).resolve("chunks");
+      processes.artifacts().restore(chunks);
       repo.saveJob(job.progress("LABELING_RELEVANCE","Freezing the retrieval pool and judging relevance",false,null,0,job.total(),0));
       List<String> label=new ArrayList<>(List.of("label","--chunks-directory",chunks.toString(),"--dataset",dataset.toString(),"--output",dir.toString(),"--judge-model",judgeModel,"--application-url",applicationUrl,"--corpus-id",job.corpusId().toString(),"--version-id",version.id().toString(),"--k"));ks.forEach(k->label.add(k.toString()));
       processes.execute("prepare_benchmark.py",label,dir.resolve("relevance.log"),environment());
@@ -132,7 +137,7 @@ public class CorpusEvaluationService {
       }
       Job job=old.progress("QUEUED","Retrying with saved successful outputs",false,null,old.completed(),old.total(),old.chunks());
       if(old.kind().equals("BENCHMARK")) {
-        JsonNode config=repo.tree(Files.readString(benchmarkDirectory(corpus,old.referenceId()).resolve("request.json")));
+        JsonNode config=repo.tree(Files.readString(processes.artifacts().require(benchmarkDirectory(corpus,old.referenceId()).resolve("request.json"))));
         if(!judgeModel.equals(config.path("judgeModel").asText())) throw CorpusService.invalid("Judge configuration changed; generate a new benchmark");
         Version version=corpora.selection(corpus.toString(),config.path("versionId").asText());
         repo.saveJob(job);worker.submit(()->generate(job,version,config.path("count").asInt()));
@@ -150,6 +155,7 @@ public class CorpusEvaluationService {
     }
   }
   public Path evaluationDirectory(UUID corpus,UUID run) {return processes.corpus(corpus).resolve("evaluations").resolve(run.toString());}
+  public CorpusArtifacts artifacts() {return processes.artifacts();}
   private Path benchmarkDirectory(UUID corpus,UUID id) {return processes.corpus(corpus).resolve("benchmarks").resolve(id.toString());}
   private Map<String,String> environment(){return Map.of("EVALUATION_JUDGE_URL",judgeUrl);}
   private void failed(Job job,Exception e) {org.slf4j.LoggerFactory.getLogger(CorpusEvaluationService.class).error("Corpus evaluation job {} failed",job.jobId(),e);if(e instanceof InterruptedException)Thread.currentThread().interrupt();repo.saveJob(job.progress("FAILED",CorpusService.failure(e),true,null,job.completed(),job.total(),job.chunks()));}

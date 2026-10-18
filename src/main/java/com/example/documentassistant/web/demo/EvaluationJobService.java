@@ -24,6 +24,7 @@ import java.util.concurrent.TimeUnit;
 @Service
 @PropertySource("classpath:evaluation-runner.properties")
 public class EvaluationJobService {
+  @Value("${document-assistant.access.internal-token:}") private String internalToken="";
   public static final Set<String> PLOT_NAMES = Set.of(
       "answer-correctness.png", "retrieval-map-mrr.png",
       "retrieval-latency.png", "inference-latency.png", "retrieval-ranking.png");
@@ -138,6 +139,7 @@ public class EvaluationJobService {
 
   private void execute(List<String> command, Path log) throws IOException, InterruptedException {
     ProcessBuilder builder = new ProcessBuilder(command).directory(root.toFile());
+    if(!internalToken.isBlank()) builder.environment().put("DOCUMENT_ASSISTANT_WORKER_TOKEN",internalToken);
     builder.redirectErrorStream(true).redirectOutput(log.toFile());
     builder.environment().put("MPLBACKEND", "Agg");
     builder.environment().put("MPLCONFIGDIR", results.resolve("matplotlib-cache").toString());

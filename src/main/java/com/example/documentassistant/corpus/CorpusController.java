@@ -38,11 +38,13 @@ public class CorpusController {
   }
   @PostMapping @ResponseStatus(HttpStatus.CREATED) public CorpusService.View create(@RequestBody CreateRequest request) {return service.view(service.create(request.name()));}
   @GetMapping("/{id}") public CorpusService.View get(@PathVariable UUID id) {return service.view(repo.corpus(id));}
-  @GetMapping("/{id}/documents") public List<PaperView> documents(@PathVariable String id) {
+  @GetMapping("/{id}/documents") public List<PaperView> documents(@PathVariable String id) throws IOException {
     if(CorpusService.LEGACY.equals(id)) return catalog.listDocuments().stream().map(p->new PaperView(p.documentId(),p.sourceFile(),p.pageCount(),p.modelNumbers(),p.revision(),p.pdfAvailable(),true)).toList();
     UUID corpus=CorpusService.uuid(id);Corpus record=repo.corpus(corpus);Set<UUID> indexed=new HashSet<>();
     if(record.activeVersion()!=null) repo.version(corpus,record.activeVersion()).documents().forEach(p->indexed.add(p.id()));
-    return repo.papers(corpus).stream().map(p->new PaperView(p.id().toString(),p.sourceFile(),p.pageCount(),List.of(),null,Files.isRegularFile(service.pdf(corpus,p.id())),indexed.contains(p.id()))).toList();
+    List<PaperView> result=new ArrayList<>();
+    for(Paper p:repo.papers(corpus)) result.add(new PaperView(p.id().toString(),p.sourceFile(),p.pageCount(),List.of(),null,service.pdfAvailable(corpus,p.id()),indexed.contains(p.id())));
+    return result;
   }
   @PostMapping(value="/{id}/documents",consumes=MediaType.MULTIPART_FORM_DATA_VALUE)
   public CorpusService.UploadResult upload(@PathVariable UUID id,@RequestParam("files") List<MultipartFile> files) throws IOException {return service.upload(id,files);}
@@ -89,14 +91,15 @@ public class CorpusController {
   }
   @GetMapping("/{id}/evaluation-runs/{run}/report") public JsonNode report(@PathVariable UUID id,@PathVariable UUID run) throws IOException {
     evaluationJob(id,run);Path report=evaluation.evaluationDirectory(id,run).resolve("report.json");
-    if(!Files.isRegularFile(report)) throw CorpusRepository.missing("Report");return repo.tree(Files.readString(report));
+    if(!evaluation.artifacts().exists(report)) throw CorpusRepository.missing("Report");return repo.tree(Files.readString(evaluation.artifacts().require(report)));
   }
   @GetMapping(value="/{id}/evaluation-runs/{run}/plots/{name}",produces=MediaType.IMAGE_PNG_VALUE)
-  public ResponseEntity<Resource> plot(@PathVariable UUID id,@PathVariable UUID run,@PathVariable String name) {
+  public ResponseEntity<Resource> plot(@PathVariable UUID id,@PathVariable UUID run,@PathVariable String name) throws IOException {
     evaluationJob(id,run);
     if(!com.example.documentassistant.web.demo.EvaluationJobService.PLOT_NAMES.contains(name)) throw CorpusRepository.missing("Plot");
     Path path=evaluation.evaluationDirectory(id,run).resolve("plots").resolve(name);
-    if(!Files.isRegularFile(path))throw CorpusRepository.missing("Plot");
+    if(!evaluation.artifacts().exists(path))throw CorpusRepository.missing("Plot");
+    evaluation.artifacts().require(path);
     return ResponseEntity.ok().cacheControl(CacheControl.noStore()).contentType(MediaType.IMAGE_PNG).body(new FileSystemResource(path));
   }
   private void evaluationJob(UUID corpus,UUID run) {if(!repo.job(corpus,run).kind().equals("EVALUATION"))throw CorpusRepository.missing("Evaluation run");}

@@ -31,6 +31,7 @@ class CorpusIntegrationTest {
   CorpusService service;
   CorpusVectorStores stores;
   CorpusFileCleanup cleanup;
+  CorpusProcesses processor;
   AtomicBoolean embeddingFails=new AtomicBoolean();
 
   @BeforeEach void setup() throws Exception {
@@ -52,7 +53,7 @@ class CorpusIntegrationTest {
       private float[] vector(String text){if(embeddingFails.get())throw new IllegalStateException("Simulated provider failure");return new float[]{text.contains("alpha")?1:0,text.contains("beta")?1:0,0.25f,0.5f};}
     };
     stores=new CorpusVectorStores(db,embedding,schema,4);
-    CorpusProcesses processor=new CorpusProcesses(directory.toString(),"storage","python","test",30) {
+    processor=new CorpusProcesses(directory.toString(),"storage","python","test",30) {
       @Override public void execute(String script,List<String> arguments,Path log,Map<String,String> environment) throws IOException {
         String id=arguments.get(arguments.indexOf("--document-id")+1),file=arguments.get(arguments.indexOf("--source-file")+1);
         Path output=Path.of(arguments.get(arguments.indexOf("--output")+1));Files.createDirectories(output.getParent());
@@ -65,6 +66,39 @@ class CorpusIntegrationTest {
     service=new CorpusService(repo,processor,stores,cleanup,db,new DataSourceTransactionManager(db.getDataSource()),"test-embedding",4,1024*1024,10);
   }
   @AfterEach void cleanup(){if(service!=null)service.close();if(cleanup!=null)cleanup.close();if(admin!=null && schema!=null)admin.execute("DROP SCHEMA "+schema+" CASCADE");}
+
+  @Test void objectStorageSurvivesAnEmptyCacheAndPaperDeletionRetainsOtherVectors() throws Exception {
+    var remote=new MemoryCorpusObjectStore();
+    processor.configureArtifacts(new CorpusArtifacts(processor.storage,remote,"integration"));
+    Corpus corpus=service.create("R2 restore");
+    var papers=service.upload(corpus.id(),List.of(pdf("alpha.pdf"),pdf("beta.pdf"))).uploaded();
+    assertEquals("COMPLETED",await(service.process(corpus.id())).stage());
+    CorpusFileCleanup.erase(processor.corpus(corpus.id()));embeddingFails.set(true);
+    assertTrue(service.pdfAvailable(corpus.id(),papers.getFirst().id()));
+    assertTrue(Files.isRegularFile(service.pdf(corpus.id(),papers.getFirst().id())));
+    assertEquals(2,service.chunks(service.selection(corpus.id().toString(),null)).size());
+    assertEquals(1,service.deleteDocument(corpus.id(),papers.getFirst().id()).corpus().chunkCount());
+    assertTrue(remote.objects.keySet().stream().noneMatch(k->k.contains(papers.getFirst().id().toString())));
+    CorpusFileCleanup.erase(processor.corpus(corpus.id()));
+    assertEquals(1,service.chunks(service.selection(corpus.id().toString(),null)).size());
+    service.deleteCorpus(corpus.id());assertTrue(remote.objects.isEmpty());
+  }
+  @Test void storageFailuresDoNotRegisterUploadsOrActivateAnIncompleteIndex() throws Exception {
+    var remote=new MemoryCorpusObjectStore();
+    processor.configureArtifacts(new CorpusArtifacts(processor.storage,remote,"integration"));
+    Corpus corpus=service.create("Failed R2");remote.failWrites=true;
+    assertThrows(IOException.class,()->service.upload(corpus.id(),List.of(pdf("alpha.pdf"))));assertTrue(repo.papers(corpus.id()).isEmpty());
+    remote.failWrites=false;service.upload(corpus.id(),List.of(pdf("alpha.pdf")));await(service.process(corpus.id()));
+    UUID active=repo.corpus(corpus.id()).activeVersion();remote.failWrites=true;
+    assertEquals("FAILED",await(service.process(corpus.id())).stage());assertEquals(active,repo.corpus(corpus.id()).activeVersion());
+  }
+  @Test void objectDeletionFailureStaysQueuedAndRetriesWithoutRestoringDeletedData() throws Exception {
+    var remote=new MemoryCorpusObjectStore();processor.configureArtifacts(new CorpusArtifacts(processor.storage,remote,"integration"));
+    Corpus corpus=service.create("R2 cleanup retry");service.upload(corpus.id(),List.of(pdf("alpha.pdf")));
+    remote.failDeletes=true;assertTrue(service.deleteCorpus(corpus.id()).cleanupPending());assertFalse(repo.fileCleanups().isEmpty());
+    assertThrows(org.springframework.web.server.ResponseStatusException.class,()->repo.corpus(corpus.id()));
+    remote.failDeletes=false;cleanup.drain();assertTrue(repo.fileCleanups().isEmpty());assertTrue(remote.objects.isEmpty());
+  }
 
   MockMultipartFile pdf(String name) throws IOException {
     try(PDDocument doc=new PDDocument();ByteArrayOutputStream output=new ByteArrayOutputStream()) {doc.getDocumentInformation().setTitle(name);doc.addPage(new PDPage());doc.save(output);return new MockMultipartFile("files",name,"application/pdf",output.toByteArray());}

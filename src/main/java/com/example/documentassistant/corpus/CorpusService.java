@@ -56,11 +56,13 @@ public class CorpusService {
     if (name==null || name.isBlank() || name.length()>120) throw invalid("Corpus name must contain 1–120 characters");
     return repo.create(name.trim());
   }
-  public Path pdf(UUID corpus, UUID document) {
+  private Path pdfPath(UUID corpus, UUID document) {
     repo.corpus(corpus);
     if (repo.papers(corpus).stream().noneMatch(p -> p.id().equals(document))) throw CorpusRepository.missing("Document");
     return processes.corpus(corpus).resolve("pdfs").resolve(document + ".pdf");
   }
+  public Path pdf(UUID corpus,UUID document) throws IOException {return processes.artifacts().require(pdfPath(corpus,document));}
+  public boolean pdfAvailable(UUID corpus,UUID document) throws IOException {return processes.artifacts().exists(pdfPath(corpus,document));}
   public record DuplicateUpload(String sourceFile, UUID existingDocumentId, String existingSourceFile) {}
   public record UploadResult(List<Paper> uploaded, List<DuplicateUpload> duplicates, int documentCount) {}
 
@@ -98,12 +100,16 @@ public class CorpusService {
         finally {if(staged.values().stream().noneMatch(temp::equals)) Files.deleteIfExists(temp);}
       }
       for(var entry:staged.entrySet()) Files.move(entry.getValue(),directory.resolve(entry.getKey().id()+".pdf"));
+      // Do not register a PDF until its durable copy exists.
+      for(Paper paper:staged.keySet()) processes.artifacts().publish(directory.resolve(paper.id()+".pdf"));
       transaction.executeWithoutResult(status -> staged.keySet().forEach(p -> repo.addPaper(corpus,p)));
       return new UploadResult(List.copyOf(staged.keySet()),List.copyOf(duplicates),repo.papers(corpus).size());
     } finally {
       for(var entry:staged.entrySet()) {
         Files.deleteIfExists(entry.getValue());
-        if(repo.papers(corpus).stream().noneMatch(p -> p.id().equals(entry.getKey().id()))) Files.deleteIfExists(directory.resolve(entry.getKey().id()+".pdf"));
+        if(repo.papers(corpus).stream().noneMatch(p -> p.id().equals(entry.getKey().id()))) {
+          cleanup.queue(List.of(directory.resolve(entry.getKey().id()+".pdf")));cleanup.drain();
+        }
       }
     }
   }
@@ -146,6 +152,7 @@ public class CorpusService {
     Set<Path> paths=new LinkedHashSet<>();Path root=processes.corpus(corpus);
     paths.add(root.resolve("pdfs").resolve(document+".pdf"));
     Path processed=root.resolve("processed");
+    processes.artifacts().restore(processed);
     if(Files.isDirectory(processed)) try(var files=Files.list(processed)) {files.filter(p->p.getFileName().toString().startsWith(document+"-")).forEach(paths::add);}
     affected.forEach(v->paths.add(versionDirectory(corpus,v.id())));
     benchmarks.forEach(b->paths.add(root.resolve("benchmarks").resolve(b.id().toString())));
@@ -180,7 +187,9 @@ public class CorpusService {
           int count=db.queryForObject("SELECT count(*) FROM "+stores.qualified(table),Integer.class);
           try {
             Path chunks=replacementDirectory.resolve("chunks");Files.createDirectories(chunks);
+            processes.artifacts().restore(versionDirectory(corpus,active.id()).resolve("chunks"));
             for(Paper keep:retained) Files.copy(versionDirectory(corpus,active.id()).resolve("chunks").resolve(keep.id()+"-chunks.json"),chunks.resolve(keep.id()+"-chunks.json"));
+            processes.artifacts().publish(replacementDirectory);
           } catch(IOException e) {throw new UncheckedIOException(e);}
           repo.saveVersion(new Version(replacement,corpus,table,retained,active.config(),count,Instant.now()));
         }
@@ -211,6 +220,7 @@ public class CorpusService {
   }
   private boolean benchmarkUsesVersion(Path root,Job job,Set<UUID> versions) throws IOException {
     Path request=root.resolve("benchmarks").resolve(job.referenceId().toString()).resolve("request.json");
+    if(processes.artifacts().exists(request)) processes.artifacts().require(request);
     // A missing request on an incomplete draft cannot establish safe provenance.
     if(!Files.isRegularFile(request)) return !versions.isEmpty();
     String version=repo.tree(Files.readString(request)).path("versionId").asText();
@@ -222,6 +232,7 @@ public class CorpusService {
     Job job=initial;
     boolean activated=false;
     try {
+      processes.artifacts().restore(processes.corpus(initial.corpusId()).resolve("processed"));
       Path chunks=directory.resolve("chunks");Files.createDirectories(chunks);
       List<ChunkedDocument> documents=new ArrayList<>();int totalChunks=0;
       for(Paper paper:papers) {
@@ -229,7 +240,10 @@ public class CorpusService {
         Path cache=processes.corpus(initial.corpusId()).resolve("processed").resolve(paper.id()+"-hybrid-512.json");
         Path legacyCache=cache.resolveSibling(paper.id()+"-512-false.json");
         if(!Files.isRegularFile(cache) && Files.isRegularFile(legacyCache)) Files.copy(legacyCache,cache);
-        if(!Files.isRegularFile(cache)) processes.execute("process_paper.py",List.of("--input",pdf(initial.corpusId(),paper.id()).toString(),"--output",cache.toString(),"--document-id",paper.id().toString(),"--source-file",paper.sourceFile(),"--max-tokens","512"),directory.resolve(paper.id()+"-docling.log"),Map.of());
+        if(!Files.isRegularFile(cache)) {
+          try {processes.execute("process_paper.py",List.of("--input",pdf(initial.corpusId(),paper.id()).toString(),"--output",cache.toString(),"--document-id",paper.id().toString(),"--source-file",paper.sourceFile(),"--max-tokens","512"),directory.resolve(paper.id()+"-docling.log"),Map.of());}
+          finally {processes.artifacts().publish(cache.getParent());processes.artifacts().publish(directory);}
+        }
         ChunkedDocument document=repo.decode(Files.readString(cache),ChunkedDocument.class);
         validate(paper,document);
         Files.copy(cache,chunks.resolve(paper.id()+"-chunks.json"),StandardCopyOption.REPLACE_EXISTING);
@@ -261,6 +275,8 @@ public class CorpusService {
       if(count==null || count!=totalChunks) throw new IllegalStateException("Stored chunk count does not match processed documents");
       JsonNode config=repo.tree(repo.encode(Map.of("embeddingModel",embeddingModel,"dimensions",dimensions,"maxTokens",512,"processor","docling-hybrid")));
       Version version=new Version(initial.referenceId(),initial.corpusId(),table,papers,config,totalChunks,Instant.now());
+      // Activate only after chunk files can survive replacement of this container.
+      processes.artifacts().publish(directory);
       transaction.executeWithoutResult(status -> {repo.saveVersion(version);repo.activate(version.corpusId(),version.id());});
       activated=true;
       repo.saveJob(job.progress("COMPLETED","Corpus indexed and ready for questions",true,null,papers.size(),papers.size(),totalChunks));
@@ -288,6 +304,7 @@ public class CorpusService {
   }
   public Path versionDirectory(UUID corpus,UUID version) {return processes.corpus(corpus).resolve("versions").resolve(version.toString());}
   public List<ChunkedDocument> chunks(Version version) throws IOException {
+    processes.artifacts().restore(versionDirectory(version.corpusId(),version.id()).resolve("chunks"));
     List<ChunkedDocument> result=new ArrayList<>();
     for(Paper paper:version.documents()) result.add(repo.decode(Files.readString(versionDirectory(version.corpusId(),version.id()).resolve("chunks").resolve(paper.id()+"-chunks.json")),ChunkedDocument.class));
     return result;

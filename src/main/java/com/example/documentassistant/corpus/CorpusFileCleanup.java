@@ -14,8 +14,9 @@ import java.util.concurrent.*;
 public class CorpusFileCleanup {
   private final CorpusRepository repo;
   private final Path root;
+  private final CorpusProcesses processes;
   private final ScheduledExecutorService worker=Executors.newSingleThreadScheduledExecutor(Thread.ofPlatform().daemon().name("corpus-file-cleanup").factory());
-  public CorpusFileCleanup(CorpusRepository repo,CorpusProcesses processes) {this.repo=repo;this.root=processes.storage;}
+  public CorpusFileCleanup(CorpusRepository repo,CorpusProcesses processes) {this.repo=repo;this.root=processes.storage;this.processes=processes;}
   @PostConstruct void initialize() {drain();worker.scheduleWithFixedDelay(this::drain,30,30,TimeUnit.SECONDS);}
   public void queue(Collection<Path> paths) {
     repo.queueFileCleanup(paths.stream().map(p->root.relativize(checked(p)).toString()).toList());
@@ -37,7 +38,7 @@ public class CorpusFileCleanup {
     try {
       for(var task:repo.fileCleanups().entrySet()) {
         try {
-          for(String path:task.getValue()) erase(checked(root.resolve(path)));
+          for(String path:task.getValue()) processes.artifacts().delete(checked(root.resolve(path)));
           repo.finishFileCleanup(task.getKey());
         } catch(Exception e) {org.slf4j.LoggerFactory.getLogger(getClass()).warn("Corpus file cleanup {} will retry",task.getKey(),e);}
       }
