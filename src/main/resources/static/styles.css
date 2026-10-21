@@ -189,18 +189,6 @@ main {
   text-align:center;
   padding:35px 20px;
 }
-.empty-mark {
-  display:grid;
-  place-items:center;
-  width:44px;
-  height:44px;
-  border-radius:14px;
-  margin:0 auto 18px;
-  background:#fff1e8;
-  color:var(--accent);
-  font-size:1.4rem;
-  font-weight:650;
-}
 .chat-empty h2 {
   font-size:1.4rem;
 }
