@@ -183,14 +183,52 @@ main {
   min-height:300px;
   max-height:58vh;
   overflow:auto;
-  scrollbar-gutter:stable;
+  scrollbar-gutter:stable both-edges;
+}
+.conversation:has(> .chat-empty:not([hidden])) {
+  display:grid;
+  place-items:center;
 }
 .chat-empty {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  width:100%;
   text-align:center;
-  padding:35px 20px;
+  padding:24px 12px;
+}
+.assistant-mark {
+  display:grid;
+  place-items:center;
+  width:72px;
+  height:72px;
+  margin-bottom:8px;
+  border:1px solid #efd8ca;
+  border-radius:20px;
+  background:#fff6ef;
+  color:var(--accent);
+}
+.assistant-mark svg {
+  width:44px;
+  height:44px;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 .chat-empty h2 {
-  font-size:1.4rem;
+  margin:0;
+  font-size:clamp(1.45rem,3vw,1.9rem);
+  letter-spacing:-.035em;
+  text-wrap:balance;
+}
+.chat-empty p {
+  max-width:36ch;
+  margin:0;
+  color:var(--muted);
+  font-size:.95rem;
+  text-wrap:balance;
 }
 .composer {
   border-top:1px solid var(--line);
