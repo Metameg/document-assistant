@@ -1,4 +1,5 @@
 # Document Assistant
+https://document-assistant-unev.onrender.com/
 
 A retrieval-augmented generation (RAG) demo for exploring PDFs through natural-language questions. Built around nine Generac generator specsheets, it also supports uploading and indexing research-paper collections.
 
