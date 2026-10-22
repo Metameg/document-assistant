@@ -8,9 +8,8 @@ The app combines semantic and keyword search to ground answers in document excer
 
 Spring Boot coordinates the app, Docling processes research PDFs, PostgreSQL with pgvector stores and searches chunks, Cloudflare R2 stores files, and OpenRouter provides embedding and chat models.
 
-<!-- Drag and drop your architecture image here in GitHub's Markdown editor.
-Alternatively, upload docs/architecture.png and replace the placeholder below with:
-![Application architecture](docs/architecture.png)
--->
+<img width="794" height="525" alt="image" src="https://github.com/user-attachments/assets/7e965f50-f5ca-4322-a9c3-27ce44f63a7b" />
+
+
 
 *Architecture diagram coming soon.*
